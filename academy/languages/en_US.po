@@ -1,0 +1,2024 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Academy 1.11\n"
+"POT-Creation-Date: 2014-02-12 22:07+0200\n"
+"PO-Revision-Date: 2014-02-12 22:07+0200\n"
+"Last-Translator: \n"
+"Language-Team: Themex\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../comments.php:3
+msgid "Comments"
+msgstr ""
+
+#: ../content-lesson.php:8 ../framework/config.php:541
+#: ../framework/config.php:676 ../framework/classes/themex.course.php:80
+#: ../framework/classes/themex.woo.php:131
+msgid "Free"
+msgstr ""
+
+#: ../content-plan.php:20 ../module-form.php:3
+msgid "Subscribe Now"
+msgstr ""
+
+#: ../content-post.php:21
+msgid "Read More"
+msgstr ""
+
+#: ../content-post.php:29 ../single.php:37
+msgid "by"
+msgstr ""
+
+#: ../header.php:30
+msgid "Sign Out"
+msgstr ""
+
+#: ../header.php:35
+msgid "My Profile"
+msgstr ""
+
+#: ../header.php:40 ../header.php:52 ../template-register.php:52
+#: ../template-register.php:62
+msgid "Sign In"
+msgstr ""
+
+#: ../header.php:46 ../template-register.php:14 ../template-register.php:57
+#: ../template-statistics.php:11 ../template-statistics.php:35
+#: ../template-statistics.php:47 ../template-statistics.php:63
+#: ../framework/classes/themex.course.php:1177
+#: ../framework/classes/themex.course.php:1188
+#: ../woocommerce/myaccount/form-login.php:46
+msgid "Username"
+msgstr ""
+
+#: ../header.php:49 ../template-register.php:25 ../template-register.php:60
+#: ../woocommerce/myaccount/form-login.php:20
+#: ../woocommerce/myaccount/form-login.php:56
+msgid "Password"
+msgstr ""
+
+#: ../header.php:56 ../template-register.php:64
+msgid "Sign in with Facebook"
+msgstr ""
+
+#: ../header.php:62 ../framework/classes/themex.user.php:353
+msgid "Password Recovery"
+msgstr ""
+
+#: ../header.php:78 ../template-register.php:19
+#: ../framework/classes/themex.form.php:291
+#: ../framework/classes/themex.interface.php:792
+#: ../woocommerce/myaccount/form-login.php:52
+msgid "Email"
+msgstr ""
+
+#: ../header.php:81 ../woocommerce/myaccount/form-lost-password.php:28
+msgid "Reset Password"
+msgstr ""
+
+#: ../header.php:93 ../template-register.php:9 ../template-register.php:41
+#: ../woocommerce/myaccount/form-login.php:42
+#: ../woocommerce/myaccount/form-login.php:66
+msgid "Register"
+msgstr ""
+
+#: ../module-attachments.php:3 ../framework/config.php:695
+msgid "Attachments"
+msgstr ""
+
+#: ../module-course.php:13 ../framework/config.php:987
+msgid "Description"
+msgstr ""
+
+#: ../module-form.php:10 ../module-form.php:13
+msgid "Take This Course"
+msgstr ""
+
+#: ../module-form.php:21
+msgid "Unsubscribe Now"
+msgstr ""
+
+#: ../module-form.php:25
+msgid "View Certificate"
+msgstr ""
+
+#: ../module-lessons.php:3 ../single-course.php:9 ../framework/config.php:350
+#: ../framework/config.php:2198
+msgid "Lessons"
+msgstr ""
+
+#: ../module-player.php:11 ../module-player.php:17
+msgid "Play"
+msgstr ""
+
+#: ../module-player.php:18 ../framework/config.php:1110
+msgid "Pause"
+msgstr ""
+
+#: ../module-player.php:31
+msgid "Full screen"
+msgstr ""
+
+#: ../module-player.php:32
+msgid "Exit full screen"
+msgstr ""
+
+#: ../module-player.php:39
+msgid "Mute"
+msgstr ""
+
+#: ../module-player.php:40
+msgid "Unmute"
+msgstr ""
+
+#: ../module-related.php:4
+msgid "Related Courses"
+msgstr ""
+
+#: ../module-users.php:3 ../template-statistics.php:123
+#: ../framework/config.php:560 ../framework/config.php:655
+msgid "Students"
+msgstr ""
+
+#: ../questions.php:6 ../single-course.php:24 ../framework/config.php:742
+msgid "Questions"
+msgstr ""
+
+#: ../sidebar-lesson.php:6
+msgid "Mark Incomplete"
+msgstr ""
+
+#: ../sidebar-lesson.php:12
+msgid "Complete Quiz"
+msgstr ""
+
+#: ../sidebar-lesson.php:14
+msgid "Take the Quiz"
+msgstr ""
+
+#: ../sidebar-lesson.php:16
+msgid "Mark Complete"
+msgstr ""
+
+#: ../sidebar-lesson.php:28
+msgid "Close Lesson"
+msgstr ""
+
+#: ../sidebar-lesson.php:31
+msgid "Next Lesson"
+msgstr ""
+
+#: ../sidebar-lesson.php:34
+msgid "Previous Lesson"
+msgstr ""
+
+#: ../sidebar-profile.php:10
+#, php-format
+msgid "\"%s\" subscription is active."
+msgstr ""
+
+#: ../sidebar-profile.php:12
+#, php-format
+msgid "\"%s\" subscription expires in %s."
+msgstr ""
+
+#: ../sidebar-profile.php:18
+msgid "No courses yet."
+msgstr ""
+
+#: ../sidebar-profile.php:26
+msgid "Author"
+msgstr ""
+
+#: ../single-course.php:35
+msgid "Subscribe to view this content"
+msgstr ""
+
+#: ../single-course.php:37
+msgid "Take the course to view this content"
+msgstr ""
+
+#: ../single-lesson.php:21
+#, php-format
+msgid "Complete \"%s\" lesson before taking this lesson."
+msgstr ""
+
+#: ../single.php:39
+msgid "in"
+msgstr ""
+
+#: ../template-certificate.php:22
+msgid "Print Certificate"
+msgstr ""
+
+#: ../template-certificate.php:26
+msgid "Certificate not found"
+msgstr ""
+
+#: ../template-posts.php:37
+msgid "No posts found. Try a different search?"
+msgstr ""
+
+#: ../template-posts.php:38
+msgid ""
+"Sorry, no posts matched your search. Try again with some different keywords."
+msgstr ""
+
+#: ../template-profile.php:7
+msgid "Upload"
+msgstr ""
+
+#: ../template-profile.php:21
+msgid "First Name"
+msgstr ""
+
+#: ../template-profile.php:26
+msgid "Last Name"
+msgstr ""
+
+#: ../template-profile.php:32
+msgid "Signature"
+msgstr ""
+
+#: ../template-profile.php:44
+msgid "Facebook"
+msgstr ""
+
+#: ../template-profile.php:49
+msgid "Twitter"
+msgstr ""
+
+#: ../template-profile.php:55
+msgid "Google +"
+msgstr ""
+
+#: ../template-profile.php:60
+msgid "Tumblr"
+msgstr ""
+
+#: ../template-profile.php:66
+msgid "LinkedIn"
+msgstr ""
+
+#: ../template-profile.php:71
+msgid "Flickr"
+msgstr ""
+
+#: ../template-profile.php:77
+msgid "YouTube"
+msgstr ""
+
+#: ../template-profile.php:82
+msgid "Vimeo"
+msgstr ""
+
+#: ../template-profile.php:87 ../framework/templates/index.php:5
+#: ../framework/templates/index.php:19
+msgid "Save Changes"
+msgstr ""
+
+#: ../template-register.php:30
+msgid "Repeat Password"
+msgstr ""
+
+#: ../template-statistics.php:2 ../framework/classes/themex.course.php:1117
+msgid "Statistics"
+msgstr ""
+
+#: ../template-statistics.php:14 ../template-statistics.php:38
+#: ../framework/config.php:257 ../framework/config.php:326
+#: ../framework/config.php:681 ../framework/classes/themex.course.php:1192
+#: ../framework/classes/themex.lesson.php:548
+#: ../framework/classes/themex.lesson.php:549
+msgid "Course"
+msgstr ""
+
+#: ../template-statistics.php:16 ../template-statistics.php:40
+#: ../framework/config.php:266 ../framework/config.php:351
+#: ../framework/config.php:728 ../framework/classes/themex.course.php:1195
+#: ../framework/classes/themex.interface.php:877
+msgid "Lesson"
+msgstr ""
+
+#: ../template-statistics.php:17 ../template-statistics.php:41
+#: ../template-statistics.php:136 ../framework/classes/themex.course.php:1196
+msgid "Grade"
+msgstr ""
+
+#: ../template-statistics.php:48 ../template-statistics.php:64
+#: ../framework/classes/themex.course.php:1178
+msgid "Active Courses"
+msgstr ""
+
+#: ../template-statistics.php:49 ../template-statistics.php:65
+#: ../framework/classes/themex.course.php:1179
+msgid "Completed Courses"
+msgstr ""
+
+#: ../template-statistics.php:50 ../template-statistics.php:66
+#: ../framework/classes/themex.course.php:1180
+msgid "Average Grade"
+msgstr ""
+
+#: ../template-statistics.php:74
+msgid "Filter"
+msgstr ""
+
+#: ../template-statistics.php:80
+msgid "All Students"
+msgstr ""
+
+#: ../template-statistics.php:90
+msgid "All Courses"
+msgstr ""
+
+#: ../template-statistics.php:103 ../framework/config.php:325
+#: ../framework/config.php:873 ../framework/config.php:2082
+msgid "Courses"
+msgstr ""
+
+#: ../template-statistics.php:106 ../template-statistics.php:126
+#: ../woocommerce/checkout/review-order.php:11
+msgid "Total"
+msgstr ""
+
+#: ../template-statistics.php:111
+msgid "Completed"
+msgstr ""
+
+#: ../template-statistics.php:116
+msgid "Per User"
+msgstr ""
+
+#: ../template-statistics.php:131
+msgid "Active"
+msgstr ""
+
+#: ../template-statistics.php:143 ../framework/classes/themex.form.php:303
+msgid "Options"
+msgstr ""
+
+#: ../template-statistics.php:147
+msgid "Update"
+msgstr ""
+
+#: ../template-statistics.php:148
+msgid "Export"
+msgstr ""
+
+#: ../framework/config.php:41 ../framework/config.php:2272
+msgid "Registration"
+msgstr ""
+
+#: ../framework/config.php:60
+msgid "Certificate"
+msgstr ""
+
+#: ../framework/config.php:80
+msgid "Inactive"
+msgstr ""
+
+#: ../framework/config.php:89
+msgid "Main Menu"
+msgstr ""
+
+#: ../framework/config.php:94
+msgid "Footer Menu"
+msgstr ""
+
+#: ../framework/config.php:118
+msgid "Bordered List"
+msgstr ""
+
+#: ../framework/config.php:119
+msgid "Checked List"
+msgstr ""
+
+#: ../framework/config.php:275
+msgid "Footer"
+msgstr ""
+
+#: ../framework/config.php:299
+msgid "Plans"
+msgstr ""
+
+#: ../framework/config.php:300 ../framework/config.php:1016
+#: ../framework/config.php:1021
+msgid "Plan"
+msgstr ""
+
+#: ../framework/config.php:301 ../framework/config.php:327
+#: ../framework/config.php:352 ../framework/config.php:377
+#: ../framework/config.php:403 ../framework/config.php:428
+msgid "Add New"
+msgstr ""
+
+#: ../framework/config.php:302
+msgid "Add New Plan"
+msgstr ""
+
+#: ../framework/config.php:303
+msgid "Edit Plan"
+msgstr ""
+
+#: ../framework/config.php:304
+msgid "New Plan"
+msgstr ""
+
+#: ../framework/config.php:305
+msgid "View Plan"
+msgstr ""
+
+#: ../framework/config.php:306
+msgid "Search Plans"
+msgstr ""
+
+#: ../framework/config.php:307
+msgid "No Plans Found"
+msgstr ""
+
+#: ../framework/config.php:308
+msgid "No Plans Found in Trash"
+msgstr ""
+
+#: ../framework/config.php:318
+msgid "plan"
+msgstr ""
+
+#: ../framework/config.php:328
+msgid "Add New Course"
+msgstr ""
+
+#: ../framework/config.php:329
+msgid "Edit Course"
+msgstr ""
+
+#: ../framework/config.php:330
+msgid "New Course"
+msgstr ""
+
+#: ../framework/config.php:331
+msgid "View Course"
+msgstr ""
+
+#: ../framework/config.php:332
+msgid "Search Courses"
+msgstr ""
+
+#: ../framework/config.php:333
+msgid "No Courses Found"
+msgstr ""
+
+#: ../framework/config.php:334
+msgid "No Courses Found in Trash"
+msgstr ""
+
+#: ../framework/config.php:343
+msgid "course"
+msgstr ""
+
+#: ../framework/config.php:353
+msgid "Add New Lesson"
+msgstr ""
+
+#: ../framework/config.php:354
+msgid "Edit Lesson"
+msgstr ""
+
+#: ../framework/config.php:355
+msgid "New Lesson"
+msgstr ""
+
+#: ../framework/config.php:356
+msgid "View Lesson"
+msgstr ""
+
+#: ../framework/config.php:357
+msgid "Search Lessons"
+msgstr ""
+
+#: ../framework/config.php:358
+msgid "No Lessons Found"
+msgstr ""
+
+#: ../framework/config.php:359
+msgid "No Lessons Found in Trash"
+msgstr ""
+
+#: ../framework/config.php:368
+msgid "lesson"
+msgstr ""
+
+#: ../framework/config.php:375
+msgid "Quizzes"
+msgstr ""
+
+#: ../framework/config.php:376 ../framework/classes/themex.interface.php:880
+msgid "Quiz"
+msgstr ""
+
+#: ../framework/config.php:378
+msgid "Add New Quiz"
+msgstr ""
+
+#: ../framework/config.php:379
+msgid "Edit Quiz"
+msgstr ""
+
+#: ../framework/config.php:380
+msgid "New Quiz"
+msgstr ""
+
+#: ../framework/config.php:381
+msgid "View Quiz"
+msgstr ""
+
+#: ../framework/config.php:382
+msgid "Search Quizzes"
+msgstr ""
+
+#: ../framework/config.php:383
+msgid "No Quizzes Found"
+msgstr ""
+
+#: ../framework/config.php:384
+msgid "No Quizzes Found in Trash"
+msgstr ""
+
+#: ../framework/config.php:394
+msgid "quiz"
+msgstr ""
+
+#: ../framework/config.php:401 ../framework/config.php:1177
+msgid "Testimonials"
+msgstr ""
+
+#: ../framework/config.php:402
+msgid "Testimonial"
+msgstr ""
+
+#: ../framework/config.php:404
+msgid "Add New Testimonial"
+msgstr ""
+
+#: ../framework/config.php:405
+msgid "Edit Testimonial"
+msgstr ""
+
+#: ../framework/config.php:406
+msgid "New Testimonial"
+msgstr ""
+
+#: ../framework/config.php:407
+msgid "View Testimonial"
+msgstr ""
+
+#: ../framework/config.php:408
+msgid "Search Testimonials"
+msgstr ""
+
+#: ../framework/config.php:409
+msgid "No Testimonials Found"
+msgstr ""
+
+#: ../framework/config.php:410
+msgid "No Testimonials Found in Trash"
+msgstr ""
+
+#: ../framework/config.php:419
+msgid "testimonial"
+msgstr ""
+
+#: ../framework/config.php:426
+msgid "Slides"
+msgstr ""
+
+#: ../framework/config.php:427
+msgid "Slide"
+msgstr ""
+
+#: ../framework/config.php:429
+msgid "Add New Slide"
+msgstr ""
+
+#: ../framework/config.php:430
+msgid "Edit Slide"
+msgstr ""
+
+#: ../framework/config.php:431
+msgid "New Slide"
+msgstr ""
+
+#: ../framework/config.php:432
+msgid "View Slide"
+msgstr ""
+
+#: ../framework/config.php:433
+msgid "Search Slides"
+msgstr ""
+
+#: ../framework/config.php:434
+msgid "No Slides Found"
+msgstr ""
+
+#: ../framework/config.php:435
+msgid "No Slides Found in Trash"
+msgstr ""
+
+#: ../framework/config.php:444
+msgid "slide"
+msgstr ""
+
+#: ../framework/config.php:459
+msgid "Course Categories"
+msgstr ""
+
+#: ../framework/config.php:460
+msgid "Course Category"
+msgstr ""
+
+#: ../framework/config.php:461 ../framework/config.php:488
+#: ../framework/classes/themex.sidebar.php:214
+msgid "Categories"
+msgstr ""
+
+#: ../framework/config.php:462
+msgid "Search Course Categories"
+msgstr ""
+
+#: ../framework/config.php:463
+msgid "All Course Categories"
+msgstr ""
+
+#: ../framework/config.php:464 ../framework/config.php:465
+msgid "Parent Course Category"
+msgstr ""
+
+#: ../framework/config.php:466
+msgid "Edit Course Category"
+msgstr ""
+
+#: ../framework/config.php:467
+msgid "Update Course Category"
+msgstr ""
+
+#: ../framework/config.php:468
+msgid "Add New Course Category"
+msgstr ""
+
+#: ../framework/config.php:469
+msgid "New Course Category Name"
+msgstr ""
+
+#: ../framework/config.php:472
+msgid "courses"
+msgstr ""
+
+#: ../framework/config.php:486
+msgid "Testimonial Categories"
+msgstr ""
+
+#: ../framework/config.php:487
+msgid "Testimonial Category"
+msgstr ""
+
+#: ../framework/config.php:489
+msgid "Search Testimonial Categories"
+msgstr ""
+
+#: ../framework/config.php:490
+msgid "All Testimonial Categories"
+msgstr ""
+
+#: ../framework/config.php:491 ../framework/config.php:492
+msgid "Parent Testimonial Category"
+msgstr ""
+
+#: ../framework/config.php:493
+msgid "Edit Testimonial Category"
+msgstr ""
+
+#: ../framework/config.php:494
+msgid "Update Testimonial Category"
+msgstr ""
+
+#: ../framework/config.php:495
+msgid "Add New Testimonial Category"
+msgstr ""
+
+#: ../framework/config.php:496
+msgid "New Testimonial Category Name"
+msgstr ""
+
+#: ../framework/config.php:499
+msgid "testimonials"
+msgstr ""
+
+#: ../framework/config.php:512
+msgid "Page Options"
+msgstr ""
+
+#: ../framework/config.php:518 ../framework/config.php:566
+#: ../framework/config.php:590
+msgid "Background"
+msgstr ""
+
+#: ../framework/config.php:521 ../framework/config.php:569
+#: ../framework/config.php:593 ../framework/config.php:2001
+msgid "Choose background image from WordPress media library"
+msgstr ""
+
+#: ../framework/config.php:529
+msgid "Course Options"
+msgstr ""
+
+#: ../framework/config.php:535 ../framework/config.php:671
+msgid "Status"
+msgstr ""
+
+#: ../framework/config.php:539 ../framework/config.php:675
+msgid "Premium"
+msgstr ""
+
+#: ../framework/config.php:540 ../framework/config.php:929
+msgid "Private"
+msgstr ""
+
+#: ../framework/config.php:546 ../framework/config.php:632
+#: ../woocommerce/checkout/review-order.php:10
+msgid "Product"
+msgstr ""
+
+#: ../framework/config.php:550
+msgid "Choose WooCommerce product to set the course price"
+msgstr ""
+
+#: ../framework/config.php:554 ../framework/config.php:902
+#: ../framework/config.php:2128 ../framework/config.php:2146
+msgid "Rating"
+msgstr ""
+
+#: ../framework/config.php:577
+msgid "Course Certificate"
+msgstr ""
+
+#: ../framework/config.php:583 ../framework/config.php:607
+#: ../framework/config.php:711 ../framework/config.php:863
+#: ../framework/config.php:920 ../framework/config.php:935
+#: ../framework/config.php:1096 ../framework/config.php:1167
+#: ../framework/config.php:1233
+msgid "Content"
+msgstr ""
+
+#: ../framework/config.php:586
+msgid ""
+"Add certificate content, you can use %username%, %title%, %date% and %grade% "
+"keywords"
+msgstr ""
+
+#: ../framework/config.php:601
+msgid "Course Sidebar"
+msgstr ""
+
+#: ../framework/config.php:610
+msgid "Add course sidebar content, use [section] shortcode for widgets"
+msgstr ""
+
+#: ../framework/config.php:618
+msgid "Plan Options"
+msgstr ""
+
+#: ../framework/config.php:624 ../framework/config.php:910
+#: ../framework/config.php:1075 ../framework/config.php:1199
+#: ../framework/config.php:2145
+msgid "Category"
+msgstr ""
+
+#: ../framework/config.php:628
+msgid "Choose course category to add courses to the plan"
+msgstr ""
+
+#: ../framework/config.php:636
+msgid "Choose WooCommerce product to set the plan price"
+msgstr ""
+
+#: ../framework/config.php:640
+msgid "Period"
+msgstr ""
+
+#: ../framework/config.php:644 ../framework/classes/themex.interface.php:539
+#: ../framework/classes/themex.interface.php:574
+msgid "None"
+msgstr ""
+
+#: ../framework/config.php:645
+msgid "Week"
+msgstr ""
+
+#: ../framework/config.php:646
+msgid "Month"
+msgstr ""
+
+#: ../framework/config.php:647
+msgid "3 Months"
+msgstr ""
+
+#: ../framework/config.php:648
+msgid "6 Months"
+msgstr ""
+
+#: ../framework/config.php:649
+msgid "9 Months"
+msgstr ""
+
+#: ../framework/config.php:650
+msgid "Year"
+msgstr ""
+
+#: ../framework/config.php:665
+msgid "Lesson Options"
+msgstr ""
+
+#: ../framework/config.php:688
+msgid "Prerequisite"
+msgstr ""
+
+#: ../framework/config.php:705
+msgid "Lesson Sidebar"
+msgstr ""
+
+#: ../framework/config.php:714
+msgid "Add lesson sidebar content, use [section] shortcode for widgets"
+msgstr ""
+
+#: ../framework/config.php:722
+msgid "Quiz Options"
+msgstr ""
+
+#: ../framework/config.php:735
+msgid "Percentage"
+msgstr ""
+
+#: ../framework/config.php:738
+msgid "Set percentage of right answers required to pass this quiz"
+msgstr ""
+
+#: ../framework/config.php:752
+msgid "Slide Options"
+msgstr ""
+
+#: ../framework/config.php:758 ../framework/config.php:807
+#: ../framework/config.php:1007 ../framework/classes/themex.interface.php:434
+msgid "Link"
+msgstr ""
+
+#: ../framework/config.php:761
+msgid "Enter URL for the slide image link"
+msgstr ""
+
+#: ../framework/config.php:765 ../framework/classes/themex.interface.php:423
+msgid "Video"
+msgstr ""
+
+#: ../framework/config.php:768
+msgid "Enter embedded video code to replace the slide image"
+msgstr ""
+
+#: ../framework/config.php:780
+msgid "Button"
+msgstr ""
+
+#: ../framework/config.php:785
+msgid "Color"
+msgstr ""
+
+#: ../framework/config.php:788
+msgid "Primary"
+msgstr ""
+
+#: ../framework/config.php:789
+msgid "Secondary"
+msgstr ""
+
+#: ../framework/config.php:790
+msgid "Dark"
+msgstr ""
+
+#: ../framework/config.php:796
+msgid "Size"
+msgstr ""
+
+#: ../framework/config.php:799
+msgid "Small"
+msgstr ""
+
+#: ../framework/config.php:800
+msgid "Medium"
+msgstr ""
+
+#: ../framework/config.php:801
+msgid "Large"
+msgstr ""
+
+#: ../framework/config.php:813
+msgid "Target"
+msgstr ""
+
+#: ../framework/config.php:816
+msgid "Current Tab"
+msgstr ""
+
+#: ../framework/config.php:817
+msgid "New Tab"
+msgstr ""
+
+#: ../framework/config.php:823 ../framework/config.php:1133
+msgid "Caption"
+msgstr ""
+
+#: ../framework/config.php:832 ../framework/config.php:885
+msgid "Columns"
+msgstr ""
+
+#: ../framework/config.php:839
+msgid "Width"
+msgstr ""
+
+#: ../framework/config.php:842
+msgid "One Sixth"
+msgstr ""
+
+#: ../framework/config.php:843
+msgid "One Sixth Last"
+msgstr ""
+
+#: ../framework/config.php:844
+msgid "One Fourth"
+msgstr ""
+
+#: ../framework/config.php:845
+msgid "One Fourth Last"
+msgstr ""
+
+#: ../framework/config.php:846
+msgid "One Third"
+msgstr ""
+
+#: ../framework/config.php:847
+msgid "One Third Last"
+msgstr ""
+
+#: ../framework/config.php:848
+msgid "Five Twelfths"
+msgstr ""
+
+#: ../framework/config.php:849
+msgid "Five Twelfths Last"
+msgstr ""
+
+#: ../framework/config.php:850
+msgid "One Half"
+msgstr ""
+
+#: ../framework/config.php:851
+msgid "One Half Last"
+msgstr ""
+
+#: ../framework/config.php:852
+msgid "Seven Twelfths"
+msgstr ""
+
+#: ../framework/config.php:853
+msgid "Seven Twelfths Last"
+msgstr ""
+
+#: ../framework/config.php:854
+msgid "Two Thirds"
+msgstr ""
+
+#: ../framework/config.php:855
+msgid "Two Thirds Last"
+msgstr ""
+
+#: ../framework/config.php:856
+msgid "Three Fourths"
+msgstr ""
+
+#: ../framework/config.php:857
+msgid "Three Fourths Last"
+msgstr ""
+
+#: ../framework/config.php:878 ../framework/config.php:1058
+#: ../framework/config.php:1182 ../framework/config.php:1248
+#: ../framework/classes/themex.form.php:290
+#: ../framework/classes/widgets/themex.authors.php:84
+#: ../framework/classes/widgets/themex.twitter.php:80
+msgid "Number"
+msgstr ""
+
+#: ../framework/config.php:898 ../framework/config.php:1065
+#: ../framework/config.php:1189 ../framework/config.php:1255
+#: ../framework/classes/widgets/themex.authors.php:88
+msgid "Order"
+msgstr ""
+
+#: ../framework/config.php:901 ../framework/config.php:1068
+#: ../framework/config.php:1192 ../framework/config.php:1258
+#: ../framework/config.php:2127
+#: ../framework/classes/widgets/themex.authors.php:96
+msgid "Date"
+msgstr ""
+
+#: ../framework/config.php:903 ../framework/config.php:2129
+#: ../framework/config.php:2147
+msgid "Popularity"
+msgstr ""
+
+#: ../framework/config.php:904 ../framework/config.php:1069
+#: ../framework/config.php:1193
+msgid "Random"
+msgstr ""
+
+#: ../framework/config.php:925 ../framework/config.php:1148
+#: ../framework/config.php:1214
+msgid "Type"
+msgstr ""
+
+#: ../framework/config.php:928
+msgid "Public"
+msgstr ""
+
+#: ../framework/config.php:944 ../framework/config.php:2400
+msgid "Contact Form"
+msgstr ""
+
+#: ../framework/config.php:954
+msgid "Google Map"
+msgstr ""
+
+#: ../framework/config.php:959
+msgid "Height"
+msgstr ""
+
+#: ../framework/config.php:966
+msgid "Latitude"
+msgstr ""
+
+#: ../framework/config.php:973
+msgid "Longitude"
+msgstr ""
+
+#: ../framework/config.php:980
+msgid "Zoom"
+msgstr ""
+
+#: ../framework/config.php:996 ../framework/config.php:1001
+#: ../framework/config.php:1127
+msgid "Image"
+msgstr ""
+
+#: ../framework/config.php:1031
+msgid "Player"
+msgstr ""
+
+#: ../framework/config.php:1036
+msgid "File URL"
+msgstr ""
+
+#: ../framework/config.php:1043
+msgid "File Title"
+msgstr ""
+
+#: ../framework/config.php:1053 ../framework/config.php:2238
+msgid "Posts"
+msgstr ""
+
+#: ../framework/config.php:1085
+msgid "Section"
+msgstr ""
+
+#: ../framework/config.php:1090 ../framework/config.php:1161
+#: ../framework/config.php:1227 ../framework/classes/themex.interface.php:411
+#: ../framework/classes/widgets/themex.authors.php:80
+#: ../framework/classes/widgets/themex.comments.php:65
+#: ../framework/classes/widgets/themex.twitter.php:72
+msgid "Title"
+msgstr ""
+
+#: ../framework/config.php:1105
+msgid "Slider"
+msgstr ""
+
+#: ../framework/config.php:1117
+msgid "Speed"
+msgstr ""
+
+#: ../framework/config.php:1143
+msgid "Tabs"
+msgstr ""
+
+#: ../framework/config.php:1151
+msgid "Horizontal"
+msgstr ""
+
+#: ../framework/config.php:1152
+msgid "Vertical"
+msgstr ""
+
+#: ../framework/config.php:1209
+msgid "Toggles"
+msgstr ""
+
+#: ../framework/config.php:1217
+msgid "Multiple"
+msgstr ""
+
+#: ../framework/config.php:1218
+msgid "Accordion"
+msgstr ""
+
+#: ../framework/config.php:1243
+msgid "Users"
+msgstr ""
+
+#: ../framework/config.php:1259 ../framework/classes/themex.form.php:268
+#: ../framework/classes/themex.interface.php:791
+#: ../framework/classes/themex.sidebar.php:88
+#: ../framework/classes/widgets/themex.authors.php:97
+msgid "Name"
+msgstr ""
+
+#: ../framework/config.php:1260
+#: ../framework/classes/widgets/themex.authors.php:98
+msgid "Activity"
+msgstr ""
+
+#: ../framework/config.php:1932
+msgid "General"
+msgstr ""
+
+#: ../framework/config.php:1937
+msgid "Site Favicon"
+msgstr ""
+
+#: ../framework/config.php:1938
+msgid "Choose an image to replace the default site favicon"
+msgstr ""
+
+#: ../framework/config.php:1944
+msgid "Site Logo"
+msgstr ""
+
+#: ../framework/config.php:1945
+msgid "Choose an image to replace the default theme logo"
+msgstr ""
+
+#: ../framework/config.php:1951
+msgid "Login Logo"
+msgstr ""
+
+#: ../framework/config.php:1952
+msgid "Choose an image to replace the default WordPress login logo"
+msgstr ""
+
+#: ../framework/config.php:1958
+msgid "Copyright Text"
+msgstr ""
+
+#: ../framework/config.php:1959
+msgid "Enter copyright text to show in the theme footer"
+msgstr ""
+
+#: ../framework/config.php:1965
+msgid "Tracking Code"
+msgstr ""
+
+#: ../framework/config.php:1966
+msgid "Enter Google Analytics code to track your site visitors"
+msgstr ""
+
+#: ../framework/config.php:1973
+msgid "Styling"
+msgstr ""
+
+#: ../framework/config.php:1978
+msgid "Primary Color"
+msgstr ""
+
+#: ../framework/config.php:1985
+msgid "Secondary Color"
+msgstr ""
+
+#: ../framework/config.php:1992
+msgid "Background Color"
+msgstr ""
+
+#: ../framework/config.php:1999
+msgid "Background Image"
+msgstr ""
+
+#: ../framework/config.php:2006
+msgid "Background Type"
+msgstr ""
+
+#: ../framework/config.php:2010
+msgid "Full Width"
+msgstr ""
+
+#: ../framework/config.php:2011
+msgid "Tiled"
+msgstr ""
+
+#: ../framework/config.php:2016
+msgid "Heading Font"
+msgstr ""
+
+#: ../framework/config.php:2023
+msgid "Content Font"
+msgstr ""
+
+#: ../framework/config.php:2030
+msgid "Custom CSS"
+msgstr ""
+
+#: ../framework/config.php:2031
+msgid "Enter custom CSS code to overwrite the default theme styles"
+msgstr ""
+
+#: ../framework/config.php:2038
+msgid "Header"
+msgstr ""
+
+#: ../framework/config.php:2043
+msgid "Sharing Code"
+msgstr ""
+
+#: ../framework/config.php:2044
+msgid "Enter social sharing buttons code to show share button in the header"
+msgstr ""
+
+#: ../framework/config.php:2050
+msgid "Slider Type"
+msgstr ""
+
+#: ../framework/config.php:2054
+msgid "Parallax"
+msgstr ""
+
+#: ../framework/config.php:2055
+msgid "Stretched"
+msgstr ""
+
+#: ../framework/config.php:2056
+msgid "Boxed"
+msgstr ""
+
+#: ../framework/config.php:2061
+msgid "Slider Pause"
+msgstr ""
+
+#: ../framework/config.php:2071
+msgid "Slider Speed"
+msgstr ""
+
+#: ../framework/config.php:2087
+msgid "Courses Layout"
+msgstr ""
+
+#: ../framework/config.php:2098
+msgid "Courses View"
+msgstr ""
+
+#: ../framework/config.php:2102
+msgid "Grid"
+msgstr ""
+
+#: ../framework/config.php:2103
+msgid "List"
+msgstr ""
+
+#: ../framework/config.php:2108
+msgid "Courses Columns"
+msgstr ""
+
+#: ../framework/config.php:2123
+msgid "Courses Order"
+msgstr ""
+
+#: ../framework/config.php:2134
+msgid "Courses Per Page"
+msgstr ""
+
+#: ../framework/config.php:2141
+msgid "Related Courses Order"
+msgstr ""
+
+#: ../framework/config.php:2152
+msgid "Related Courses Number"
+msgstr ""
+
+#: ../framework/config.php:2159
+msgid "Students Number"
+msgstr ""
+
+#: ../framework/config.php:2166
+msgid "Questions Number"
+msgstr ""
+
+#: ../framework/config.php:2173
+msgid "Hide Course Author"
+msgstr ""
+
+#: ../framework/config.php:2179
+msgid "Hide Course Rating"
+msgstr ""
+
+#: ../framework/config.php:2185
+msgid "Hide Students Number"
+msgstr ""
+
+#: ../framework/config.php:2191
+msgid "Disable Retaking Courses"
+msgstr ""
+
+#: ../framework/config.php:2203
+msgid "Lessons Layout"
+msgstr ""
+
+#: ../framework/config.php:2213
+msgid "Hide Child Lessons"
+msgstr ""
+
+#: ../framework/config.php:2219
+msgid "Disable Retaking Lessons"
+msgstr ""
+
+#: ../framework/config.php:2225
+msgid "Hide Prerequisite Content"
+msgstr ""
+
+#: ../framework/config.php:2231
+msgid "Shuffle Quiz Questions"
+msgstr ""
+
+#: ../framework/config.php:2243
+msgid "Posts Layout"
+msgstr ""
+
+#: ../framework/config.php:2253
+msgid "Hide Post Author"
+msgstr ""
+
+#: ../framework/config.php:2259
+msgid "Hide Post Date"
+msgstr ""
+
+#: ../framework/config.php:2265
+msgid "Hide Post Image"
+msgstr ""
+
+#: ../framework/config.php:2277
+msgid "Enable Email Confirmation"
+msgstr ""
+
+#: ../framework/config.php:2283 ../framework/classes/themex.form.php:67
+msgid "Enable Captcha Protection"
+msgstr ""
+
+#: ../framework/config.php:2289
+msgid "Enable Facebook Login"
+msgstr ""
+
+#: ../framework/config.php:2295
+msgid "Facebook Application ID"
+msgstr ""
+
+#: ../framework/config.php:2305
+msgid "Facebook Application Secret"
+msgstr ""
+
+#: ../framework/config.php:2315
+msgid "Registration Email"
+msgstr ""
+
+#: ../framework/config.php:2317
+msgid ""
+"Add registration email text, you can use %username%, %password% and %link% "
+"keywords"
+msgstr ""
+
+#: ../framework/config.php:2322
+msgid "Password Reset Email"
+msgstr ""
+
+#: ../framework/config.php:2324
+msgid ""
+"Add password reset email text, you can use %username% and %link% keywords"
+msgstr ""
+
+#: ../framework/config.php:2330
+msgid "Notifications"
+msgstr ""
+
+#: ../framework/config.php:2335
+msgid "New Course Email"
+msgstr ""
+
+#: ../framework/config.php:2337 ../framework/config.php:2344
+#: ../framework/config.php:2351 ../framework/config.php:2358
+msgid ""
+"Add notification email text, you can use %username%, %title% and %link% "
+"keywords"
+msgstr ""
+
+#: ../framework/config.php:2342
+msgid "Completed Course Email"
+msgstr ""
+
+#: ../framework/config.php:2349
+msgid "New Plan Email"
+msgstr ""
+
+#: ../framework/config.php:2356
+msgid "New Question Email"
+msgstr ""
+
+#: ../framework/config.php:2364
+msgid "Profile Form"
+msgstr ""
+
+#: ../framework/config.php:2369
+msgid "Hide Signature"
+msgstr ""
+
+#: ../framework/config.php:2375
+msgid "Hide Description"
+msgstr ""
+
+#: ../framework/config.php:2381
+msgid "Hide Social Links"
+msgstr ""
+
+#: ../framework/config.php:2387
+msgid "Hide Courses"
+msgstr ""
+
+#: ../framework/config.php:2412
+msgid "Checkout Form"
+msgstr ""
+
+#: ../framework/config.php:2423
+msgid "Sidebars"
+msgstr ""
+
+#: ../framework/functions.php:601
+msgid "week"
+msgstr ""
+
+#: ../framework/functions.php:605
+msgid "month"
+msgstr ""
+
+#: ../framework/functions.php:609
+msgid "year"
+msgstr ""
+
+#: ../framework/functions.php:613
+msgid "months"
+msgstr ""
+
+#: ../framework/functions.php:619
+msgid "day"
+msgstr ""
+
+#: ../framework/functions.php:621
+msgid "days"
+msgstr ""
+
+#: ../framework/functions.php:624
+msgid "less than a day"
+msgstr ""
+
+#: ../framework/shortcodes.php:109
+msgid "Submit"
+msgstr ""
+
+#: ../framework/classes/themex.core.php:581
+msgid "All changes have been saved"
+msgstr ""
+
+#: ../framework/classes/themex.core.php:610
+msgid "All options have been reset"
+msgstr ""
+
+#: ../framework/classes/themex.core.php:743
+msgid "Only JPG and PNG images are allowed."
+msgstr ""
+
+#: ../framework/classes/themex.core.php:765
+msgid "This image is too large for uploading."
+msgstr ""
+
+#: ../framework/classes/themex.course.php:150
+msgid "Course Completed"
+msgstr ""
+
+#: ../framework/classes/themex.course.php:587
+msgid "Plan Subscription"
+msgstr ""
+
+#: ../framework/classes/themex.course.php:893
+msgid "Course Membership"
+msgstr ""
+
+#: ../framework/classes/themex.facebook.php:151
+#: ../framework/classes/themex.user.php:220
+msgid "Registration Complete"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:59
+msgid "Form Message"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:61
+msgid "Enter message to show when email is successfully sent"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:74
+msgid "Form Fields"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:220
+msgid "Code"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:255
+#: ../framework/classes/themex.interface.php:402
+#: ../framework/classes/themex.interface.php:615
+#: ../framework/classes/themex.interface.php:650
+#: ../framework/classes/themex.interface.php:701
+#: ../framework/classes/themex.shortcode.php:146
+#: ../framework/classes/themex.sidebar.php:182
+msgid "Remove"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:262
+#: ../framework/classes/themex.interface.php:403
+#: ../framework/classes/themex.interface.php:616
+#: ../framework/classes/themex.interface.php:651
+#: ../framework/classes/themex.interface.php:690
+#: ../framework/classes/themex.shortcode.php:147
+msgid "Add"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:278
+#: ../framework/classes/themex.form.php:289
+msgid "String"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:279
+#: ../framework/classes/themex.form.php:293
+msgid "Select"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:292
+msgid "Text"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:330
+msgid "The verification code is incorrect"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:339
+msgid "field is required"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:342
+msgid "field can only contain numbers"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:346
+msgid "You have entered an invalid email address"
+msgstr ""
+
+#: ../framework/classes/themex.form.php:355
+msgid "Contact"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:95
+msgid "Insert This Item"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:141
+#: ../framework/templates/index.php:4
+msgid "Theme Options"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:383
+msgid "Browse"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:421
+msgid "Document"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:422
+msgid "Audio"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:433
+msgid "File"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:624
+#: ../framework/classes/themex.interface.php:781
+msgid "Question"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:634
+msgid "Single Choice"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:635
+msgid "Multiple Choice"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:636
+msgid "Short Answer"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:659
+#: ../framework/classes/themex.lesson.php:316
+msgid "Answer"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:782
+#: ../framework/classes/themex.interface.php:794
+msgid "Comment"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:786
+msgid "Add Question"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:795
+msgid "Add Comment"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:895
+msgid "Profile"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:899
+msgid "Archives"
+msgstr ""
+
+#: ../framework/classes/themex.interface.php:915
+msgid "Search Results"
+msgstr ""
+
+#: ../framework/classes/themex.lesson.php:270
+#, php-format
+msgid "Congratulations! You have passed this quiz achieving %d%%!"
+msgstr ""
+
+#: ../framework/classes/themex.lesson.php:273
+#, php-format
+msgid "You are required %d%% to pass this quiz."
+msgstr ""
+
+#: ../framework/classes/themex.lesson.php:411
+msgid "ERROR"
+msgstr ""
+
+#: ../framework/classes/themex.lesson.php:411
+msgid "please type a question."
+msgstr ""
+
+#: ../framework/classes/themex.lesson.php:438
+msgid "Question Answered"
+msgstr ""
+
+#: ../framework/classes/themex.shortcode.php:67
+#: ../framework/classes/themex.shortcode.php:156
+msgid "Insert Shortcode"
+msgstr ""
+
+#: ../framework/classes/themex.sidebar.php:54
+msgid "Default"
+msgstr ""
+
+#: ../framework/classes/themex.sidebar.php:86
+msgid "Add Sidebar"
+msgstr ""
+
+#: ../framework/classes/themex.sidebar.php:198
+msgid "Pages"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:149
+msgid "Verification code is incorrect"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:152
+msgid "Verification code is empty"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:157
+msgid "Please fill in all fields"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:160
+#: ../framework/classes/themex.user.php:360
+msgid "Invalid email address"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:162
+msgid "This email is already in use"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:166
+msgid "Invalid character used in username"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:168
+msgid "This username is already taken"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:172
+msgid "Password must be at least 4 characters long"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:174
+msgid "Password must be not more than 16 characters long"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:176
+msgid "Password contains invalid characters"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:178
+msgid "Passwords do not match"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:193
+msgid "Registration complete! Check your mailbox to activate the account"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:194
+msgid "Account Confirmation"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:288
+msgid "Invalid username or password"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:292
+msgid "This account is not activated"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:333
+msgid "Password recovery not allowed"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:354
+msgid "Password reset link is sent"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:356
+msgid "Error sending email"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:571
+msgid "Profile Photo"
+msgstr ""
+
+#: ../framework/classes/themex.user.php:583
+msgid "Profile Text"
+msgstr ""
+
+#: ../framework/classes/themex.woo.php:71
+msgid "Show Country"
+msgstr ""
+
+#: ../framework/classes/themex.woo.php:78
+msgid "Show City"
+msgstr ""
+
+#: ../framework/classes/themex.woo.php:85
+msgid "Show State"
+msgstr ""
+
+#: ../framework/classes/themex.woo.php:92
+msgid "Show Address"
+msgstr ""
+
+#: ../framework/classes/themex.woo.php:99
+msgid "Show Postcode"
+msgstr ""
+
+#: ../framework/classes/themex.woo.php:106
+msgid "Show Company"
+msgstr ""
+
+#: ../framework/classes/themex.woo.php:113
+msgid "Show Phone"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.authors.php:6
+msgid "Selected blog authors"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.authors.php:7
+#: ../framework/classes/widgets/themex.authors.php:15
+#: ../framework/classes/widgets/themex.authors.php:25
+msgid "Blog Authors"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.comments.php:6
+msgid "The most recent comments"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.comments.php:7
+#: ../framework/classes/widgets/themex.comments.php:30
+msgid "Recent Comments"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.comments.php:43
+msgid "on"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.comments.php:67
+msgid "Number of comments to show"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.twitter.php:6
+msgid "The most recent tweets"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.twitter.php:7
+#: ../framework/classes/widgets/themex.twitter.php:19
+#: ../framework/classes/widgets/themex.twitter.php:24
+msgid "Recent Tweets"
+msgstr ""
+
+#: ../framework/classes/widgets/themex.twitter.php:76
+msgid "Widget ID"
+msgstr ""
+
+#: ../framework/templates/index.php:18
+msgid "Reset Options"
+msgstr ""
+
+#: ../woocommerce/checkout/form-checkout.php:33
+msgid "Billing Details"
+msgstr ""
+
+#: ../woocommerce/checkout/form-checkout.php:43
+msgid "I accept the"
+msgstr ""
+
+#: ../woocommerce/checkout/form-checkout.php:43
+#: ../woocommerce/checkout/review-order.php:138
+msgid "terms &amp; conditions"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:16
+msgid "Cart Subtotal"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:21
+#: ../woocommerce/checkout/review-order.php:53
+msgid "Coupon:"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:59
+msgid "Order Total"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:89
+msgid "Payment Method"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:118
+msgid "Please fill in your details above to see available payment methods."
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:120
+msgid ""
+"Sorry, it seems that there are no available payment methods for your state. "
+"Please contact us if you require assistance or wish to make alternate "
+"arrangements."
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:127
+msgid ""
+"Since your browser does not support JavaScript, or it is disabled, please "
+"ensure you click the <em>Update Totals</em> button before placing your "
+"order. You may be charged more than the amount stated above if you fail to "
+"do so."
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:127
+msgid "Update totals"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:131
+msgid "Place order"
+msgstr ""
+
+#: ../woocommerce/checkout/review-order.php:138
+msgid "I have read and accept the"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:27
+msgid "Failure in Processing the Payment."
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:28
+msgid ""
+"Unfortunately your order cannot be processed as the originating bank/"
+"merchant has declined your transaction."
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:29
+msgid "Please attempt your purchase"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:29
+msgid "again or go to your account page."
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:31
+msgid "Thank you. Your order has been received."
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:35
+msgid "Order:"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:39
+msgid "Email:"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:43
+msgid "Date:"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:47
+msgid "Total:"
+msgstr ""
+
+#: ../woocommerce/checkout/thankyou.php:52
+msgid "Payment method:"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-change-password.php:12
+#: ../woocommerce/myaccount/form-lost-password.php:19
+msgid "New password"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-change-password.php:15
+#: ../woocommerce/myaccount/form-lost-password.php:22
+msgid "Re-enter new password"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-change-password.php:18
+#: ../woocommerce/myaccount/form-lost-password.php:28
+msgid "Save"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-login.php:14
+#: ../woocommerce/myaccount/form-login.php:26
+msgid "Login"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-login.php:17
+#: ../woocommerce/myaccount/form-lost-password.php:14
+msgid "Username or email"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-login.php:36
+msgid "Lost Password?"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-login.php:59
+msgid "Re-enter password"
+msgstr ""
+
+#: ../woocommerce/myaccount/form-lost-password.php:12
+msgid ""
+"Lost your password? Please enter your username or email address. You will "
+"receive a link to create a new password via email."
+msgstr ""
+
+#: ../woocommerce/myaccount/form-lost-password.php:17
+msgid "Enter a new password below."
+msgstr ""
