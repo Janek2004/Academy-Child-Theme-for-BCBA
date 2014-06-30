@@ -2,26 +2,29 @@
 <?php 
 include("mpdf/mpdf.php");
 
-echo get_bloginfo('template_url').'?/certificate='.$_GET['certificate'];
-
+//echo site_url().'?certificate='.$_GET['certificate'];
+//echo get_bloginfo('template_url').'/style.css';
+//echo "<br>";
+//echo "".get_stylesheet_directory_uri();
 
 $mpdf=new mPDF('utf-8', 'A3', '8', '', 10, 10, 22, 22, 10, 20); 
 $mpdf->SetDisplayMode('fullpage');
-/*$mpdf->fontdata = array(
+
+/*
+	$mpdf->fontdata = array(
     "opensans" => array(
-    'R' => 'http://yellowobjects.djmobilesoftware.com/wp/wp-content/themes/academy-child/OpenSans-Italic.ttf'
-    ));*/
+      'R' => 'http://yellowobjects.djmobilesoftware.com/wp/wp-content/themes/academy-child/OpenSans-Italic.ttf'
+    ));
+*/
+
 ?>
 <?php
 
 $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
-
 ;
-$stylesheet = file_get_contents(get_bloginfo('template_url').'/style.css'); // external css
-
+$stylesheet = file_get_contents(get_stylesheet_directory_uri().'/style.css'); // external css
 $mpdf->WriteHTML($stylesheet,1);
- 
-$mpdf->WriteHTML(file_get_contents( get_bloginfo('template_url').'?/certificate='.$_GET['certificate']));
+$mpdf->WriteHTML(file_get_contents( site_url().'?certificate='.$_GET['certificate']));
          
 $mpdf->Output();
 
