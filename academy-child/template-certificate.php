@@ -17,7 +17,7 @@ $stylesheet = file_get_contents(get_stylesheet_directory().'/style.css'); // ext
 
 $mpdf->WriteHTML($stylesheet,1);
  
-$mpdf->WriteHTML(file_get_contents(home_url().'?certificate='.$_GET['certificate']));
+$mpdf->WriteHTML(file_get_contents( get_site_url().'?/certificate='.$_GET['certificate']));
          
 $mpdf->Output();
 
