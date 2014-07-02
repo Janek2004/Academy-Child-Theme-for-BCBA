@@ -19,7 +19,7 @@
 					<?php echo THEME_URI.'images/bullet_5.png';	
 					}
 					else{
-	          	echo THEME_URI.'images/bullet_4.png';					
+	          	//echo THEME_URI.'images/bullet_4.png';					
 	 			 }
       	?>"/>
 			

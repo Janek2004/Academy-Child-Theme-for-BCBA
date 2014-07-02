@@ -7,14 +7,13 @@
 		<?php if(ThemexLesson::$data['status']=='free') { ?>
 		<div class="course-status"><?php _e('Free', 'academy'); ?></div>
 		<?php } ?>
-     <img src="
-				<?php 			
+     <img src="<?php 			
 					if(ThemexLesson::$data['progress'] == 100){
 				 ?>
 					<?php echo THEME_URI.'images/bullet_5.png';	
 					}
 					else{
-	          	echo THEME_URI.'images/bullet_4.png';					
+	          	//echo THEME_URI.'images/bullet_4.png';					
 	 			 }
       	?>"/>
     
