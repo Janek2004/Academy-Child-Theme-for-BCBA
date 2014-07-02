@@ -23,7 +23,7 @@ Text Domain:  academy-child
 
 
 .lessons-listing .lesson-item .lesson-title a{
-	color:#F66 !important;
+		color:#777 !important;
 }
 
 .lessons-listing .lesson-item.completed .lesson-title a{
