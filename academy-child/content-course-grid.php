@@ -27,9 +27,7 @@
 	<div class="course-meta">
 		<header class="course-header">
 			<h5 class="nomargin"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-			<?php if(!ThemexCore::checkOption('course_author')) { ?>
-			<a href="<?php echo ThemexCourse::$data['author']['profile_url']; ?>" class="author"><?php echo ThemexCourse::$data['author']['profile']['full_name']; ?></a>
-			<?php } ?>
+		
 		</header>
 		<?php if(!ThemexCore::checkOption('course_popularity') || !ThemexCore::checkOption('course_rating')) { ?>
 		<footer class="course-footer clearfix">
