@@ -78,6 +78,8 @@ top: 92px !important;
 #certificate_main h2{font-family: Crete Round,Arial,Helvetica,sans-serif; font-weight:bold;}
 .margin_top20{margin-top:20px;}
 .view_certificate{margin: 0; position: absolute; right: 17px; top: 5px;}
+.view_certificate_evaluation {margin: 0; right: 17px; top: 5px;}
+
 big{ color:#000000; font-weight:normal;  font-family: Crete Round,Arial,Helvetica,sans-serif; font-weight:bold;}
 
 .btn_possition{position:relative; left:0; width:92%; text-align:center; margin-top:10px;}	
