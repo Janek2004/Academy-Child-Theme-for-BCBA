@@ -20,7 +20,21 @@ Text Domain:  academy-child
 
 /* =Theme customization starts here
 -------------------------------------------------------------- */
+.course-preview .course-header {
+position: relative;
+z-index: 9;
+padding: 0.5em 15px 0.9em 15px;
+height:65px;
 
+
+
+}
+
+.course-preview .course-header h5{
+	overflow: hidden;
+max-height: 62px;
+display: block;
+}
 
 .lessons-listing .lesson-item .lesson-title a{
 		color:#777 !important;
