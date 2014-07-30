@@ -27,8 +27,26 @@
 	<div class="course-meta">
 		<header class="course-header">
 			<h5 class="nomargin"><a href="<?php the_permalink(); ?>">
-		<?php  
-				echo substr(get_the_title($post->ID),0,80); ?>
+		<?php 
+		 $title_string =get_the_title($post->ID);
+			$words = preg_split("/[\s,]+/", $title_string);
+			$title_string ="";
+			for($i=0; $i<5;$i++)
+			{	
+				$word = $words[$i];
+				//echo $word;
+				if($i==0) {$title_string= $word;}
+				else{
+								$title_string=	$title_string." ".$word;			
+				}
+
+				
+			}
+				//print_r($words);
+			echo $title_string; ?>
+       
+        
+        
       </a>
       </h5>
 		
