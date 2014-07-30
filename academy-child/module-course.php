@@ -8,6 +8,16 @@
 <?php } else { ?>
 <div class="ninecol column last">
 <?php } ?>
+<div class="course-description widget">
+		<div class="widget-title">
+ 			<h4 class="nomargin"><?php _e('Course', 'academy'); ?></h4>
+    </div>
+  	<div class="widget-content">
+		    <?php the_title(); ?>
+    </div>
+</div>
+    
+
 	<div class="course-description widget <?php echo ThemexCourse::$data['status']; ?>-course">
 		<div class="widget-title">
 			<h4 class="nomargin"><?php _e('Description', 'academy'); ?></h4>
