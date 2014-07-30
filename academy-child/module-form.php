@@ -7,10 +7,10 @@
 		<?php if(ThemexCourse::$data['status']!='private') { ?>
 		<a href="#" class="button medium price-button submit-button left">		
 			<?php if(ThemexCourse::$data['status']=='premium' && ThemexCourse::$data['product']!=0) { ?>
-			<span class="caption"><?php _e('Take This Course', 'academy'); ?></span>
+			<span class="caption"><?php _e('Purchase this course from CCBS', 'academy'); ?></span>
 			<span class="price"><?php echo ThemexCourse::$data['price']['text']; ?></span>
 			<?php } else { ?>
-			<?php _e('Take This Course', 'academy'); ?>
+			<?php _e('Purchase this course from CCBS', 'academy'); ?>
 			<?php } ?>
 		</a>
 		<input type="hidden" name="course_action" value="add_user" />
