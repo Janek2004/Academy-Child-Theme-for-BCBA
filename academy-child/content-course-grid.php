@@ -31,7 +31,7 @@
 		 $title_string =get_the_title($post->ID);
 			$words = preg_split("/[\s,]+/", $title_string);
 			$title_string ="";
-			for($i=0; $i<5;$i++)
+			for($i=0; $i<10;$i++)
 			{	
 				$word = $words[$i];
 				//echo $word;
@@ -39,9 +39,12 @@
 				else{
 								$title_string=	$title_string." ".$word;			
 				}
-
-				
+	
 			}
+			if(count($words)>10){
+				$title_string = $title_string."... ";
+			}
+			
 				//print_r($words);
 			echo $title_string; ?>
        
