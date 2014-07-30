@@ -26,7 +26,11 @@
 	</div>
 	<div class="course-meta">
 		<header class="course-header">
-			<h5 class="nomargin"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+			<h5 class="nomargin"><a href="<?php the_permalink(); ?>">
+		<?php  
+				echo substr(get_the_title($post->ID),0,80); ?>
+      </a>
+      </h5>
 		
 		</header>
 		<?php if(!ThemexCore::checkOption('course_popularity') || !ThemexCore::checkOption('course_rating')) { ?>
