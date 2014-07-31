@@ -13,6 +13,7 @@
 </div>
 <div class="user-description">
 	<p>Please fill the form fields below. We will use this data to provide you a certificate of completion. </p>
+  <p>Go to the <a href="http://behavior.uwf.edu">homepage </a> to get access to the courses.</p>
 	<form action="<?php echo themex_url(); ?>" class="formatted-form" method="POST">
 		<div class="message">
 			<?php ThemexInterface::renderMessages(); ?>
