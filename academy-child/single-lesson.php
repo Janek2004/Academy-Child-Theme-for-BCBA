@@ -25,30 +25,25 @@ if($layout=='left') {
 	}
 	else {
 		the_content();
-		//comments_template('/questions.php');
+	
 	}
 	
-	//var_dump(ThemexCourse::$data);
+	
 	
 	?>
   <?php
  		if(!empty(ThemexLesson::$data['quiz']))
-		{
-				if(ThemexLesson::$data['quiz']['percentage']==100){
-									echo "<p>Congratulations! You scored 100% on the quiz </p>";	
-																				
-				}
-				else{
-						if(!empty(ThemexLesson::$data['quiz'])) { ?>
+		{		
+	if(!empty(ThemexLesson::$data['quiz'])) { ?>
   <a href="<?php echo get_permalink(ThemexLesson::$data['quiz']['ID']); ?>" class="button"> <span class="button-icon edit"> </span>
   <?php _e('Take the Quiz', 'academy');} ?>
   </a>
   <?php  
               
-					}
+
 		}
-    if(ThemexLesson::$data['progress']==100)
-    { 
+		if(ThemexLesson::$data['progress']==100)
+		{ 
 			
 		}
 		else{?>
