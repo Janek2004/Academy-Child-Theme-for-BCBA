@@ -11,7 +11,7 @@ $columns=intval(ThemexCore::getOption('courses_columns', '4'));
 
 if($layout=='left') {
 ?>
-<aside class="sidebar fourcol column">
+<aside class="sidebar sixcol column">
 	<?php get_sidebar(); ?>
 </aside>
 <div class="eightcol column last">

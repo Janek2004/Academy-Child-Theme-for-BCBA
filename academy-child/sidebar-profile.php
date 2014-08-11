@@ -5,17 +5,12 @@ $plan=ThemexCourse::getPlan(ThemexUser::$data['active_user']['ID']);
 if(ThemexUser::isProfile() && !empty($plan)) {
 ?>
 <h2 class="secondary">
-	<?php
-	if($plan['period']==0) {
-		printf(__('"%s" subscription is active.', 'academy'), '<a href="'.$plan['url'].'">'.get_the_title($plan['ID']).'</a>');
-	} else {
-		printf(__('"%s" subscription expires in %s.', 'academy'), '<a href="'.$plan['url'].'">'.get_the_title($plan['ID']).'</a>', themex_time($plan['time'])); 
-	}
-	?>
+	
 </h2>
 <?php } ?>
 <?php if(empty($courses)) { ?>
 <h2 class="secondary"><?php _e('No courses yet.', 'academy'); ?></h2>
+<p>Check our <a href="http://behavior.uwf.edu/?page_id=2644" target="_self"> </a> course listing.</p>
 <?php } else { ?>
 <div class="user-courses-listing">
 <?php foreach($courses as $ID) { ?>

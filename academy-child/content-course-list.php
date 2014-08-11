@@ -1,5 +1,5 @@
 <article <?php post_class('post clearfix'); ?>>
-	<div class="column fivecol post-image">
+	<div class="column threeecol post-image">
 		<?php get_template_part('content', 'course-grid'); ?>
 	</div>
 	<div class="course-description column sevencol last">

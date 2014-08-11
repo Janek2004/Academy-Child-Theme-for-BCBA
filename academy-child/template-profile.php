@@ -12,7 +12,7 @@
 	</div>
 </div>
 <div class="user-description">
-	<p>Please fill the form fields below. We will use this data to provide you a certificate of completion. </p>
+  <p>Please fill the form fields below. We will use this data to provide you a certificate of completion. </p>
   <p>Go to the <a href="http://behavior.uwf.edu">homepage </a> to get access to the courses.</p>
 	<form action="<?php echo themex_url(); ?>" class="formatted-form" method="POST">
 		<div class="message">
@@ -96,4 +96,8 @@
 		<input type="hidden" name="user_action" value="update_profile" />
 		<input type="hidden" name="nonce" value="<?php echo wp_create_nonce(THEMEX_PREFIX.'nonce'); ?>" />
 	</form>
+	<br><br><br>
+		<div style="text-align:center;">
+		<a class="button dark" style="margin:auto !important;"  href="<?php echo site_url();?>"><?php _e('Get Started','academy'); ?></a>
+		</div>
 </div>

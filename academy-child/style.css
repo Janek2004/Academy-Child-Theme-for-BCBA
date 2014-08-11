@@ -25,15 +25,17 @@ position: relative;
 z-index: 9;
 padding: 0.5em 15px 0.9em 15px;
 height:65px;
-
-
-
 }
+
+.course-preview{
+	width:250px;
+}
+
 
 .course-preview .course-header h5{
 	overflow: hidden;
-max-height: 62px;
-display: block;
+	max-height: 62px;
+	display: block;
 }
 
 .lessons-listing .lesson-item .lesson-title a{
@@ -56,10 +58,7 @@ height: 239px !important;
 display: block !important;
 width: 100% !important;
 height: 100% !important;
-/* height: auto;
-background: #fff; */
-/* height: 239px; */
-/* width: 239px; */
+
 }
 
 .wpvl_auto_thumb_box_wrapper .wpvl_auto_thumb_play {

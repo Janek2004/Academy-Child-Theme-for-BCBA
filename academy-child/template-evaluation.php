@@ -84,14 +84,14 @@ if( get_field('evaluation', $postId) )
     </div>
    	
     <ul>
-        <?php while(has_sub_field('answers')): ?>
+        <?php $i =0; while(has_sub_field('answers')): ?>
         	<input type="hidden" name="answer_counter" value="<?php echo $answer_counter; ?>">
         	<input type="hidden" name="post_id" value="<?php echo $postId; ?>">
           <input type="hidden" name="user_id" value="<?php echo $userId; ?>">
           <?php $rating=get_sub_field('ratings'); ?>
-            <li><input type="radio" <?php if($evaluationAnsArray[$counter]==$rating){ ?>checked="checked"<?php } ?> name="answer<?php echo $answer_counter; ?>" value="<?php the_sub_field('ratings'); ?>"><?php the_sub_field('options'); ?></li>
-        
-        <?php  endwhile; ?>
+            <li><input type="radio" <?php if($i==0){ ?>checked="checked"<?php } ?> name="answer<?php echo $answer_counter; ?>" value="<?php the_sub_field('ratings'); ?>"><?php the_sub_field('options'); ?></li>
+			
+        <?php $i++;  endwhile; ?>
         </ul>
         
 	</div>
@@ -116,6 +116,7 @@ if( get_field('evaluation', $postId) )
 <?php } else { ?>
 <div class="ninecol column">
 <?php } ?>
+	
 	<span class="view_certificate_evaluation">
 		<a class="button dark"  href="<?php echo site_url()."/". get_the_slug($postId); ?>"><?php echo "Go Back to ". get_the_title($postId); ?></a>
 	</span>
@@ -144,20 +145,19 @@ $evaluation_count = get_user_meta($userId, $postId."_evaluation_count",false);?>
 </div>
 
 			<?php
-			
-			//	echo "Themex " .ThemexCourse::$data['ID'];
-			///	echo "Post iD ".$postId;
-		
-				//var_dump($eval_array);
+	
 				if( count($evaluation_count)==0)
 				{
 						displayEvalFields($postId, $userId);			
 				}
 				else{
-						// <p> Thank you for submitting evaluation. </p>
-						?>
-            <span class="success"><?php dynamic_sidebar('evaluation-sidebar-id'); ?>
+									
+	?>
+      
+      <span class="success"><?php dynamic_sidebar('evaluation-sidebar-id'); ?>
             <br />
+		
+			
 						<span class=".view_certificate_evaluation">
     <a href="<?php echo ThemexCore::getURL('certificate', themex_encode($postId, $userId)); ?>" target="_blank" class="button dark "><?php _e('View Certificate', 'academy'); ?></a>
     </span>
