@@ -32,22 +32,25 @@ if($layout=='left') {
 	
 	?>
   <?php
+	//print_r( ThemexLesson::$data['quiz']);
  		if(!empty(ThemexLesson::$data['quiz']))
 		{		
-	if(!empty(ThemexLesson::$data['quiz'])) { ?>
-  <a href="<?php echo get_permalink(ThemexLesson::$data['quiz']['ID']); ?>" class="button"> <span class="button-icon edit"> </span>
-  <?php _e('Take the Quiz', 'academy');} ?>
-  </a>
+?>
+		<a href="<?php echo get_permalink(ThemexLesson::$data['quiz']['ID']); ?>" class="button"> <span class="button-icon edit"> </span>
+		<?php _e('Take the Quiz', 'academy'); ?>
+		</a>
+		
   <?php  
-              
-
-		}
-		if(ThemexLesson::$data['progress']==100)
-		{ 
+	}
+	else{
+			if(ThemexLesson::$data['progress']==100){
+	?>
 			
+
+		<?php
 		}
 		else{?>
-    	<p>Are you done with watching the video? Please mark the lesson as complete by clicking on the button below. </p>
+    	<p>Are you done with the lesson? Please mark it as complete by clicking on the button below. </p>
       <form action="<?php echo themex_url(); ?>" method="POST">
       	<a href="#" class="button submit-button"><span class="button-icon check"></span><?php _e('Mark Complete', 'academy'); ?></a>
 			<input type="hidden" name="lesson_action" value="complete_lesson" />
@@ -58,10 +61,34 @@ if($layout=='left') {
 		  <input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_lesson" />
       
       </form>
-      
+		<br>
+		
 		<?php
     	}
-  ?>
+	}
+	?>
+	<?php
+		if((ThemexCourse::$data['progress']==100) &&(ThemexLesson::$data['progress']==100)){
+					$post_id_evaluate=ThemexCourse::$data['ID'];
+					$evaluation_count=get_user_meta(ThemexUser::$data['user']['ID'],$post_id_evaluate.'_evaluation_count'); 
+					if($evaluation_count[0]==1){
+					?>
+						 <a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button medium certificate-button"><?php _e('View Certificate', 'academy'); ?></a>
+						<br>	<br>
+					<?php
+						
+					}
+					else{?>
+										
+						<a href="<?php echo get_page_link(14); ?>&userid=<?php echo ThemexUser::$data['user']['ID']; ?>&post_id=<?php echo ThemexCourse::$data['ID']; ?>" target="_blank" class="button submit-button btn_possition"><?php _e('Course Evaluation', 'academy'); ?></a>	
+						<br>
+					<?php
+					}
+
+	}
+?>	
+	
+
 </div>
 <?php if($layout=='right') { ?>
 <aside class="sidebar fourcol column last">

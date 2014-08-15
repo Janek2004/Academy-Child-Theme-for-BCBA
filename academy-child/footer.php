@@ -14,7 +14,7 @@
 							<?php echo ThemexCore::getOption('copyright', 'Academy Theme &copy; '.date('Y')); ?>
 						</div>
 						<nav class="footer-navigation right">
-							<?php wp_nav_menu( array( 'theme_location' => 'footer_menu' ) ); ?>
+							<?php // wp_nav_menu( array( 'theme_location' => 'footer_menu' ) ); ?>
 						</nav>
 						<!-- /navigation -->				
 					</div>			

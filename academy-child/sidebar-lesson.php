@@ -43,8 +43,25 @@
 					$course_id=ThemexCourse::$data['ID'];
 					$course_progress_key="courseProgress_".$course_id;
 					update_user_meta( $user_id, $course_progress_key,1);
+				
+					$post_id_evaluate=ThemexCourse::$data['ID'];
+					$evaluation_count=get_user_meta(ThemexUser::$data['user']['ID'],$post_id_evaluate.'_evaluation_count'); 
+					if($evaluation_count[0]==1){
+					?>
+						 <a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button medium certificate-button"><?php _e('View Certificate', 'academy'); ?></a>
+					<?php
+						
+					}
+					else{?>
+										
+						<a href="<?php echo get_page_link(14); ?>&userid=<?php echo ThemexUser::$data['user']['ID']; ?>&post_id=<?php echo ThemexCourse::$data['ID']; ?>" target="_blank" class="button submit-button btn_possition"><?php _e('Course Evaluation', 'academy'); ?></a>	
+					<?php
+					}
+				
 				?>
-                <a href="<?php echo get_page_link(14); ?>&userid=<?php echo ThemexUser::$data['user']['ID']; ?>&post_id=<?php echo ThemexCourse::$data['ID']; ?>" target="_blank" class="button submit-button btn_possition"><?php _e('Course Evaluation', 'academy'); ?></a>	
+				
+				
+
             <?php } 
 			else{
 					$user_id=ThemexUser::$data['user']['ID'];
