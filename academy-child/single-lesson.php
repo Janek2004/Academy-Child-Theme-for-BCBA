@@ -34,14 +34,16 @@ if($layout=='left') {
   <?php
 	//print_r( ThemexLesson::$data['quiz']);
  		if(!empty(ThemexLesson::$data['quiz']))
-		{		
+		{	if(ThemexLesson::$data['progress']!=100){	
 ?>
 		<a href="<?php echo get_permalink(ThemexLesson::$data['quiz']['ID']); ?>" class="button"> <span class="button-icon edit"> </span>
-		<?php _e('Take the Quiz', 'academy'); ?>
+		 <?php _e('Take the Quiz', 'academy'); ?>
 		</a>
 		
   <?php  
 	}
+	}
+	
 	else{
 			if(ThemexLesson::$data['progress']==100){
 	?>

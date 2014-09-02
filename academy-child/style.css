@@ -20,6 +20,12 @@ Text Domain:  academy-child
 
 /* =Theme customization starts here
 -------------------------------------------------------------- */
+
+/* Login Page*/
+.login-options .button-wrap {
+ margin-left: 0px; 
+/* border: 1px solid rgba(0,0,0,0.15); */
+}
 .course-preview .course-header {
 position: relative;
 z-index: 9;
@@ -28,7 +34,7 @@ height:65px;
 }
 
 .course-preview{
-	width:250px;
+	max-width:250px;
 }
 
 
@@ -50,8 +56,9 @@ height:65px;
 .wpvl_auto_thumb_box_wrapper .wpvl_auto_thumb_box
 {
 position: relative;
-width: 239px !important;
-height: 239px !important;	
+max-width: 250px !important;
+max-height: 250px !important;
+margin:auto;	
 }
 
 .course-preview .course-image .wpvl_auto_thumb_box_wrapper .wpvl_auto_thumb_box img {
@@ -106,7 +113,7 @@ big{ color:#000000; font-weight:normal;  font-family: Crete Round,Arial,Helvetic
 .wpvl_auto_thumb_box_wrapper .wpvl_auto_thumb_box{height: 142px !important; width: 148px !important;}
 .wpvl_auto_thumb_box_wrapper .wpvl_auto_thumb_play{left:49px !important; top:46px !important;}
 }
-@media screen and (min-width: 240px) and (max-width: 767px) {
+@media screen and (min-width: 240px) {
 .wpvl_auto_thumb_box_wrapper .wpvl_auto_thumb_box{width:auto !important; height:auto !important;}
 .wpvl_auto_thumb_box_wrapper .wpvl_auto_thumb_play{left:46% !important; top:45% !important;}
 }

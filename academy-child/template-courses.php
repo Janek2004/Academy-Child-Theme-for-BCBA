@@ -21,6 +21,7 @@ if($layout=='left') {
 <div class="fullwidth-section">
 <?php } ?>
 	<?php echo category_description(); ?>
+	<img src="http://behavior.uwf.edu/wp-content/uploads/2014/03/PearseStreet_Behavior_Logo_52_102909_BWIsolated-1-300x87.jpg">
 	<?php ThemexCourse::queryCourses(); ?>
 	<?php if($view=='list') { ?>
 	<div class="posts-listing clearfix">

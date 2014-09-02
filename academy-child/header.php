@@ -58,9 +58,11 @@
 												</a>
 											</div>
 											<?php } ?>
+											<br>
 											<div class="button-wrap switch-button left">
 												<a href="#" class="button dark" title="<?php _e('Password Recovery','academy'); ?>">
-													<span class="button-icon help"></span>
+													
+													 <?php _e('Recover Password ','academy'); ?>
 												</a>
 											</div>
 											<input type="hidden" name="user_action" value="login_user" />

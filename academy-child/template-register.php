@@ -14,7 +14,7 @@ Template Name: Registration
 
 <div class="eightcol column">
 
-	<h1><?php _e('Register','academy'); ?></h1>
+	<h1><?php _e('New Users Register Here:','academy'); ?></h1>
 
 	<form class="ajax-form formatted-form" action="<?php echo AJAX_URL; ?>" method="POST">
 
@@ -29,7 +29,7 @@ Template Name: Registration
 			</div>								
 
 		</div>  
-
+<div class="clear"></div>
       <div class="sixcol column last">
 
 			<div class="field-wrapper last">
@@ -50,6 +50,7 @@ Template Name: Registration
 			</div>
 
 		</div>	
+		<div class="clear"></div>
 
 		<div class="sixcol column last">
 
@@ -103,17 +104,14 @@ Template Name: Registration
 </div>
 
 <?php } ?>
+<div class="clear"></div>
+<div class="eightcol column">
 
-<div class="fourcol column last">
-
-	<?php if(get_option('users_can_register')) { ?>
-
-	<h1><?php _e('Sign In','academy'); ?></h1>
-
-	<?php } ?>
-
+<br><br>
+	
+	<h1><?php _e('Existing Users Sign In Here:','academy'); ?></h1>
 	<form class="ajax-form formatted-form" action="<?php echo AJAX_URL; ?>" method="POST">
-
+ <div class="sixcol column">
 		<div class="message"></div>
 
 		<div class="field-wrapper">
@@ -149,11 +147,33 @@ Template Name: Registration
 		<input type="hidden" name="nonce" class="nonce" value="<?php echo wp_create_nonce(THEMEX_PREFIX.'nonce'); ?>" />
 
 		<input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_user" />
+</div>
+	</form>	
 
-	</form>			
+<!---
+<div class="ajax-form formatted-form">
+										
+										<form action="<?php //echo AJAX_URL; ?>" class="ajax-form" method="POST">
+											<h1><?php _e('Forgot Password?','academy'); ?></h1>
+									
+											<div class="message"></div>
+											<div class="field-wrap">
+												<input type="text" name="user_email" placeholder="<?php _e('Email','academy'); ?>" />
+											</div>
+											<div class="button-wrap left nomargin">
+												<a href="#" class="button submit-button"><?php _e('Reset Password','academy'); ?></a>
+											</div>
+											<input type="hidden" name="user_action" value="reset_password" />
+											<input type="hidden" name="nonce" class="nonce" value="<?php echo wp_create_nonce(THEMEX_PREFIX.'nonce'); ?>" />
+											<input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_user" />
+										</form>
+						
+				</div>
+	
+--->
+
 
 </div>
-
 <div class="clear"></div>
 
 <?php 
