@@ -21,7 +21,7 @@ Template Name: Registration
 		<div class="message"></div>
 
       <div class="sixcol column">
-
+ 
 			<div class="field-wrapper">
 
 				<input type="text" name="user_bcba" placeholder="<?php _e('BCBA No','academy'); ?>" />
@@ -150,15 +150,16 @@ Template Name: Registration
 </div>
 	</form>	
 
-<!---
-<div class="ajax-form formatted-form">
-										
-										<form action="<?php //echo AJAX_URL; ?>" class="ajax-form" method="POST">
-											<h1><?php _e('Forgot Password?','academy'); ?></h1>
-									
+</div>
+<div class="clear"></div>
+<br />
+
+<div class="eightcol column">
+									 <div class="sixcol column">
+										<form action="<?php echo AJAX_URL; ?>" class="ajax-form formatted-form" method="POST">
 											<div class="message"></div>
-											<div class="field-wrap">
-												<input type="text" name="user_email" placeholder="<?php _e('Email','academy'); ?>" />
+												<div class="field-wrapper">
+												<input type="text" name="user_email"  placeholder="Email" />
 											</div>
 											<div class="button-wrap left nomargin">
 												<a href="#" class="button submit-button"><?php _e('Reset Password','academy'); ?></a>
@@ -167,14 +168,10 @@ Template Name: Registration
 											<input type="hidden" name="nonce" class="nonce" value="<?php echo wp_create_nonce(THEMEX_PREFIX.'nonce'); ?>" />
 											<input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_user" />
 										</form>
-						
 				</div>
-	
---->
-
-
 </div>
-<div class="clear"></div>
+
+
 
 <?php 
 
