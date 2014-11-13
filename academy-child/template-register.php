@@ -155,6 +155,7 @@ Template Name: Registration
 <br />
 
 <div class="eightcol column">
+<h1><?php _e('Forgot Password?','academy'); ?></h1>
 									 <div class="sixcol column">
 										<form action="<?php echo AJAX_URL; ?>" class="ajax-form formatted-form" method="POST">
 											<div class="message"></div>
