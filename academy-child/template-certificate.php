@@ -10,13 +10,6 @@ include("mpdf/mpdf.php");
 $mpdf=new mPDF('utf-8', 'A3', '8', '', 10, 10, 22, 22, 10, 20); 
 $mpdf->SetDisplayMode('fullpage');
 
-/*
-	$mpdf->fontdata = array(
-    "opensans" => array(
-      'R' => 'http://yellowobjects.djmobilesoftware.com/wp/wp-content/themes/academy-child/OpenSans-Italic.ttf'
-    ));
-*/
-
 ?>
 <?php
 
@@ -76,7 +69,7 @@ $mpdf->Output();
                   </div>
                   
                   <div class="date">
-                    <h3>OP-11-2135</h3>
+                    <h3>OP-44-0058</h3>
                     <small>CEU PROVIDER NO.</small>
                   </div>
                   
