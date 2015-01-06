@@ -1,13 +1,7 @@
 <?php if($_GET['format']=='pdf'){ ?>
 <?php 
 include("mpdf/mpdf.php");
-
-//echo site_url().'?certificate='.$_GET['certificate'];
-//echo get_bloginfo('template_url').'/style.css';
-//echo "<br>";
-//echo "".get_stylesheet_directory_uri();
-
-$mpdf=new mPDF('utf-8', 'A3', '8', '', 10, 10, 22, 22, 10, 20); 
+$mpdf=new mPDF('utf-8', 'A4-L', '8', '', 5, 5, 10, 5, 10, 20); 
 $mpdf->SetDisplayMode('fullpage');
 
 ?>
@@ -15,7 +9,8 @@ $mpdf->SetDisplayMode('fullpage');
 
 $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
 ;
-$stylesheet = file_get_contents(get_stylesheet_directory_uri().'/style.css'); // external css
+//$stylesheet = file_get_contents(get_stylesheet_directory_uri().'/style.css'); // external css
+$stylesheet = file_get_contents(get_stylesheet_directory_uri().'/certificate_pdf.css'); // external css
 $mpdf->WriteHTML($stylesheet,1);
 $mpdf->WriteHTML(file_get_contents( site_url().'?certificate='.$_GET['certificate']));
          
@@ -62,6 +57,7 @@ $mpdf->Output();
 			 center; background-image-resize:6;">
                 <div class="logo"><img src="<?php echo get_bloginfo('template_url'); ?>/images/certificate_logo.png" /></div>
                		<?php echo $certificateContent; ?>
+				<div class="cert_container"> <!--container for dates and etc -->
                   <div class="dir_logo"><img src="<?php echo get_bloginfo('template_url'); ?>/images/director_logo.png" /></div>
                   <div class="date">
                     <h3><?php echo $today_date; ?></h3>
@@ -69,7 +65,8 @@ $mpdf->Output();
                   </div>
                   
                   <div class="date">
-                    <h3>OP-44-0058</h3>
+                    <!--<h3>OP-44-0058</h3>-->
+					<h3>OP-11-2135</h3>
                     <small>CEU PROVIDER NO.</small>
                   </div>
                   
@@ -77,7 +74,8 @@ $mpdf->Output();
                     <h3><?php echo $bcba_no; ?></h3>
                     <small>BCBA NO.</small>
                   </div>
-                 
+                 </div>
+				 
                  </div>
 		</div>
 	
