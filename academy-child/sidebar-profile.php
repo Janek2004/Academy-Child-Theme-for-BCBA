@@ -8,7 +8,10 @@ if(ThemexUser::isProfile() && !empty($plan)) {
 	
 </h2>
 <?php } ?>
-<?php if(empty($courses)) { ?>
+
+<?php 
+//die();
+if(empty($courses)) { ?>
 <h2 class="secondary"><?php _e('No courses yet.', 'academy'); ?></h2>
 <p>Check our <a href="http://behavior.uwf.edu/?page_id=2644" target="_self"> </a> course listing.</p>
 <?php } else { ?>
