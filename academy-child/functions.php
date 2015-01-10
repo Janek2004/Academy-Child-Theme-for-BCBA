@@ -1,4 +1,124 @@
 <?php
+
+add_action('admin_menu', 'register_my_custom_submenu_page');
+
+function register_my_custom_submenu_page() {
+	add_submenu_page( 'woocommerce', 'BCBA Report', 'BCBA Report', 'manage_options', 'my-custom-submenu-page', 'my_custom_submenu_page_callback' );
+}
+
+function my_custom_submenu_page_callback() {
+	
+	echo '<div class="wrap"><div id="icon-tools" class="icon32"></div>';
+	echo '<h2>Customer Orders</h2>';
+		
+	
+		$users = get_users();
+	   
+		foreach ($users as $key => $user){
+		//print_r($key);
+		// echo $key;
+		echo "<h4>User: ";
+		print_r($user->user_email);
+		echo "</h4>";
+			
+		$status = 'completed';
+		$args = array(
+         'meta_key' => '_customer_user',
+         'post_type' => 'shop_order',
+         'post_status' => 'publish',
+		 'meta_value' => $user->ID
+         );
+		 
+		 $orders=new WP_Query($args);
+		 
+			if($orders->have_posts()):
+			?>
+			<ul>
+			<?php 
+			while($orders->have_posts()): 
+				$orders->the_post(); //use the template tags to list the posts
+				;
+				
+				$order = new WC_Order(get_the_ID());
+				
+				$items = $order->get_items();
+				
+			//	print_r($items);
+				//print_r($order);
+				//print_r($order['prices_include_tax']);
+			?>
+
+			<li><b>Order Information:</b> <?php echo " <br> Status: ".$order->status."<br>  Date: ".$order->order_date." ";
+				foreach($items as $key=>$item){
+					?>					
+						<br> Total cost: $<?php 	print_r($order->get_total()) ?>
+						<br> Products Purchased: <?php echo $item['name']; ?>
+					<?php
+				}			
+			?>
+			</li>
+
+		
+
+	<?php
+
+    endwhile;
+	?>
+	</ul>
+	<?php
+
+	endif;
+	
+	wp_reset_postdata();
+		 
+	  }
+		
+		
+ 
+		
+		
+	echo '</div>';
+
+}
+
+/**
+ * Returns all the orders made by the user
+ *
+ * @param int $user_id
+ * @param string $status (completed|processing|canceled|on-hold etc)
+ * @return array of order ids
+ */
+function fused_get_all_user_orders($user_id,$status='completed'){
+    if(!$user_id)
+        return false;
+    
+    $orders=array();//order ids
+     
+    $args = array(
+        'numberposts'     => -1,
+        'meta_key'        => '_customer_user',
+        'meta_value'      => $user_id,
+        'post_type'       => 'shop_order',
+        'post_status'     => 'publish',
+        'tax_query'=>array(
+                array(
+                    'taxonomy'  =>'shop_order_status',
+                    'field'     => 'slug',
+                    'terms'     =>$status
+                    )
+        )  
+    );
+    
+    $posts=get_posts($args);
+    //get the post ids as order ids
+    $orders=wp_list_pluck( $posts, 'ID' );
+    
+    return $orders;
+ 
+}
+
+
+
 /*-------------------------------USER REGISTER BCBA NO----------------------------------------------*/
 add_action('admin_footer_text', 'hack_add_custom_user_profile_fields');
 
