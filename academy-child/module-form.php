@@ -25,11 +25,19 @@
          <a href="<?php echo get_page_link(14); ?>&userid=<?php echo ThemexUser::$data['user']['ID']; ?>&post_id=<?php echo ThemexCourse::$data['ID']; ?>" target="_blank" class="button medium certificate-button"><?php _e('Course Evaluation', 'academy'); ?></a>
         <?php 
 		$post_id_evaluate=ThemexCourse::$data['ID'];
-		$evaluation_count=get_user_meta(ThemexUser::$data['user']['ID'],$post_id_evaluate.'_evaluation_count'); 	?> 
-		<?php if($evaluation_count[0]==1): ?>
-        <a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button medium certificate-button"><?php _e('View Certificate', 'academy'); ?></a>
-       <?php endif; ?>
-		<?php } ?>
+		$evaluation_count=get_user_meta(ThemexUser::$data['user']['ID'],$post_id_evaluate.'_evaluation_count'); 	
+		$user=	get_user_by( 'email', 'jchudzynski@uwf.edu');
+		if(is_course_certified(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])){
+?>
+			
+			 <a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button medium certificate-button"><?php _e('View Certificate', 'academy'); ?></a>	
+		<?php
+        }
+		
+		
+		?> 
+	
+				<?php } ?>
 	<?php } ?>
 	<input type="hidden" name="course_id" value="<?php echo ThemexCourse::$data['ID']; ?>" />
 	<input type="hidden" name="plan_id" value="<?php echo intval(reset(ThemexCourse::$data['plans'])); ?>" />	

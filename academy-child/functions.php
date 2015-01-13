@@ -8,7 +8,7 @@ function register_my_custom_submenu_page() {
 
 function my_custom_submenu_page_callback() {
 	
-	echo '<div class="wrap"><div id="icon-tools" class="icon32"></div>';
+	echo '<hr><div class="wrap"><div id="icon-tools" class="icon32"></div>';
 	echo '<h2>Customer Orders</h2>';
 		
 	
@@ -17,9 +17,25 @@ function my_custom_submenu_page_callback() {
 		foreach ($users as $key => $user){
 		//print_r($key);
 		// echo $key;
-		echo "<h4>User: ";
+		echo "<hr><h4>User: ";
 		print_r($user->user_email);
 		echo "</h4>";
+		?>
+					<p><b>Courses: </b></p>
+          
+                <?php
+            		$courses = ThemexCourse::getCourses($user->ID);
+					foreach($courses as $course){
+						//$tc = ThemexCourse::getCourse($course);	
+						//print_r($tc);
+						$certified = "";
+						if(is_course_certified($course,$user->ID)) $certified = "Certified"; 
+						echo "<p>". get_the_title($course)." <b>". $certified."</b></p>";
+						
+						
+					}
+            		
+			
 			
 		$status = 'completed';
 		$args = array(
@@ -42,22 +58,32 @@ function my_custom_submenu_page_callback() {
 				$order = new WC_Order(get_the_ID());
 				
 				$items = $order->get_items();
-				
 			//	print_r($items);
+			//	echo "<br>";
+			//	print_r($items['_product_id']);
+			//	echo "<br>";
+
 				//print_r($order);
 				//print_r($order['prices_include_tax']);
 			?>
 
 			<li><b>Order Information:</b> <?php echo " <br> Status: ".$order->status."<br>  Date: ".$order->order_date." ";
 				foreach($items as $key=>$item){
+						//print_r($item);
+						print_r($item['item_meta']['_product_id'][0]);
+						//$product = WC_Product($item['item_meta']['_product_id'][0]);
+						//$print_r($product);
 					?>					
 						<br> Total cost: $<?php 	print_r($order->get_total()) ?>
 						<br> Products Purchased: <?php echo $item['name']; ?>
+                        
+                        
 					<?php
 				}			
 			?>
-			</li>
-
+	
+            </li>
+			
 		
 
 	<?php
@@ -339,3 +365,19 @@ function pagination($totalposts,$p,$lpm1,$prev,$next,$path){
     return $pagination;
 }
 
+/**Checks if course has a certificate or not*/
+function is_course_certified($courseid,$userid){
+	$course = ThemexCourse::getCourse($courseid);
+	
+	$content=ThemexCore::getPostMeta($course['ID'], 'course_certificate_content');
+	if(empty($content)) return false; //There is no asssociated certificate
+	if(!$course['progress']==100) return false; //Course is not finished yet
+
+	$evaluation_count=get_user_meta($userid,$courseid.'_evaluation_count'); 	
+	if($evaluation_count[0]==1):
+		return true;
+	endif;
+
+	
+	return false;
+}
