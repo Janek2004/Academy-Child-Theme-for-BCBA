@@ -1,111 +1,112 @@
 <?php
-
-add_action('admin_menu', 'register_my_custom_submenu_page');
-
-function register_my_custom_submenu_page() {
-	add_submenu_page( 'woocommerce', 'BCBA Report', 'BCBA Report', 'manage_options', 'my-custom-submenu-page', 'my_custom_submenu_page_callback' );
+add_action('admin_menu', 'register_bcba_report_submenu_page');
+/**BCBA REPORTS*/
+function register_bcba_report_submenu_page() {
+	add_submenu_page( 'woocommerce', 'BCBA Report', 'BCBA Report', 'manage_options', 'BCBA-REPORT', 'register_bcba_report_submenu_page_callback' );
 }
 
-function my_custom_submenu_page_callback() {
+
+function get_courses_for_order($order){
+				$items = $order->get_items();
+				$products ="";
+				foreach($items as $key=>$item){
+						//print_r($item);
+						
+                    $products =$products." ".$item['name'];		
 	
-	echo '<hr><div class="wrap"><div id="icon-tools" class="icon32"></div>';
-	echo '<h2>Customer Orders</h2>';
-		
-	
-		$users = get_users();
-	   
-		foreach ($users as $key => $user){
-		//print_r($key);
-		// echo $key;
-		echo "<hr><h4>User: ";
-		print_r($user->user_email);
-		echo "</h4>";
-		?>
-					<p><b>Courses: </b></p>
-          
-                <?php
-            		$courses = ThemexCourse::getCourses($user->ID);
-					foreach($courses as $course){
+                        
+    				}
+			return $products;
+		}			
+
+function getusername($order){
+	$user =$order->get_user();
+	if($user) {
+		return $user->get('first_name')." ".$user->get('last_name');
+	}
+	else{
+		return "Guest?";		
+	}
+}
+
+function getuseremail($order){
+	$user =$order->get_user();
+	if($user) {
+		return $user->get('user_email');
+	}
+}
+
+function get_all_user_courses($order){
+			$user =$order->get_user();
+			$courses = ThemexCourse::getCourses($user->ID);
+			$courses_html ='';
+			foreach($courses as $course){
 						//$tc = ThemexCourse::getCourse($course);	
 						//print_r($tc);
 						$certified = "";
 						if(is_course_certified($course,$user->ID)) $certified = "Certified"; 
-						echo "<p>". get_the_title($course)." <b>". $certified."</b></p>";
-						
-						
-					}
-            		
-			
-			
-		$status = 'completed';
+						$courses_html=$courses_html."<p>". get_the_title($course)." <b>". $certified."</b></p>";
+			}
+		return $courses_html;
+	}
+
+
+function register_bcba_report_submenu_page_callback() {
+	
+	echo '<hr><div class="wrap"><div id="icon-tools" class="icon32"></div>';
+	echo '<h2>Customer Orders</h2>';
+		
+		
 		$args = array(
-         'meta_key' => '_customer_user',
-         'post_type' => 'shop_order',
-         'post_status' => 'publish',
-		 'meta_value' => $user->ID
-         );
-		 
-		 $orders=new WP_Query($args);
-		 
-			if($orders->have_posts()):
-			?>
-			<ul>
-			<?php 
-			while($orders->have_posts()): 
-				$orders->the_post(); //use the template tags to list the posts
-				;
-				
-				$order = new WC_Order(get_the_ID());
-				
-				$items = $order->get_items();
-			//	print_r($items);
-			//	echo "<br>";
-			//	print_r($items['_product_id']);
-			//	echo "<br>";
+		  'post_type' => 'shop_order',
+		  'post_status' => 'publish',
+		  'meta_key' => '_customer_user',
+		  'posts_per_page' => '-1',
+		  'orderby'   => 'order_date' 
+	);
+		$my_query = new WP_Query($args);
 
-				//print_r($order);
-				//print_r($order['prices_include_tax']);
-			?>
 
-			<li><b>Order Information:</b> <?php echo " <br> Status: ".$order->status."<br>  Date: ".$order->order_date." ";
-				foreach($items as $key=>$item){
-						//print_r($item);
-						print_r($item['item_meta']['_product_id'][0]);
-						//$product = WC_Product($item['item_meta']['_product_id'][0]);
-						//$print_r($product);
-					?>					
-						<br> Total cost: $<?php 	print_r($order->get_total()) ?>
-						<br> Products Purchased: <?php echo $item['name']; ?>
-                        
-                        
-					<?php
-				}			
-			?>
+
+
+$customer_orders = $my_query->posts;
+
+?>
+	<table class="wp-list-table widefat fixed posts" cellspacing="0"> 
+    	<thead>
+        <tr><th>Date</th><th>Modified Date</th><th>User</th><th>Email</th><th>Course</th><th>Status</th><th>Courses</th></tr>
+        </thead>
+<?php
+
+
+
+
+foreach ($customer_orders as $customer_order) {
+ $order = new WC_Order();
+
+ $order->populate($customer_order);
+ $orderdata = (array) $order;
+	echo '<tr class="alternate">';
+		//Date
+		echo '<td class="column-columnname">'.$order->order_date."</td>";
+		echo '<td class="column-columnname">'.$order->modified_date."</td>";
+		echo '<td class="column-columnname">'.getusername($order)."</td>";	
+		echo '<td class="column-columnname">'.getuseremail($order)."</td>";	
+		echo '<td class="column-columnname">'.get_courses_for_order($order)."</td>";
+		echo '<td class="column-columnname">'.$order->get_status()."</td>";
+		echo '<td class="column-columnname">'.get_all_user_courses($order)."</td>";
 	
-            </li>
-			
-		
-
-	<?php
-
-    endwhile;
-	?>
-	</ul>
-	<?php
-
-	endif;
-	
-	wp_reset_postdata();
-		 
-	  }
-		
-		
- 
-		
-		
-	echo '</div>';
-
+	echo "</tr>";
 }
+		
+	?>
+    </table>
+    <?php	
+	echo '</div>';
+}
+
+/**END OF BCBA REPORTS*/
+
 
 /**
  * Returns all the orders made by the user
