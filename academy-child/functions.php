@@ -1,4 +1,5 @@
 <?php
+
 add_action('admin_menu', 'register_bcba_report_submenu_page');
 /**BCBA REPORTS*/
 function register_bcba_report_submenu_page() {
@@ -21,11 +22,12 @@ function get_courses_for_order($order){
 
 function getusername($order){
 	$user =$order->get_user();
+	
 	if($user) {
 		return $user->get('first_name')." ".$user->get('last_name');
 	}
 	else{
-		return "Guest?";		
+		return "Guest";		
 	}
 }
 
@@ -70,6 +72,8 @@ function register_bcba_report_submenu_page_callback() {
 
 
 $customer_orders = $my_query->posts;
+
+
 
 ?>
 	<table class="wp-list-table widefat fixed posts" cellspacing="0"> 
