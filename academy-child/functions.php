@@ -34,7 +34,7 @@ function getusername($order){
 function getuseremail($order){
 	$user =$order->get_user();
 	if($user) {
-		return $user->get('user_email');
+		return $user->get('user_email'); 
 	}
 }
 
