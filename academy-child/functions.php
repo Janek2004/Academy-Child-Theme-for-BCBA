@@ -1,7 +1,6 @@
 <?php
 
-
-add_action('admin_menu', 'register_bcba_report_submenu_page');
+add_action('admin_menu', 'register_submenu_pages');
 
 /**BCBA REPORTS*/
 function register_submenu_pages() {
