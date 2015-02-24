@@ -1,5 +1,8 @@
 <?php
-add_action('admin_menu', 'register_submenu_pages');
+
+
+add_action('admin_menu', 'register_bcba_report_submenu_page');
+
 /**BCBA REPORTS*/
 function register_submenu_pages() {
 	add_submenu_page( 'woocommerce', 'BCBA Report', 'BCBA Report', 'manage_options', 'BCBA-REPORT', 'register_bcba_report_submenu_page_callback' );
