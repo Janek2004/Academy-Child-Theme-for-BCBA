@@ -92,6 +92,28 @@
 		</div>
 		<div class="clear"></div>
 		<?php } ?>
+		<div class="sixcol column">
+ 
+			<div class="field-wrapper">
+            	<?php
+                $email_optin = get_user_meta(ThemexUser::$data['user']['ID'],'email_communication',true);
+	   	   	  if(strlen($email_optin)>0) {			 	 
+			  ?>
+					<input type="checkbox" name="email_communication" value="optin" checked="checked"/> I want to receive news and updates				  
+                      <?php
+				 } 
+				 else{
+					 ?>
+	 			 	<input type="checkbox" name="email_communication" value="optin" /> I want to receive news and updates
+                 <?php
+				 }
+				 ?>
+
+
+			</div>								
+		</div> 
+	<div class="clear"></div>
+
 		<a href="#" class="button submit-button"><span class="button-icon save"></span><?php _e('Save Changes','academy'); ?></a>
 		<input type="hidden" name="user_action" value="update_profile" />
 		<input type="hidden" name="nonce" value="<?php echo wp_create_nonce(THEMEX_PREFIX.'nonce'); ?>" />

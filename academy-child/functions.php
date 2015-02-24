@@ -1,8 +1,51 @@
 <?php
-add_action('admin_menu', 'register_bcba_report_submenu_page');
+add_action('admin_menu', 'register_submenu_pages');
 /**BCBA REPORTS*/
-function register_bcba_report_submenu_page() {
+function register_submenu_pages() {
 	add_submenu_page( 'woocommerce', 'BCBA Report', 'BCBA Report', 'manage_options', 'BCBA-REPORT', 'register_bcba_report_submenu_page_callback' );
+	add_submenu_page( 'users.php', 'Email Blast', 'Email Blast', 'manage_options', 'EMAIL-BLAST', 'register_users_submenu_page_callback' );
+}
+
+
+function register_users_submenu_page_callback(){
+	?>
+	<h2>Users that opted in for further commmunication </h2>
+	
+	<?php
+	$args = array(
+		'meta_key'   => 'email_communication',
+		'meta_value' => 'optin'
+	);
+	$query = new WP_User_Query( $args );
+	
+	$users = $query->results;
+	?>
+	<h3>Easy to copy list </h3>
+    <p>
+	<?php
+	foreach ($users  as $user ) {
+		echo $user->user_email.",";	
+	}
+	?>
+    </p>    
+    <table class="wp-list-table widefat fixed posts" cellspacing="0"> 
+    	<thead>
+        <tr><th>Name</th><th>Last Name</th><th>Email</th></tr>
+</thead>
+	<?php
+	
+
+foreach ($users  as $user ) {
+	$meta = get_user_meta($user->ID);
+	echo "<tr>";
+	echo "<td>",$meta["first_name"][0]."</td>";
+	echo "<td>",$meta["last_name"][0]."</td>";
+	echo "<td>",$user->user_email."</td>";
+	echo "</tr>";	
+}
+?>
+ </table>
+<?php
 }
 
 
@@ -21,18 +64,19 @@ function get_courses_for_order($order){
 
 function getusername($order){
 	$user =$order->get_user();
+	
 	if($user) {
 		return $user->get('first_name')." ".$user->get('last_name');
 	}
 	else{
-		return "Guest?";		
+		return "Guest";		
 	}
 }
 
 function getuseremail($order){
 	$user =$order->get_user();
 	if($user) {
-		return $user->get('user_email');
+		return $user->get('user_email'); 
 	}
 }
 
@@ -71,8 +115,10 @@ function register_bcba_report_submenu_page_callback() {
 
 $customer_orders = $my_query->posts;
 
+
+
 ?>
-	<table class="wp-list-table widefat fixed posts" cellspacing="0"> 
+<table class="wp-list-table widefat fixed posts" cellspacing="0"> 
     	<thead>
         <tr><th>Date</th><th>Modified Date</th><th>User</th><th>Email</th><th>Course</th><th>Status</th><th>Courses</th></tr>
         </thead>

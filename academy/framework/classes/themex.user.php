@@ -188,10 +188,19 @@ class ThemexUser {
 				}
 			}
 			
-			if($bcba_no_flag==1)
-			ThemexInterface::$messages[]=__('Please Select an Unique Bcba No.', 'academy');
+			if($bcba_no_flag==1) ThemexInterface::$messages[]=__('Please Select an Unique Bcba No.', 'academy');
+			
+			if(isset($data['email_communication'])){
+					$data['email_communication'];
+					
+						
+			}
+			
 			
 		}
+		//email
+		
+		
 		
 		if(empty(ThemexInterface::$messages)){
 			$user=wp_create_user($data['user_login'], $data['user_password'], $data['user_email']);			
@@ -213,6 +222,7 @@ class ThemexUser {
 				$user->add_role('inactive');
 				ThemexCore::updateUserMeta($user->ID, 'activation_key', $activation_key);
 				ThemexCore::updateUserMeta($user->ID, "bcba_no", $data['user_bcba']);
+				ThemexCore::updateUserMeta($user, "email_communication", $data['email_communication']);
 				
 				if(isset($data['user_redirect']) && !empty($data['user_redirect'])) {
 					ThemexCore::updateUserMeta($user->ID, 'redirect', intval($data['user_redirect']));
@@ -231,7 +241,10 @@ class ThemexUser {
 				
 				$keywords['link']=$link.'activate='.urlencode($activation_key).'&user='.$user->ID;
 			} else {
-				ThemexCore::updateUserMeta($user, "bcba_no", $data['user_bcba']);
+				ThemexCore::updateUserMeta($user, "bcba_no", $data['user_bcba']);			
+				ThemexCore::updateUserMeta($user, "email_communication", $data['email_communication']);
+	
+				
 				wp_signon($data, false);
 				$subject=__('Registration Complete', 'academy');
 				
@@ -498,7 +511,19 @@ class ThemexUser {
 				ThemexCore::updateUserMeta($ID, $name, $data[$name]);
 			}
 		}
+			
+	
 		
+				
+		if(isset($data['email_communication'])){
+			
+			update_user_meta($ID, 'email_communication', sanitize_text_field($data['email_communication']));	
+		}
+		else{
+			update_user_meta($ID, 'email_communication', '');
+		}
+	
+
 		//first name
 		if(isset($data['first_name'])) {
 			update_user_meta($ID, 'first_name', sanitize_text_field($data['first_name']));

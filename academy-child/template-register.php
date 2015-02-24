@@ -86,7 +86,17 @@ Template Name: Registration
 		<div class="clear"></div>
 
 		<?php } ?>
+	
+    	  <div class="sixcol column">
+ 
+			<div class="field-wrapper">
 
+				<input type="checkbox" name="email_communication" value="optin" checked="checked"/> I want to receive news and updates
+
+			</div>								
+		</div> 
+		
+		<div class="clear"></div>
 		<a href="#" class="button submit-button left"><span class="button-icon register"></span><?php _e('Register','academy'); ?></a>
 
 		<div class="form-loader"></div>
