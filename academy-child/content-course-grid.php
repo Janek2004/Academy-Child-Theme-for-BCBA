@@ -3,10 +3,10 @@
 	<div class="course-image">
 		<a href="<?php the_permalink(); ?>"><?php //the_post_thumbnail('normal');
 		//echo "[video_lightbox_vimeo5 video_id=".get_field('course_demo_video')."width=800 height=450 auto_thumb='1']"
-		$video_id=get_field('course_demo_video',$post->ID);
+		$video_id= get_post_meta($post->ID, 'course_demo_video', true);
 		if($video_id!="")
 		{
-			echo do_shortcode("[video_lightbox_vimeo5 video_id=".get_field('course_demo_video')." width=800 height=450 auto_thumb='1']");
+			echo do_shortcode("[video_lightbox_vimeo5 video_id=".$video_id." width=800 height=450 auto_thumb='1']");
 			
 		}else{
 			//echo "[video_lightbox_vimeo5 video_id=".get_field('course_demo_video')." width=800 height=450 auto_thumb='1']";

@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+print_r($_REQUEST);
 /*
 Template Name: Courses
 */
@@ -8,6 +11,7 @@ get_header();
 $layout=ThemexCore::getOption('courses_layout', 'fullwidth');
 $view=ThemexCore::getOption('courses_view', 'grid');
 $columns=intval(ThemexCore::getOption('courses_columns', '4'));
+
 
 if($layout=='left') {
 ?>
@@ -20,8 +24,26 @@ if($layout=='left') {
 <?php } else { ?>
 <div class="fullwidth-section">
 <?php } ?>
-	<?php echo category_description(); ?>
-	<img src="http://behavior.uwf.edu/wp-content/uploads/2014/03/PearseStreet_Behavior_Logo_52_102909_BWIsolated-1-300x87.jpg">
+	<?php category_description();
+	 	$taxonomies = array("course_category");
+		$terms = get_terms($taxonomies);
+		
+	 ?>
+    <p>Choose course category</p>
+    <form method="get"  action="<?php echo $_SERVER['REQUEST_URI'];?>">
+	<select id="course_category" name="course_category">
+	<option value="All">All</option>
+
+	<?php	
+		foreach ($terms as $term) {
+			print_r( "<option value=".$term->term_id.">".$term->name."</option>");	
+		}
+	 ?> 
+     </select>
+     <input type="submit" value="Filter Courses"/>  
+     </form>
+     
+    <img src="http://behavior.uwf.edu/wp-content/uploads/2014/03/PearseStreet_Behavior_Logo_52_102909_BWIsolated-1-300x87.jpg">
 	<?php ThemexCourse::queryCourses(); ?>
 	<?php if($view=='list') { ?>
 	<div class="posts-listing clearfix">

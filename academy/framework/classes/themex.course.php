@@ -316,10 +316,11 @@ class ThemexCourse {
 			),
 		);
 		
-		if(get_query_var('course_category')) {
+		if(get_query_var('course_category') && get_query_var('course_category')!="All") {
+		
+			
 			$args['tax_query'][]=array(
 				'taxonomy' => 'course_category',
-				'field' => 'slug',
 				'terms' => get_query_var('course_category'),				
 			);
 		}
@@ -330,6 +331,8 @@ class ThemexCourse {
 			$args['meta_key']='_course_'.$order;
 		}
 		
+	//	$the_query = new WP_Query( $args );
+
 		query_posts($args);
 	}
 	
