@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-print_r($_REQUEST);
+//print_r($_REQUEST);
 /*
 Template Name: Courses
 */
@@ -11,6 +11,7 @@ get_header();
 $layout=ThemexCore::getOption('courses_layout', 'fullwidth');
 $view=ThemexCore::getOption('courses_view', 'grid');
 $columns=intval(ThemexCore::getOption('courses_columns', '4'));
+//$page_id  = 0;
 
 
 if($layout=='left') {
@@ -29,21 +30,39 @@ if($layout=='left') {
 		$terms = get_terms($taxonomies);
 		
 	 ?>
-    <p>Choose course category</p>
-    <form method="get"  action="<?php echo $_SERVER['REQUEST_URI'];?>">
-	<select id="course_category" name="course_category">
-	<option value="All">All</option>
+     <div class="clear"></div>
 
-	<?php	
-		foreach ($terms as $term) {
-			print_r( "<option value=".$term->term_id.">".$term->name."</option>");	
-		}
-	 ?> 
-     </select>
-     <input type="submit" value="Filter Courses"/>  
+   
+    <form method="get"  action="<?php echo get_permalink();?>">
+	<div class= "sevencol column">
+    <div class="sixcol column">
+    		<img src="http://behavior.uwf.edu/wp-content/uploads/2014/03/PearseStreet_Behavior_Logo_52_102909_BWIsolated-1-300x87.jpg">
+	</div>
+   
+    <div class="sixcol column last">		
+	    <p>Choose course category</p>
+            <div class="field-wrapper">
+			<select id="course_category" name="course_category">
+			<option value="All">All</option>
+
+			<?php	
+				foreach ($terms as $term) {
+					print_r( "<option value=".$term->term_id.">".$term->name."</option>");	
+				}
+			 ?> 
+   		  </select>
+			</div>
+		</div>
+    <div class="sixcol column last">
+    	 <input type="submit" value="Filter Courses"/> 
+    </div>
+    </div>
+     
      </form>
      
-    <img src="http://behavior.uwf.edu/wp-content/uploads/2014/03/PearseStreet_Behavior_Logo_52_102909_BWIsolated-1-300x87.jpg">
+    <div class="clear"></div>
+	<br /><br />
+    
 	<?php ThemexCourse::queryCourses(); ?>
 	<?php if($view=='list') { ?>
 	<div class="posts-listing clearfix">
