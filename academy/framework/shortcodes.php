@@ -200,8 +200,37 @@ function themex_courses($atts, $content=null) {
 	}
 	
 	$query=new WP_Query($args);
+	$taxonomies = array("course_category");
+	$terms = get_terms($taxonomies);
+		
+	
+	ob_start();
+	?>
 
-	$out='<div class="courses-listing clearfix">';
+<form method="post" action="<?php echo get_permalink();?>">
+  <div class= "sevencol column">
+  <div class="sixcol column">
+    <p>Choose course category</p>
+    <div class="field-wrapper">
+      <select id="course_category" name="course_category">
+        <option value="All">All</option>
+        <?php	
+				foreach ($terms as $term) {
+					print_r( "<option value=".$term->term_id.">".$term->name."</option>");	
+				}
+			 ?>
+      </select>
+    <input type="submit" value="Filter Courses" style="float:left"/>
+    </div>
+   
+  </div>
+</div>  
+</form>
+<?php
+    $out.=ob_get_contents();
+	ob_end_clean();		
+	
+	$out=$out.'<div class="courses-listing clearfix">';
 	while($query->have_posts()){
 		$query->the_post();	
 		$counter++;
@@ -604,3 +633,5 @@ function themex_users( $atts, $content = null ) {
 	
 	return $out;
 }
+
+

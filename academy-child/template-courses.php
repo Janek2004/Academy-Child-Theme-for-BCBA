@@ -25,7 +25,7 @@ if($layout=='left') {
 <?php } else { ?>
 <div class="fullwidth-section">
 <?php } ?>
-	<?php category_description();
+	<?php 
 	 	$taxonomies = array("course_category");
 		$terms = get_terms($taxonomies);
 		
@@ -33,7 +33,7 @@ if($layout=='left') {
      <div class="clear"></div>
 
    
-    <form method="get"  action="<?php echo get_permalink();?>">
+    <form method="post"  action="<?php echo get_permalink();?>">
 	<div class= "sevencol column">
     <div class="sixcol column">
     		<img src="http://behavior.uwf.edu/wp-content/uploads/2014/03/PearseStreet_Behavior_Logo_52_102909_BWIsolated-1-300x87.jpg">
