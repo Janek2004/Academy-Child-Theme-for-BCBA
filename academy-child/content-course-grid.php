@@ -32,6 +32,9 @@
 			$words = preg_split("/[\s,]+/", $title_string);
 			$title_string ="";
 			$max_words =15;
+			if(count($words)<$max_words){
+				$max_words = count($words);
+			}
 			for($i=0; $i<$max_words;$i++)
 			{	
 				$word = $words[$i];
