@@ -20,6 +20,56 @@ Text Domain:  academy-child
 
 /* =Theme customization starts here
 -------------------------------------------------------------- */
+/*Number of CEUs*/
+.course-credit .credit-text {
+	display:block;
+	padding:0.2em 10px;
+	min-width:38px;
+	border:1px solid rgba(0,0,0,0.1);
+	background-color:#5ea5d7;
+	color:#fff;
+	text-align:center;
+	text-shadow:0 -1px 0 rgba(0,0,0,0.15);
+	font-size:1.2em;
+}
+
+.course-credit .corner-wrap {	
+	position:absolute;
+	bottom:-4px;
+	right:0;
+	width:4px;
+	height:4px;
+}
+
+.course-credit {
+	position:absolute;
+	top:25px;
+	right:-5px;
+}
+
+.course-credit .corner,
+.course-price .corner-background {
+	width:0;
+	height:0;
+	border:2px solid #5ea5d7;
+	border-bottom-color:#fff;
+	border-left-color:#fff;
+}
+
+.course-credit .corner-background {
+	position:absolute;
+	top:0;
+	left:0;
+	border-top-color:#000;
+	border-right-color:#000;
+}
+
+.course-credit .corner {
+	position:relative;
+	z-index:1;
+	opacity:0.8;
+}
+
 
 /* Login Page*/
 .login-options .button-wrap {

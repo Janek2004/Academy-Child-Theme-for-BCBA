@@ -2,14 +2,13 @@
 <div class="course-preview <?php echo ThemexCourse::$data['status']; ?>-course">
 	<div class="course-image">
 		<a href="<?php the_permalink(); ?>"><?php //the_post_thumbnail('normal');
-		//echo "[video_lightbox_vimeo5 video_id=".get_field('course_demo_video')."width=800 height=450 auto_thumb='1']"
+	
 		$video_id= get_post_meta($post->ID, 'course_demo_video', true);
 		if($video_id!="")
 		{
 			echo do_shortcode("[video_lightbox_vimeo5 video_id=".$video_id." width=800 height=450 auto_thumb='1']");
 			
 		}else{
-			//echo "[video_lightbox_vimeo5 video_id=".get_field('course_demo_video')." width=800 height=450 auto_thumb='1']";
 			the_post_thumbnail('normal');	
 		}
 		
@@ -22,6 +21,15 @@
 				<div class="corner-background"></div>
 			</div>			
 		</div>
+        <div class="course-credit product-credit">
+			<div class="credit-text"><?php echo get_field("number_of_credits", $post->ID); ?>CEUs</div>
+			<div class="corner-wrap">
+				<div class="corner"></div>
+				<div class="corner-background"></div>
+			</div>			
+		</div>
+        
+        
 		<?php //} ?>
 	</div>
 	<div class="course-meta">
@@ -38,7 +46,7 @@
 			for($i=0; $i<$max_words;$i++)
 			{	
 				$word = $words[$i];
-				//echo $word;
+	
 				if($i==0) {$title_string= $word;}
 				else{
 								$title_string=	$title_string." ".$word;			
@@ -49,7 +57,6 @@
 				$title_string = $title_string."... ";
 			}
 			
-				//print_r($words);
 			echo $title_string; ?>
        
         
