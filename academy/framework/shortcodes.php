@@ -159,6 +159,9 @@ function themex_courses($atts, $content=null) {
 	$columns=intval($columns);
 	$counter=0;
 	
+	
+	
+	
 	$args=array(
 		'post_type' => 'course',
 		'showposts' => $number,	
@@ -191,6 +194,17 @@ function themex_courses($atts, $content=null) {
             'field' => 'term_id',
         );
 	}
+	
+	if(isset($_POST["course_cat"]))
+	{
+		$category =$_POST["course_cat"];
+		$args['tax_query'][]=array(
+            'taxonomy' => 'course_category',
+            'terms' => $category,
+            'field' => 'term_id',
+        );			
+	}
+	
 		
 	if (in_array($order, array('rating', 'popularity'))) {
 		$args['orderby']='meta_value_num';
@@ -212,7 +226,7 @@ function themex_courses($atts, $content=null) {
   <div class="sixcol column">
     <p>Choose course category</p>
     <div class="field-wrapper">
-      <select id="course_category" name="course_category">
+      <select id="course_cat" name="course_cat">
         <option value="All">All</option>
         <?php	
 				foreach ($terms as $term) {

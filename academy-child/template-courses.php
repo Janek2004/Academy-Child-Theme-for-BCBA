@@ -33,7 +33,7 @@ if($layout=='left') {
      <div class="clear"></div>
 
    
-    <form method="post"  action="<?php echo get_permalink();?>">
+    <form method="post"  action="<?php echo $_SERVER['REQUEST_URI'];?>">
 	<div class= "sevencol column">
     <div class="sixcol column">
     		<img src="http://behavior.uwf.edu/wp-content/uploads/2014/03/PearseStreet_Behavior_Logo_52_102909_BWIsolated-1-300x87.jpg">
@@ -42,7 +42,7 @@ if($layout=='left') {
     <div class="sixcol column last">		
 	    <p>Choose course category</p>
             <div class="field-wrapper">
-			<select id="course_category" name="course_category">
+			<select id="course_cat" name="course_cat">
 			<option value="All">All</option>
 
 			<?php	

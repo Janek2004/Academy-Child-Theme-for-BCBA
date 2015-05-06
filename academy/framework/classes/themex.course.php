@@ -315,15 +315,16 @@ class ThemexCourse {
 				),
 			),
 		);
+		if (isset($_POST['course_cat'])){
+			if($_POST['course_cat'] && $_POST['course_cat']!="All") {
 		
-		if(get_query_var('course_category') && get_query_var('course_category')!="All") {
-		
-			
 			$args['tax_query'][]=array(
 				'taxonomy' => 'course_category',
-				'terms' => get_query_var('course_category'),				
+				'terms' => $_POST['course_cat']			
 			);
+		}		
 		}
+
 		
 		$order=ThemexCore::getOption('courses_order', 'date');
 		if(in_array($order, array('rating', 'popularity'))) {
