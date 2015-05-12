@@ -315,16 +315,17 @@ class ThemexCourse {
 				),
 			),
 		);
+
+		
 		if (isset($_POST['course_cat'])){
 			if($_POST['course_cat'] && $_POST['course_cat']!="All") {
-		
 			$args['tax_query'][]=array(
 				'taxonomy' => 'course_category',
 				'terms' => $_POST['course_cat']			
 			);
-		}		
+		 }		
 		}
-
+		
 		
 		$order=ThemexCore::getOption('courses_order', 'date');
 		if(in_array($order, array('rating', 'popularity'))) {
@@ -332,7 +333,6 @@ class ThemexCourse {
 			$args['meta_key']='_course_'.$order;
 		}
 		
-	//	$the_query = new WP_Query( $args );
 
 		query_posts($args);
 	}

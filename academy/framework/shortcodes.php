@@ -159,9 +159,6 @@ function themex_courses($atts, $content=null) {
 	$columns=intval($columns);
 	$counter=0;
 	
-	
-	
-	
 	$args=array(
 		'post_type' => 'course',
 		'showposts' => $number,	
@@ -188,28 +185,25 @@ function themex_courses($atts, $content=null) {
 	}
 	
 
-
-	if(!empty($category)) {
+	if(isset($_POST["course_cat"]))
+	{	
+		if ($_POST["course_cat"]!='All'){ 
+		
+		$sel_category =$_POST["course_cat"];
+		$args['tax_query'][]=array(
+            'taxonomy' => 'course_category',
+            'terms' => $sel_category,
+            'field' => 'term_id',
+        );
+		}
+	}
+	else if(!empty($category)) {
 		$categories = explode(',', $category);
 		$args['tax_query'][]=array(
             'taxonomy' => 'course_category',
             'terms' => $categories,
             'field' => 'term_id',
         );
-	}
-	
-	
-	
-	//die("");
-	
-	if(isset($_POST["course_cat"]))
-	{
-		$category =$_POST["course_cat"];
-		$args['tax_query'][]=array(
-            'taxonomy' => 'course_category',
-            'terms' => $category,
-            'field' => 'term_id',
-        );			
 	}
 	
 		
@@ -221,8 +215,7 @@ function themex_courses($atts, $content=null) {
 	}
 	
 	$query=new WP_Query($args);
-	$taxonomies = array("course_category");
-	$terms = get_terms($taxonomies);
+	
 		
 	
 	ob_start();
@@ -236,7 +229,8 @@ function themex_courses($atts, $content=null) {
       <select id="course_cat" name="course_cat">
         <option value="All">All</option>
         <?php	
-				
+				$taxonomies = array("course_category");
+			$terms = get_terms($taxonomies);
 				foreach ($terms as $term) {
 				if(!empty($category)){
 					$categories = explode(',', $category);
