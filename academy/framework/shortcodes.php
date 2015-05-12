@@ -187,13 +187,20 @@ function themex_courses($atts, $content=null) {
         );
 	}
 	
+
+
 	if(!empty($category)) {
+		$categories = explode(',', $category);
 		$args['tax_query'][]=array(
             'taxonomy' => 'course_category',
-            'terms' => $category,
+            'terms' => $categories,
             'field' => 'term_id',
         );
 	}
+	
+	
+	
+	//die("");
 	
 	if(isset($_POST["course_cat"]))
 	{
@@ -229,8 +236,18 @@ function themex_courses($atts, $content=null) {
       <select id="course_cat" name="course_cat">
         <option value="All">All</option>
         <?php	
+				
 				foreach ($terms as $term) {
-					print_r( "<option value=".$term->term_id.">".$term->name."</option>");	
+				if(!empty($category)){
+					$categories = explode(',', $category);
+					if (in_array($term->term_id, $categories)) {
+						print_r( "<option value=".$term->term_id.">".$term->name."</option>");	
+					}
+				}
+				else{
+					print_r( "<option value=".$term->term_id.">".$term->name."</option>");					
+				}
+	
 				}
 			 ?>
       </select>
