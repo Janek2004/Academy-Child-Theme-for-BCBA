@@ -136,7 +136,7 @@ function themex_content($atts, $content=null) {
 //Courses
 add_shortcode('courses', 'themex_courses');
 function themex_courses($atts, $content=null) {
-	print_r($atts);
+
 	extract(shortcode_atts(array(
 		'number' => '4',
 		'columns' => '4',
