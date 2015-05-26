@@ -143,10 +143,19 @@ function themex_courses($atts, $content=null) {
 		'category' => '0',
 		'status' => '',
 		'id' => '0',
+		'select'=>'true'
     ), $atts));
 	
 	if($order=='random') {
 		$order='rand';
+	}
+	
+	if($select == 'true'){
+		echo "True";
+	}
+	else{
+		echo $select;
+				echo "False";
 	}
 	
 	$width='three';
