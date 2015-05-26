@@ -136,6 +136,7 @@ function themex_content($atts, $content=null) {
 //Courses
 add_shortcode('courses', 'themex_courses');
 function themex_courses($atts, $content=null) {
+	print_r($atts);
 	extract(shortcode_atts(array(
 		'number' => '4',
 		'columns' => '4',
@@ -143,20 +144,14 @@ function themex_courses($atts, $content=null) {
 		'category' => '0',
 		'status' => '',
 		'id' => '0',
-		'select'=>'true'
+		'picker'=>'false'
     ), $atts));
 	
 	if($order=='random') {
 		$order='rand';
 	}
 	
-	if($select == 'true'){
-		echo "True";
-	}
-	else{
-		echo $select;
-				echo "False";
-	}
+
 	
 	$width='three';
 	switch($columns) {
@@ -226,7 +221,7 @@ function themex_courses($atts, $content=null) {
 	$query=new WP_Query($args);
 	
 		
-	
+if( $picker == 'true'){	
 	ob_start();
 	?>
 
@@ -263,7 +258,7 @@ function themex_courses($atts, $content=null) {
 <?php
     $out.=ob_get_contents();
 	ob_end_clean();		
-	
+}
 	$out=$out.'<div class="courses-listing clearfix">';
 	while($query->have_posts()){
 		$query->the_post();	
