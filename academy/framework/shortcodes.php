@@ -136,7 +136,6 @@ function themex_content($atts, $content=null) {
 //Courses
 add_shortcode('courses', 'themex_courses');
 function themex_courses($atts, $content=null) {
-
 	extract(shortcode_atts(array(
 		'number' => '4',
 		'columns' => '4',
@@ -188,12 +187,22 @@ function themex_courses($atts, $content=null) {
         );
 	}
 	
+	$sel_category;
+	if(isset($_POST["course_cat"])){
+		$sel_category = $_POST["course_cat"];
+	}
 
-	if(isset($_POST["course_cat"]))
+	if(isset($_GET["course_cat"])){
+		$sel_category = $_GET["course_cat"];
+	}
+	
+
+	if(isset($_POST["course_cat"])||isset($_GET["course_cat"]))
 	{	
-		if ($_POST["course_cat"]!='All'){ 
 		
-		$sel_category =$_POST["course_cat"];
+		
+	if ($sel_category!='All'){ 
+		
 		$args['tax_query'][]=array(
             'taxonomy' => 'course_category',
             'terms' => $sel_category,
