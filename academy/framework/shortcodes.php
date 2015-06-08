@@ -227,35 +227,45 @@ function themex_courses($atts, $content=null) {
 		$args['order']='ASC';
 	}
 	
-	$query=new WP_Query($args);
 	
+
+	
+	$query=new WP_Query($args);
 		
 if( $picker == 'true'){	
 	ob_start();
 	?>
+
+
 
 <form method="post" action="<?php echo get_permalink();?>">
   <div class= "sevencol column">
   <div class="sixcol column">
     <p>Choose course category</p>
     <div class="field-wrapper">
+
       <select id="course_cat" name="course_cat">
         <option value="All">All</option>
         <?php	
 				$taxonomies = array("course_category");
-			$terms = get_terms($taxonomies);
+				$terms = get_terms($taxonomies);
+				
 				foreach ($terms as $term) {
+				$selected = "";	
+				if ($term->term_id == $sel_category){
+					$selected = "selected";	
+				}
+
 				if(!empty($category)){
 					$categories = explode(',', $category);
 					if (in_array($term->term_id, $categories)) {
-						print_r( "<option value=".$term->term_id.">".$term->name."</option>");	
+						print_r( "<option ".$selected." value=".$term->term_id." >".$term->name."</option>");	
 					}
 				}
 				else{
-					print_r( "<option value=".$term->term_id.">".$term->name."</option>");					
+					print_r( "<option ".$selected." value=".$term->term_id.">".$term->name."</option>");					
 				}
-	
-				}
+			}
 			 ?>
       </select>
     <input type="submit" value="Filter Courses" style="float:left"/>
@@ -268,6 +278,14 @@ if( $picker == 'true'){
     $out.=ob_get_contents();
 	ob_end_clean();		
 }
+	$taxonomies = array("course_category");
+	$terms = get_terms($taxonomies);
+			foreach ($terms as $term) {
+				if ($term->term_id == $sel_category){
+						echo "<h1>".$term->name."</h1>";
+					}
+			}
+
 	$out=$out.'<div class="courses-listing clearfix">';
 	while($query->have_posts()){
 		$query->the_post();	
