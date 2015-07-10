@@ -20,6 +20,15 @@ if(empty($courses)) { ?>
 	<?php ThemexCourse::refresh($ID); ?>
 	<div class="course-item <?php if(ThemexCourse::$data['progress']!=100){ ?>started<?php } ?>">
 		<div class="course-title">
+        <?php if(ThemexCourse::hasCertificate()) { ?>
+				<a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button small 	certificate-button"><?php _e('View Certificate', 'academy'); ?></a>
+               
+                
+		<?php } 
+	
+		
+		?>	
+        
 			<?php if(ThemexCourse::$data['author']['ID']==ThemexUser::$data['active_user']['ID']) { ?>
 			<div class="course-status"><?php _e('Author', 'academy'); ?></div>
 			<?php } ?>
