@@ -29,6 +29,15 @@ Template Name: Registration
 			</div>								
 
 		</div>  
+  <div class="sixcol column">
+ 
+			<div class="field-wrapper">
+
+				<input type="checkbox" name="bcba_checkbox" value="has_number"/> I don't have a BCBA number
+
+			</div>								
+		</div> 
+        
 <div class="clear"></div>
       <div class="sixcol column last">
 

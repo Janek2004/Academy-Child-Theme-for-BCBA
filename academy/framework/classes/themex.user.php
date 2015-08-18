@@ -153,7 +153,25 @@ class ThemexUser {
 			}
 		}
 		
-		if(empty($data['user_email']) || empty($data['user_login']) || empty($data['user_bcba']) || empty($data['user_password']) || empty($data['user_password_repeat'] )) {
+	
+	/*		
+		if (isset($data['bcba_checkbox'])  && !empty($data['user_bcba'])){
+			ThemexInterface::$messages[]=__('You indicated the you do not have a BCBA number. Please remove it or uncheck the chexkbox. ', 'academy');
+	    	ThemexInterface::renderMessages(true);
+			die();
+		}
+	*/
+	
+	
+		if (!isset($data['bcba_checkbox'])  && empty($data['user_bcba'])){
+			ThemexInterface::$messages[]=__("Please fill in the BCBA number or select the 'I don't have a BCBA number checkbox'.", 'academy');
+			ThemexInterface::renderMessages(true);
+			die();
+	    }
+						
+		
+		if(empty($data['user_email']) || empty($data['user_login']) ||  empty($data['user_password']) || empty($data['user_password_repeat'] )) {
+
 			ThemexInterface::$messages[]=__('Please fill in all fields', 'academy');
 		} else {
 			if(!is_email($data['user_email'])) {
