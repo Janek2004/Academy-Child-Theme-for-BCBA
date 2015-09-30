@@ -1,5 +1,5 @@
 <h3>Child theme of Academy theme</h3>
-<p>Academt theme is a LMS plugin/theme for wordpress. Currently used for the office of ABA of UWF.</p>
+<p>Academy theme is a LMS plugin/theme for wordpress. Currently used for the office of ABA of UWF.</p>
 
 <h4>FAQ</h4>
 <p>To change the certificate:</p>
@@ -9,5 +9,7 @@
 <li>   HTML and mpdf settings are set in the template-certificate.php</li>
 <li>   You should also add a shortcode in the course's meta (Wordpress Admin) </li>
 </ul>
+
+
 
 
