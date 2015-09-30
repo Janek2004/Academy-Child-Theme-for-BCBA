@@ -9,8 +9,8 @@ $mpdf->SetDisplayMode('fullpage');
 
 $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
 ;
-//$stylesheet = file_get_contents(get_stylesheet_directory_uri().'/style.css'); // external css
-$stylesheet = file_get_contents(get_stylesheet_directory_uri().'/certificate_pdf.css'); // external css
+
+$stylesheet = file_get_contents(get_stylesheet_directory_uri().'/css/certificate_pdf.css'); // external css
 $mpdf->WriteHTML($stylesheet,1);
 $mpdf->WriteHTML(file_get_contents( site_url().'?certificate='.$_GET['certificate']));
          
@@ -53,19 +53,17 @@ $mpdf->Output();
 		</div>
 		<?php } ?>
 		<div class="certificate-text">
-			<div id="certificate_main" style="background:url(<?php echo get_bloginfo('template_url'); ?>/images/certificate.jpg)
-			 center; background-image-resize:6;">
-                <div class="logo"><img src="<?php echo get_bloginfo('template_url'); ?>/images/certificate_logo.png" /></div>
+			<div id="certificate_main" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/images/certificate/certificate.jpg) center; background-repeat:no-repeat; background-image-resize:6">
+                <div class="logo"><img width="250px" height="109px" src="<?php echo get_stylesheet_directory_uri();  ?>/images//certificate/certificate_logo.jpg" /></div>
                		<?php echo $certificateContent; ?>
 				<div class="cert_container"> <!--container for dates and etc -->
-                  <div class="dir_logo"><img src="<?php echo get_bloginfo('template_url'); ?>/images/director_logo.png" /></div>
+                  <div class="dir_logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/certificate/director_logo.png" /></div>
                   <div class="date">
                     <h3><?php echo $today_date; ?></h3>
                     <small>DATE</small>
                   </div>
                   
                   <div class="date">
-                    <!--<h3>OP-44-0058</h3>-->
 					<h3>OP-11-2135</h3>
                     <small>CEU PROVIDER NO.</small>
                   </div>

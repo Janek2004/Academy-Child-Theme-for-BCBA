@@ -1,0 +1,29 @@
+/*Certificate Style*/
+
+/* =============================================================== */
+/* certificate SECTION  
+/* =============================================================== */
+#certificate_main{
+	margin:20px auto;
+	padding:70px;
+	clear: both;
+	width:871px;
+	height:673px;
+	font-family: Crete Round,Arial,Helvetica,sans-serif;
+}
+#certificate_main .logo{ margin-top:40px; padding:0px; display:block; text-align:center;}
+#certificate_main p {width:300px; margin:0px auto; font-size:14px; text-align:center; font-family: Crete Round,Arial,Helvetica,sans-serif; font-weight:normal;}
+#certificate_main .text_area{ padding:0px; text-align: center;}
+#certificate_main .text_area p {display: block; margin: 16px auto 0px; padding: 0; text-align: center; width: 90%;}
+#certificate_main .dir_logo{ margin-top:0px; padding:0px; float:left; width:230px;height:100px}
+#certificate_main .date{ margin-top:0px; padding:0px; width:140px; float:left; text-align:center; margin-left:20px;padding-top:8px}
+#certificate_main .date h3{border-bottom:1px solid #333; width:100%; height:30px; line-height:30px; font-family: Crete Round,Arial,Helvetica,sans-serif; font-weight:normal;}
+
+/*User Name*/
+#certificate_main .text_area h1{color: #036294; width:100%; font-family: Crete Round,Arial,Helvetica,sans-serif; font-weight:bold; font-size:4.5em; }
+/*Course Name*/
+#certificate_main h2{font-family: Arial,Helvetica,sans-serif; font-weight:bold; font-size:2em;margin-bottom:80px}
+#certificate_main .cert_container{margin-top:20px; margin:auto; display:block;width:90%}
+#certificate_main .cert_container h3{font-size:1em !important}
+#certificate_main h2{color: #036294;} 
+big{  font-weight:normal;  font-family: Crete Round,Arial,Helvetica,sans-serif; font-weight:bold;}
