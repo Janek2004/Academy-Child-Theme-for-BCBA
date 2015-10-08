@@ -46,6 +46,7 @@ Tags: learning, teaching, education, studying, tutoring
 4. PAGES
 		Course
 			- Preview
+			- Preview
 			- Listing
 			- Plan
 			- Certificate
@@ -2246,12 +2247,7 @@ ul.success li {
 	background:#fff;
 }
 
-.certificate-text {
-	position:relative;
-	padding:1.5em 20px;
-	border:1px solid rgba(0,0,0,0.1);
-	text-align:center;
-}
+
 
 /*---------------------------------- Lessons ----------------------------------*/
 
