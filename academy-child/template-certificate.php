@@ -35,13 +35,15 @@ $mpdf->Output();
 	
 			$today_date=date("F j, Y");
 			$credits=get_field('number_of_credits',$post_id);
+			$number_of_ethics_credits=get_field('number_of_ethics_credits',$post_id);
 			$teacher=get_field('presenter_teacher',$post_id);
 			$name_of_course=get_field('name_of_course',$post_id);
 			$array_bcba_no = get_user_meta($certificate['user'],'_themex_bcba_no');
+			
 			$bcba_no=$array_bcba_no[0];
 			
-			$replaceContent=array($credits,$teacher,$name_of_course,$bcba_no,$today_date);
-			$replacingWords=array("%credits%","%teacher%","%course_name%","%bcba_no%","%certificate_date%");
+			$replaceContent=array($credits,$teacher,$name_of_course,$bcba_no,$today_date,$number_of_ethics_credits);
+			$replacingWords=array("%credits%","%teacher%","%course_name%","%bcba_no%","%certificate_date%","%ethics_credits%");
 			
 			$certificateContent = str_replace($replacingWords,$replaceContent,$certificate['content']);
 		
