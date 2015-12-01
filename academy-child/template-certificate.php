@@ -58,7 +58,8 @@ $mpdf->Output();
 			<div id="certificate_main" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/images/certificate/certificate.jpg) center; background-repeat:no-repeat; background-image-resize:6">
                 <div class="logo"><img width="250px" height="109px" src="<?php echo get_stylesheet_directory_uri();  ?>/images//certificate/certificate_logo.jpg" /></div>
                		<?php echo $certificateContent; ?>
-				<div class="cert_container"> <!--container for dates and etc -->
+				<!--container for dates and etc -->
+                <div class="cert_container">
                   <div class="dir_logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/certificate/director_logo.png" /></div>
                   <div class="date">
                     <h3><?php echo $today_date; ?></h3>
@@ -74,15 +75,16 @@ $mpdf->Output();
                     <h3><?php echo $bcba_no; ?></h3>
                     <small>BCBA NO.</small>
                   </div>
+                
                  </div>
-				 
-                 </div>
+                <p id="contact_info">Contact info:  aba@uwf.edu or (850) 474-2704</p>
+                 
+             </div>
 		</div>
 	
 	<?php if($certificate['user']==get_current_user_id()) { ?>
-	<a href="#" class="button print-button"><?php _e('Print Certificate', 'academy'); ?></a>
-   
-    <a href="<?php echo get_site_url(); ?>?certificate=<?php echo $ID; ?>&format=pdf" class="button" ><?php _e('Download Certificate', 'academy'); ?></a>
+	
+    <a href="<?php echo get_site_url(); ?>?certificate=<?php echo $ID; ?>&format=pdf" class="button" ><?php _e('Print Certificate', 'academy'); ?></a>
 	<?php } ?>
 <?php } else { ?>
 <div class="certificate-error">
