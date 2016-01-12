@@ -3,7 +3,7 @@
 function getCertificateDate($post_id,$user){
 	//$user=wp_get_current_user();
 
-	/*THIS CODE Doesn't work	*/
+	/*THIS CODE Doesn't work	
 	$args = array('user_id'=>$user,'type' => 'user_certificate','post_id' => $post_id);
 	$comments = get_comments($args);
 	print_r($comments);
@@ -11,7 +11,7 @@ function getCertificateDate($post_id,$user){
 	// The Query
 	$comments_query = new WP_Comment_Query;
 	$comments = $comments_query->query( $args );
-	
+	*/
 	
 	global $wpdb;
 	$query = "SELECT * 
