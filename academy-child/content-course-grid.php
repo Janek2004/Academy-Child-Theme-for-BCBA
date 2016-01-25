@@ -3,10 +3,14 @@
 	<div class="course-image">
 		<a href="<?php the_permalink(); ?>"><?php //the_post_thumbnail('normal');
 	
+		//Check if there is a video associated with the course
 		$video_id= get_post_meta($post->ID, 'course_demo_video', true);
 		if($video_id!="")
 		{
 			echo do_shortcode("[video_lightbox_vimeo5 video_id=".$video_id." width=800 height=450 auto_thumb='1']");
+			//http://blog.teamtreehouse.com/using-jquery-asynchronously-loading-image
+			//http://blog.teamtreehouse.com/learn-asynchronous-image-loading-javascript
+			//echo do_shortcode("[video_lightbox_vimeo5 video_id=".$video_id." width=800 height=450 ]");
 			
 		}else{
 			the_post_thumbnail('normal');	
