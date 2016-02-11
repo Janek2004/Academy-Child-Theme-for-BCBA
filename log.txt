@@ -1,0 +1,38 @@
+<?php
+$file = 'log.txt';
+// Open the file to get existing content
+$current = file_get_contents($file);
+// Append a new person to the file
+$log = $_REQUEST;
+$current .= $log;
+
+// Write the contents back to the file
+file_put_contents($file, $current);
+?>ArrayArray1Array
+(
+    [k] => test
+    [SQLiteManager_currentLangue] => 2
+    [_ga] => GA1.1.789076359.1454944162
+)
+test a02:11:2016 test a
+02:11:2016 test a
+02/11/2016 08:02 test a
+02/11/2016 08:02 
+02/11/2016 08:02 1
+02/11/2016 08:02 2
+02/11/2016 08:02 3
+02/11/2016 08:02 4
+02/11/2016 08:02 test a
+02/11/2016 08:02 
+02/11/2016 08:02 
+02/11/2016 08:02 
+02/11/2016 08:02 
+02/11/2016 08:0202 
+02/11/2016 08:0202 test
+02/11/2016 09:01 test
+02/11/2016 09:03 
+02/11/2016 09:03 test
+02/11/2016 09:03 1
+02/11/2016 09:03 2
+02/11/2016 09:03 3
+02/11/2016 09:03 4
