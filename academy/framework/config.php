@@ -62,8 +62,7 @@ $config = array (
 				'rewrite' => 'index.php?certificate=$matches[1]',
 				'position' => 'top',
 				'dynamic' => true,
-			),
-			
+			),	
 			'redirect' => array(
 				'name' => 'redirect',
 				'rule' => 'redirect/([^/]+)',

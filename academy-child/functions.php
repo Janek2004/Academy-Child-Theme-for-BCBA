@@ -1,6 +1,38 @@
 <?php
+/*
+  function custom_rewrite_rule() {
+    add_rewrite_rule('^evaluation/([^/]*)/([^/]*)/?','index.php?page_id=14&user_id=$matches[1]&post_id=$matches[2]','top');
+  }
+
+  add_action('init', 'custom_rewrite_rule', 10, 0);
+
+function custom_rewrite_tag() {
+  add_rewrite_tag('%user_id%', '([^&]+)');
+  add_rewrite_tag('%post_id%', '([^&]+)');
+}
+ add_action('init', 'custom_rewrite_tag', 10, 0);
+
+add_action( 'wp_loaded','my_flush_rules' );
+
+// flush_rules() if our rules are not yet included
+function my_flush_rules(){
+	$rules = get_option( 'rewrite_rules' );
+
+	if ( ! isset( $rules['(evaluation)/(\d*)$'] ) ) {
+		global $wp_rewrite;
+	   	$wp_rewrite->flush_rules();
+	}
+}
+*/
+
+?>
+<?php
+
+require_once("customapi.php");
+
 
 add_action('admin_menu', 'register_submenu_pages');
+
 
 /**BCBA REPORTS*/
 function register_submenu_pages() {
@@ -12,30 +44,30 @@ function register_submenu_pages() {
 function register_users_submenu_page_callback(){
 	?>
 	<h2>Users that opted in for further commmunication </h2>
-	
+
 	<?php
 	$args = array(
 		'meta_key'   => 'email_communication',
 		'meta_value' => 'optin'
 	);
 	$query = new WP_User_Query( $args );
-	
+
 	$users = $query->results;
 	?>
 	<h3>Easy to copy list </h3>
     <p>
 	<?php
 	foreach ($users  as $user ) {
-		echo $user->user_email.",";	
+		echo $user->user_email.",";
 	}
 	?>
-    </p>    
-    <table class="wp-list-table widefat fixed posts" cellspacing="0"> 
+    </p>
+    <table class="wp-list-table widefat fixed posts" cellspacing="0">
     	<thead>
         <tr><th>Name</th><th>Last Name</th><th>Email</th></tr>
 </thead>
 	<?php
-	
+
 
 foreach ($users  as $user ) {
 	$meta = get_user_meta($user->ID);
@@ -43,7 +75,7 @@ foreach ($users  as $user ) {
 	echo "<td>",$meta["first_name"][0]."</td>";
 	echo "<td>",$meta["last_name"][0]."</td>";
 	echo "<td>",$user->user_email."</td>";
-	echo "</tr>";	
+	echo "</tr>";
 }
 ?>
  </table>
@@ -56,29 +88,29 @@ function get_courses_for_order($order){
 				$products ="";
 				foreach($items as $key=>$item){
 						//print_r($item);
-						
-                    $products =$products." ".$item['name'];		
-	
-                        
+
+                    $products =$products." ".$item['name'];
+
+
     				}
 			return $products;
-		}			
+		}
 
 function getusername($order){
 	$user =$order->get_user();
-	
+
 	if($user) {
 		return $user->get('first_name')." ".$user->get('last_name');
 	}
 	else{
-		return "Guest";		
+		return "Guest";
 	}
 }
 
 function getuseremail($order){
 	$user =$order->get_user();
 	if($user) {
-		return $user->get('user_email'); 
+		return $user->get('user_email');
 	}
 }
 
@@ -87,10 +119,10 @@ function get_all_user_courses($order){
 			$courses = ThemexCourse::getCourses($user->ID);
 			$courses_html ='';
 			foreach($courses as $course){
-						//$tc = ThemexCourse::getCourse($course);	
+						//$tc = ThemexCourse::getCourse($course);
 						//print_r($tc);
 						$certified = "";
-						if(is_course_certified($course,$user->ID)) $certified = "Certified"; 
+						if(is_course_certified($course,$user->ID)) $certified = "Certified";
 						$courses_html=$courses_html."<p>". get_the_title($course)." <b>". $certified."</b></p>";
 			}
 		return $courses_html;
@@ -98,17 +130,17 @@ function get_all_user_courses($order){
 
 
 function register_bcba_report_submenu_page_callback() {
-	
+
 	echo '<hr><div class="wrap"><div id="icon-tools" class="icon32"></div>';
 	echo '<h2>Customer Orders</h2>';
-		
-		
+
+
 		$args = array(
 		  'post_type' => 'shop_order',
 		  'post_status' => 'publish',
 		  'meta_key' => '_customer_user',
 		  'posts_per_page' => '-1',
-		  'orderby'   => 'order_date' 
+		  'orderby'   => 'order_date'
 	);
 		$my_query = new WP_Query($args);
 
@@ -120,7 +152,7 @@ $customer_orders = $my_query->posts;
 
 
 ?>
-<table class="wp-list-table widefat fixed posts" cellspacing="0"> 
+<table class="wp-list-table widefat fixed posts" cellspacing="0">
     	<thead>
         <tr><th>Date</th><th>Modified Date</th><th>User</th><th>Email</th><th>Course</th><th>Status</th><th>Courses</th></tr>
         </thead>
@@ -138,18 +170,18 @@ foreach ($customer_orders as $customer_order) {
 		//Date
 		echo '<td class="column-columnname">'.$order->order_date."</td>";
 		echo '<td class="column-columnname">'.$order->modified_date."</td>";
-		echo '<td class="column-columnname">'.getusername($order)."</td>";	
-		echo '<td class="column-columnname">'.getuseremail($order)."</td>";	
+		echo '<td class="column-columnname">'.getusername($order)."</td>";
+		echo '<td class="column-columnname">'.getuseremail($order)."</td>";
 		echo '<td class="column-columnname">'.get_courses_for_order($order)."</td>";
 		echo '<td class="column-columnname">'.$order->get_status()."</td>";
 		echo '<td class="column-columnname">'.get_all_user_courses($order)."</td>";
-	
+
 	echo "</tr>";
 }
-		
+
 	?>
     </table>
-    <?php	
+    <?php
 	echo '</div>';
 }
 
@@ -166,9 +198,9 @@ foreach ($customer_orders as $customer_order) {
 function fused_get_all_user_orders($user_id,$status='completed'){
     if(!$user_id)
         return false;
-    
+
     $orders=array();//order ids
-     
+
     $args = array(
         'numberposts'     => -1,
         'meta_key'        => '_customer_user',
@@ -181,15 +213,15 @@ function fused_get_all_user_orders($user_id,$status='completed'){
                     'field'     => 'slug',
                     'terms'     =>$status
                     )
-        )  
+        )
     );
-    
+
     $posts=get_posts($args);
     //get the post ids as order ids
     $orders=wp_list_pluck( $posts, 'ID' );
-    
+
     return $orders;
- 
+
 }
 
 
@@ -234,7 +266,7 @@ function save_custom_user_profile_fields($user_id){
     if(!current_user_can('manage_options'))
         return false;
 
-   
+
 			$bcba_no_flag=0;
 			$all_meta_for_user = mysql_query("SELECT meta_value FROM wp_usermeta WHERE meta_key='_themex_bcba_no'");
 			while($row = mysql_fetch_array($all_meta_for_user))
@@ -244,7 +276,7 @@ function save_custom_user_profile_fields($user_id){
 					$bcba_no_flag=1;
 				}
 			}
-			
+
 			if($bcba_no_flag==1){
 			?>
             <script>alert("Please select a unique BCBA No.");</script>
@@ -276,7 +308,7 @@ if ( !current_user_can( 'edit_user', $user_id ) ) { return false; }
 					$bcba_no_flag=1;
 				}
 			}
-			
+
 			if($bcba_no_flag==1){
 			?>
             <script>
@@ -325,9 +357,9 @@ $args = array(
 	'before_widget' => '',
 	'after_widget'  => '',
 	'before_title'  => '',
-	'after_title'   => '' ); 
+	'after_title'   => '' );
 
-register_sidebar( $args ); 
+register_sidebar( $args );
 $args = array(
 	'name'          => __( 'Evaluation Page Error Messages', 'theme_text_domain' ),
 	'id'            => 'evaluation-sidebar-id_1',
@@ -336,9 +368,9 @@ $args = array(
 	'before_widget' => '',
 	'after_widget'  => '',
 	'before_title'  => '',
-	'after_title'   => '' ); 
+	'after_title'   => '' );
 
-register_sidebar( $args ); 
+register_sidebar( $args );
 
 
 
@@ -417,16 +449,16 @@ function pagination($totalposts,$p,$lpm1,$prev,$next,$path){
 /**Checks if course has a certificate or not*/
 function is_course_certified($courseid,$userid){
 	$course = ThemexCourse::getCourse($courseid);
-	
+
 	$content=ThemexCore::getPostMeta($course['ID'], 'course_certificate_content');
 	if(empty($content)) return false; //There is no asssociated certificate
 	if(!$course['progress']==100) return false; //Course is not finished yet
 
-	$evaluation_count=get_user_meta($userid,$courseid.'_evaluation_count'); 	
+	$evaluation_count=get_user_meta($userid,$courseid.'_evaluation_count');
 	if($evaluation_count[0]==1):
 		return true;
 	endif;
 
-	
+
 	return false;
 }

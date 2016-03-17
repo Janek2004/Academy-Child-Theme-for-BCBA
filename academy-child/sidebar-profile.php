@@ -1,19 +1,19 @@
-<?php 
+<?php
 $courses=ThemexCourse::getCourses(ThemexUser::$data['active_user']['ID']);
 $plan=ThemexCourse::getPlan(ThemexUser::$data['active_user']['ID']);
 
 if(ThemexUser::isProfile() && !empty($plan)) {
 ?>
 <h2 class="secondary">
-	
+
 </h2>
 <?php } ?>
 
-<?php 
-//die();
+<?php
+
 if(empty($courses)) { ?>
 <h2 class="secondary"><?php _e('No courses yet.', 'academy'); ?></h2>
-<p>Check our <a href="http://behavior.uwf.edu/?page_id=2644" target="_self"> </a> course listing.</p>
+<p>Check our <a href="<?php echo get_permalink(2644)?>" target="_self"> </a> course listing.</p>
 <?php } else { ?>
 <div class="user-courses-listing">
 <?php foreach($courses as $ID) { ?>
@@ -21,14 +21,15 @@ if(empty($courses)) { ?>
 	<div class="course-item <?php if(ThemexCourse::$data['progress']!=100){ ?>started<?php } ?>">
 		<div class="course-title">
         <?php if(ThemexCourse::hasCertificate()) { ?>
-				<a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button small 	certificate-button"><?php _e('View Certificate', 'academy'); ?></a>
-               
-                
-		<?php } 
-	
-		
-		?>	
-        
+				<a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button small 	certificate-button">
+					<?php _e('View Certificate', 'academy'); ?></a>
+
+
+		<?php }
+
+
+		?>
+
 			<?php if(ThemexCourse::$data['author']['ID']==ThemexUser::$data['active_user']['ID']) { ?>
 			<div class="course-status"><?php _e('Author', 'academy'); ?></div>
 			<?php } ?>
