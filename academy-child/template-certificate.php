@@ -117,8 +117,13 @@ $mpdf->Output();
 	
     <a href="<?php echo get_site_url(); ?>?certificate=<?php echo $ID; ?>&format=pdf" class="button" ><?php _e('Print Certificate', 'academy'); ?></a>
 	<?php } ?>
-<?php } else { ?>
+<?php } else { 
+//echo $certificate['user'];
+
+?>
 <div class="certificate-error">
+
+
 	<h1><?php _e('Certificate not found', 'academy'); ?>.</h1>
 </div>
 <?php } ?>

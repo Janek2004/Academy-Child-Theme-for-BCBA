@@ -128,7 +128,7 @@ class ThemexCourse {
      * @return void
      */
 	public static function completeCourse() {	
-		if(self::isMember() && self::$data['progress']==100) {
+		if(self::isMember() && self::$data['progress']>=100) {
 			ThemexCore::addUserRelation(get_current_user_id(), self::$data['ID'], 'certificate', current_time('timestamp'));
 			
 			$message=ThemexCore::getOption('email_certificate');
@@ -975,7 +975,7 @@ class ThemexCourse {
 		
 		
 		
-		if(!empty($certificate['content']) && $certificate['progress']==100) {
+		if(!empty($certificate['content']) && $certificate['progress']>=100) {
 			$username=trim(get_user_meta($user, 'first_name', true).' '.get_user_meta($user, 'last_name', true));
 			$title=get_the_title($ID);
 			$grade=self::getGrade($ID, $user).'%';

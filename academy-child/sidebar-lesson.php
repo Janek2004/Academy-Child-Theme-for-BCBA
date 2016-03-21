@@ -37,8 +37,8 @@
 	<?php 
      if(!empty(ThemexCourse::$data['lessons'])) { 
             if(ThemexCourse::isMember()) { 
-                if(ThemexCourse::$data['progress']==100)
-                { 
+                if(ThemexCourse::$data['progress'] >= 100)
+				{
 					$user_id=ThemexUser::$data['user']['ID'];
 					$course_id=ThemexCourse::$data['ID'];
 					$course_progress_key="courseProgress_".$course_id;

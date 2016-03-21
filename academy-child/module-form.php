@@ -26,7 +26,7 @@
         <?php 
 		$post_id_evaluate=ThemexCourse::$data['ID'];
 		$evaluation_count=get_user_meta(ThemexUser::$data['user']['ID'],$post_id_evaluate.'_evaluation_count'); 	
-		$user=	get_user_by( 'email', 'jchudzynski@uwf.edu');
+		//s$user=	get_user_by( 'email', 'jchudzynski@uwf.edu');
 		if(is_course_certified(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])){
 ?>
 			
