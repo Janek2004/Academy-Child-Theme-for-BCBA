@@ -316,7 +316,7 @@
 				/*---------------------------------PAGINATION CODE----------------------------------------*/
 				
 				
-				$arrayAnswers=mysql_query("SELECT * FROM wp_usermeta WHERE meta_key LIKE '%_evaluation_ans_".$course_id."%' AND user_id=$user_id ORDER BY meta_key DESC limit $limits,$max");
+			$arrayAnswers=mysql_query("SELECT * FROM wp_usermeta WHERE meta_key LIKE '%_evaluation_ans_".$course_id."%' AND user_id=$user_id ORDER BY meta_key DESC limit $limits,$max");
 			$new_counter=1;
 			while($row=mysql_fetch_array($arrayAnswers))
 			{
