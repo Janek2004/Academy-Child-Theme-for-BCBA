@@ -37,7 +37,7 @@
 	<?php
      if(!empty(ThemexCourse::$data['lessons'])) {
             if(ThemexCourse::isMember()) {
-                if(ThemexCourse::$data['progress']==100)
+                if(ThemexCourse::$data['progress']>=100)
                 {
 					$user_id=ThemexUser::$data['user']['ID'];
 					$course_id=ThemexCourse::$data['ID'];
@@ -63,11 +63,7 @@
 				     <a href="<?php echo $evaleurl; ?>" target="_blank" class="button medium certificate-button"><?php _e('Course Evaluation', 'academy'); ?></a>
 					<?php
 					}
-
 				?>
-
-
-
             <?php }
 			else{
 					$user_id=ThemexUser::$data['user']['ID'];
