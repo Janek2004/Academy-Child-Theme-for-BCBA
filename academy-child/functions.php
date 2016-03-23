@@ -1,32 +1,4 @@
 <?php
-/*
-  function custom_rewrite_rule() {
-    add_rewrite_rule('^evaluation/([^/]*)/([^/]*)/?','index.php?page_id=14&user_id=$matches[1]&post_id=$matches[2]','top');
-  }
-
-  add_action('init', 'custom_rewrite_rule', 10, 0);
-
-function custom_rewrite_tag() {
-  add_rewrite_tag('%user_id%', '([^&]+)');
-  add_rewrite_tag('%post_id%', '([^&]+)');
-}
- add_action('init', 'custom_rewrite_tag', 10, 0);
-
-add_action( 'wp_loaded','my_flush_rules' );
-
-// flush_rules() if our rules are not yet included
-function my_flush_rules(){
-	$rules = get_option( 'rewrite_rules' );
-
-	if ( ! isset( $rules['(evaluation)/(\d*)$'] ) ) {
-		global $wp_rewrite;
-	   	$wp_rewrite->flush_rules();
-	}
-}
-*/
-
-?>
-<?php
 
 require_once("customapi.php");
 

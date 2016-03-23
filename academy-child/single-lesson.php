@@ -19,35 +19,43 @@ if($layout=='left') {
   <h1>
     <?php the_title(); ?>
   </h1>
-  <?php 
-	if(ThemexLesson::$data['prerequisite']['progress']==0 && ThemexLesson::$data['status']!='free' && ThemexCore::checkOption('lesson_hide')) { 
+  <?php
+	if(ThemexLesson::$data['prerequisite']['progress']==0 && ThemexLesson::$data['status']!='free' && ThemexCore::checkOption('lesson_hide')) {
 		printf(__('Complete "%s" lesson before taking this lesson.', 'academy'), '<a href="'.get_permalink(ThemexLesson::$data['prerequisite']['ID']).'">'.get_the_title(ThemexLesson::$data['prerequisite']['ID']).'</a>');
 	}
 	else {
 		the_content();
-	
+
 	}
-	
-	
-	
+
+
+
 	?>
   <?php
-	//print_r( ThemexLesson::$data['quiz']);
+	//If lesson contains quiz
  		if(!empty(ThemexLesson::$data['quiz']))
-		{	if(ThemexLesson::$data['progress']!=100){	
+		{	if(ThemexLesson::$data['progress']!=100){
 ?>
 		<a href="<?php echo get_permalink(ThemexLesson::$data['quiz']['ID']); ?>" class="button"> <span class="button-icon edit"> </span>
 		 <?php _e('Take the Quiz', 'academy'); ?>
 		</a>
-		
-  <?php  
+
+  <?php
 	}
 	}
-	
+
 	else{
-			if(ThemexLesson::$data['progress']==100){
-	?>
-			
+		if(ThemexLesson::$data['progress']==100){
+	  ?>
+      <form action="<?php echo themex_url(); ?>" method="POST">
+        <a href="#" class="button submit-button"><span class="button-icon check"></span><?php _e('Mark Uncomplete', 'academy'); ?></a>
+			  <input type="hidden" name="lesson_action" value="uncomplete_lesson" />
+			  <input type="hidden" name="course_action" value="uncomplete_course" />
+        <input type="hidden" name="lesson_id" value="<?php echo ThemexLesson::$data['ID']; ?>" />
+	  	  <input type="hidden" name="course_id" value="<?php echo ThemexCourse::$data['ID']; ?>" />
+		    <input type="hidden" name="nonce" class="nonce" value="<?php echo wp_create_nonce(THEMEX_PREFIX.'nonce'); ?>" />
+		   <input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_lesson" />
+      </form>
 
 		<?php
 		}
@@ -61,10 +69,10 @@ if($layout=='left') {
 	  	<input type="hidden" name="course_id" value="<?php echo ThemexCourse::$data['ID']; ?>" />
 		  <input type="hidden" name="nonce" class="nonce" value="<?php echo wp_create_nonce(THEMEX_PREFIX.'nonce'); ?>" />
 		  <input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_lesson" />
-      
+
       </form>
 		<br>
-		
+
 		<?php
     	}
 	}
@@ -72,24 +80,24 @@ if($layout=='left') {
 	<?php
 		if((ThemexCourse::$data['progress']==100) &&(ThemexLesson::$data['progress']==100)){
 					$post_id_evaluate=ThemexCourse::$data['ID'];
-					$evaluation_count=get_user_meta(ThemexUser::$data['user']['ID'],$post_id_evaluate.'_evaluation_count'); 
+					$evaluation_count=get_user_meta(ThemexUser::$data['user']['ID'],$post_id_evaluate.'_evaluation_count');
 					if($evaluation_count[0]==1){
 					?>
 						 <a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button medium certificate-button"><?php _e('View Certificate', 'academy'); ?></a>
 						<br>	<br>
 					<?php
-						
+
 					}
 					else{?>
-										
-						<a href="<?php echo get_page_link(14); ?>&userid=<?php echo ThemexUser::$data['user']['ID']; ?>&post_id=<?php echo ThemexCourse::$data['ID']; ?>" target="_blank" class="button submit-button btn_possition"><?php _e('Course Evaluation', 'academy'); ?></a>	
+
+						<a href="<?php echo get_page_link(14); ?>&userid=<?php echo ThemexUser::$data['user']['ID']; ?>&post_id=<?php echo ThemexCourse::$data['ID']; ?>" target="_blank" class="button submit-button btn_possition"><?php _e('Course Evaluation', 'academy'); ?></a>
 						<br>
 					<?php
 					}
 
 	}
-?>	
-	
+?>
+
 
 </div>
 <?php if($layout=='right') { ?>

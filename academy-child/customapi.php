@@ -4,7 +4,7 @@ add_filter('json_api_controllers', 'add_my_controller');
 
 function add_my_controller($controllers) {
   // Corresponds to the class JSON_API_MyController_Controller
-  $controllers[] = 'hello';
+  $controllers[] = 'mobileapi';
   return $controllers;
 }
 
@@ -27,7 +27,7 @@ class EvalQuestion{
 }
 
 
-class JSON_API_Hello_Controller {
+class JSON_API_mobileapi_Controller {
 
 /**Evaluation*/
 function get_evaluation() {
@@ -58,22 +58,20 @@ function get_evaluation() {
 /**Quiz*/
 function get_quiz() {
 
-  $args=array(
-    'post_type' => 'course',
-    'posts_per_page' => -1,
-  );
+ global $json_api;
+  global $wpdb;
+  $id = $json_api->query->id;
+  if (!$id) {
+        $json_api->error("Missing course id parameter.");
+  }
+  else{
+    ThemexLesson::refresh(ThemexCore::getPostRelations($id, 0, 'quiz_lesson', true), true);
+    ThemexCourse::refresh(ThemexLesson::$data['course'], true);
+//    ThemexLesson::getQuiz($id);
+  //  print_r(ThemexLesson::$data['quiz']);
+    return ThemexLesson::$data['quiz'];
 
-  $posts = get_posts($args);
-  // $string ="":
-  // foreach ($posts as $post){
-  //   $string = $string.'{';
-  //       $string = $string.'"course_id":..';
-  //
-  //
-  //   $string = $string."}";
-  // }
-
-  return $posts;
+  }
 }
 
 
@@ -114,13 +112,13 @@ public function getCourses() {
 }
 
 
-function set_hello_controller_path() {
+function set_mobileapi_controller_path() {
 //echo "url is
  //echo get_stylesheet_directory()."\customapi.php";
  //die();
   return get_stylesheet_directory()."/customapi.php";
 }
-add_filter('json_api_hello_controller_path', 'set_hello_controller_path');
+add_filter('json_api_mobileapi_controller_path', 'set_mobileapi_controller_path');
 //get_stylesheet_directory_uri()
 
 ?>
