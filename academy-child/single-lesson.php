@@ -48,7 +48,7 @@ if($layout=='left') {
 		if(ThemexLesson::$data['progress']==100){
 	  ?>
       <form action="<?php echo themex_url(); ?>" method="POST">
-        <a href="#" class="button submit-button"><span class="button-icon check"></span><?php _e('Mark Uncomplete', 'academy'); ?></a>
+        <a href="#" class="button submit-button"><span class="button-icon check"></span><?php _e('Mark Incomplete', 'academy'); ?></a>
 			  <input type="hidden" name="lesson_action" value="uncomplete_lesson" />
 			  <input type="hidden" name="course_action" value="uncomplete_course" />
         <input type="hidden" name="lesson_id" value="<?php echo ThemexLesson::$data['ID']; ?>" />
@@ -83,14 +83,20 @@ if($layout=='left') {
 					$evaluation_count=get_user_meta(ThemexUser::$data['user']['ID'],$post_id_evaluate.'_evaluation_count');
 					if($evaluation_count[0]==1){
 					?>
-						 <a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button medium certificate-button"><?php _e('View Certificate', 'academy'); ?></a>
+						 <a href="<?php echo ThemexCore::getURL('certificate', themex_encode(ThemexCourse::$data['ID'], ThemexUser::$data['user']['ID'])); ?>" target="_blank" class="button medium certificate-button">
+               <?php _e('View Certificate', 'academy'); ?></a>
 						<br>	<br>
 					<?php
 
 					}
 					else{?>
+            <?php
+              $evalurl = get_page_link(14);
+              $evaleurl = add_query_arg(array('userid'=>ThemexUser::$data['user']['ID'], 'post_id'=>ThemexCourse::$data['ID']),$evalurl);
+           ?>
+             <a href="<?php echo $evaleurl; ?>" target="_blank" class="button medium certificate-button"><?php _e('Course Evaluation', 'academy'); ?></a>
 
-						<a href="<?php echo get_page_link(14); ?>&userid=<?php echo ThemexUser::$data['user']['ID']; ?>&post_id=<?php echo ThemexCourse::$data['ID']; ?>" target="_blank" class="button submit-button btn_possition"><?php _e('Course Evaluation', 'academy'); ?></a>
+
 						<br>
 					<?php
 					}

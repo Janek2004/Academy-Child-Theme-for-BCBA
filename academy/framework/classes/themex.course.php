@@ -979,17 +979,7 @@ class ThemexCourse {
 	public static function getCertificate($ID, $user) {
 		$certificate['content']=ThemexCore::getPostMeta($ID, 'course_certificate_content');
 		$certificate['progress']=self::getProgress($ID, $user);
-<<<<<<< HEAD
-
-
-
-		if(!empty($certificate['content']) && $certificate['progress']==100) {
-=======
-
-
-
 		if(!empty($certificate['content']) && $certificate['progress']>=100) {
->>>>>>> master
 			$username=trim(get_user_meta($user, 'first_name', true).' '.get_user_meta($user, 'last_name', true));
 			$title=get_the_title($ID);
 			$grade=self::getGrade($ID, $user).'%';
