@@ -7,10 +7,11 @@
  * @version     2.4.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
-
+//if ( ! defined( 'ABSPATH' ) ) {
+	//exit; // Exit if accessed directly
+//}
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 ?>
 
 <?php do_action( 'woocommerce_email_header', $email_heading ); ?>
