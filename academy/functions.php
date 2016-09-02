@@ -26,7 +26,7 @@ include(THEMEX_PATH.'functions.php');
 include(THEMEX_PATH.'config.php');
 
 //Include core class
-include(THEMEX_PATH.'classes/themex.core.php');
+require_once(THEMEX_PATH.'classes/themex.core.php');
 
 //Create theme instance
 $themex=new ThemexCore($config);
