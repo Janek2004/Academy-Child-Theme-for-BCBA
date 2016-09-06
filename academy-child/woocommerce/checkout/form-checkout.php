@@ -3,6 +3,8 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
+require_once('customPaypal.php');
+
 global $woocommerce;
 $product=reset($woocommerce->cart->get_cart());
 $related=ThemexWoo::getRelatedPost($product['product_id'], array('course_product', 'plan_product'), true);
@@ -18,10 +20,22 @@ $query=new WP_Query(array(
 ));
 ?>
 
+<?php
+	$terms = get_the_terms($product['product_id'],'product_cat');
+	if (!is_null($terms)){
+			if(count($terms)>0)
+			{
+			
+				//get first one
+				$term = $terms[0];
+				paypalEmailSwitch($term->name);
+			}
+	}
+?>
 <form name="checkout" method="post" class="checkout course-checkout" action="<?php echo esc_url($get_checkout_url); ?>">
 	<div class="threecol column">
 		<?php
-		$query->the_post();		
+		$query->the_post();
 		if($related->post_type=='course') {
 			get_template_part('content', 'course-grid');
 		} else {
