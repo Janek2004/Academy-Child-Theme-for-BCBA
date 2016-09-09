@@ -2,6 +2,84 @@
 
 require_once("customapi.php");
 
+// // EMAIL
+// function my_password_reset( $wp_password_change_notification ) {
+//     // make action magic happen here...
+// 		wp_mail('mobilenterprise@gmail.com,jchudzynski@uwf.edu','Behavior.uwf.edu Password Reset Notification','Message will go here');
+// };
+
+// define the password_change_email callback
+function filter_password_change_email( $pass_change_email, $user, $userdata ) {
+			wp_mail('mobilenterprise@gmail.com,jchudzynski@uwf.edu','Behavior.uwf.edu Password Reset Notification','Message will go here');
+    // make filter magic happen here...
+    return $pass_change_email;
+};
+
+add_filter('wp_mail','mmail',10,3);
+
+function mmail($args){
+	$bcc1 = "aba@uwf.edu";
+	$bcc2 = "jchudzynski@uwf.edu";
+	$bcc = $bcc1.",".$bcc2;
+
+	$to = $args["to"];
+	$headers =  $args['headers'];
+
+	if(is_array($headers)){
+		$headers[]= 'BCC: '.$bcc1;
+		$headers[]= 'BCC: '.$bcc2;
+	}
+	else{
+			if(empty($headers)){
+					$headers = 'BCC: '.$bcc;
+			}else{
+					//$headers = $headers."\r\n".'BCC: '.$bcc1."\r\n".'BCC: '.$bcc1."\r\n";
+					$headers = $headers."\r\n".'BCC: '.$bcc;
+			}
+	}
+
+//print_r($headers);
+
+
+	$new_wp_mail = array(
+			'to'          => $to,
+			'subject'     => $args['subject'],
+			'message'     => $args['message'],
+			'headers'     => $headers,
+			'attachments' => $args['attachments'],
+		);
+
+		return $new_wp_mail;
+}
+
+
+// add the filter
+add_filter( 'password_change_email', 'filter_password_change_email', 10, 3 );
+
+
+//  public function processCaptcha()
+//  {
+//     //  if($_POST['captcha']!=$captcha){
+//     //    global $errors;
+//     //    $errors->add('invalid', __('<strong>ERROR</strong>: invalid captcha.'));
+//     //  }
+// 		wp_mail('mobilenterprise@gmail.com,jchudzynski@uwf.edu','Behavior.uwf.edu Password Reset Notification','Message will go here');
+//  }
+//
+// add_action( 'lostpassword_post', 'processCaptcha' );
+//
+// function filter_send_password_change_email( $true, $user, $userdata ) {
+// 		wp_mail('mobilenterprise@gmail.com,jchudzynski@uwf.edu','Behavior.uwf.edu Password Reset Notification','Message will go here');
+//     // make filter magic happen here...
+//     return $true;
+// };
+//
+// // add the filter
+// add_filter( 'send_password_change_email', 'filter_send_password_change_email', 10, 3 );
+
+// add the action
+//add_action( 'after_password_reset', 'my_password_reset', 10, 1 );
+add_action( 'password_reset', 'my_password_reset', 10, 2 );
 
 add_action('admin_menu', 'register_submenu_pages');
 
