@@ -21,71 +21,72 @@ Template Name: Registration
 		<div class="message"></div>
 
       <div class="sixcol column">
- 
-			<div class="field-wrapper">
 
+			<div class="field-wrapper">
+				BCBA Number:
 				<input type="text" name="user_bcba" placeholder="<?php _e('BCBA No','academy'); ?>" />
 
-			</div>								
+			</div>
 
-		</div>  
+		</div>
   <div class="sixcol column">
- 
+
 			<div class="field-wrapper">
 
 				<input type="checkbox" name="bcba_checkbox" value="has_number"/> I don't have a BCBA number
 
-			</div>								
-		</div> 
-        
+			</div>
+		</div>
+
 <div class="clear"></div>
       <div class="sixcol column last">
 
 			<div class="field-wrapper last">
-
+				Username:
 				<input type="text" name="user_login" placeholder="<?php _e('Username','academy'); ?>" />
 
-			</div>								
+			</div>
 
 		</div>
 			<div class="clear"></div>
-		
+
         <div class="sixcol column">
 
 			<div class="field-wrapper">
-
+				Email:
 				<input type="text" name="user_email" placeholder="<?php _e('Email','academy'); ?>" />
 
 			</div>
 
-		</div>	
+		</div>
 		<div class="clear"></div>
 
 		<div class="sixcol column last">
 
 			<div class="field-wrapper">
+				Password:
 				<input type="password" name="user_password" placeholder="<?php _e('Password','academy'); ?>" />
 			</div>
 
 		</div>
 			<div class="clear"></div>
-		
+
         <div class="sixcol column last">
 
 			<div class="field-wrapper">
-
+				Repeat Password:
 				<input type="password" name="user_password_repeat" placeholder="<?php _e('Repeat Password','academy'); ?>" />
 
 			</div>
 
 		</div>
 
-		<div class="clear"></div>			
+		<div class="clear"></div>
 
 		<?php if(ThemexCore::checkOption('user_captcha')) { ?>
 
 		<div class="form-captcha">
-
+			Captcha:
 			<img src="<?php echo THEMEX_URI; ?>assets/images/captcha/captcha.php" alt="" />
 
 			<input type="text" name="captcha" id="captcha" size="6" value="" />
@@ -95,16 +96,16 @@ Template Name: Registration
 		<div class="clear"></div>
 
 		<?php } ?>
-	
+
     	  <div class="sixcol column">
- 
+
 			<div class="field-wrapper">
 
 				<input type="checkbox" name="email_communication" value="optin" checked="checked"/> I want to receive news and updates
 
-			</div>								
-		</div> 
-		
+			</div>
+		</div>
+
 		<div class="clear"></div>
 		<a href="#" class="button submit-button left"><span class="button-icon register"></span><?php _e('Register','academy'); ?></a>
 
@@ -127,23 +128,23 @@ Template Name: Registration
 <div class="eightcol column">
 
 <br><br>
-	
+
 	<h1><?php _e('Existing Users Sign In Here:','academy'); ?></h1>
 	<form class="ajax-form formatted-form" action="<?php echo AJAX_URL; ?>" method="POST">
  <div class="sixcol column">
 		<div class="message"></div>
 
 		<div class="field-wrapper">
-
+			Username:
 			<input type="text" name="user_login" placeholder="<?php _e('Username','academy'); ?>" />
 
 		</div>
 
 		<div class="field-wrapper">
-
+			Password:
 			<input type="password" name="user_password" placeholder="<?php _e('Password','academy'); ?>" />
 
-		</div>			
+		</div>
 
 		<a href="#" class="button submit-button left"><span class="button-icon login"></span><?php _e('Sign In','academy'); ?></a>
 
@@ -167,7 +168,7 @@ Template Name: Registration
 
 		<input type="hidden" name="action" class="action" value="<?php echo THEMEX_PREFIX; ?>update_user" />
 </div>
-	</form>	
+	</form>
 
 </div>
 <div class="clear"></div>
@@ -179,6 +180,7 @@ Template Name: Registration
 										<form action="<?php echo AJAX_URL; ?>" class="ajax-form formatted-form" method="POST">
 											<div class="message"></div>
 												<div class="field-wrapper">
+													Email:
 												<input type="text" name="user_email"  placeholder="Email" />
 											</div>
 											<div class="button-wrap left nomargin">
@@ -193,7 +195,7 @@ Template Name: Registration
 
 
 
-<?php 
+<?php
 
 $query=new WP_Query(array(
 

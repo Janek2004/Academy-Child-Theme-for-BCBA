@@ -4,11 +4,11 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
-	
+
 	<!--[if lt IE 9]>
 	<script type="text/javascript" src="<?php echo THEME_URI; ?>js/html5.js"></script>
 	<![endif]-->
-	
+
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -22,20 +22,20 @@
 						</a>
 					</div>
 					<!-- /logo -->
-					<div class="header-options right clearfix">					
+					<div class="header-options right clearfix">
 						<div class="login-options right">
 						<?php if(is_user_logged_in()) { ?>
 							<div class="button-wrap left">
 								<a href="<?php echo wp_logout_url(SITE_URL); ?>" class="button dark">
 									<span class="button-icon logout"></span><?php _e('Sign Out','academy'); ?>
-								</a>							
+								</a>
 							</div>
 							<div class="button-wrap left">
 								<a href="<?php echo ThemexUser::$data['user']['profile_url']; ?>" class="button">
 									<span class="button-icon register"></span><?php _e('My Profile','academy'); ?>
-								</a>						
-							</div>							
-							<?php } else { ?>						
+								</a>
+							</div>
+							<?php } else { ?>
 							<div class="button-wrap left tooltip login-button">
 								<a href="#" class="button dark"><span class="button-icon login"></span><?php _e('Sign In','academy'); ?></a>
 								<div class="tooltip-wrap">
@@ -43,14 +43,16 @@
 										<form action="<?php echo AJAX_URL; ?>" class="ajax-form popup-form" method="POST">
 											<div class="message"></div>
 											<div class="field-wrap">
-												<input type="text" name="user_login" value="<?php _e('Username','academy'); ?>" />
+												Username: <?php //_e('Username','academy'); ?>
+												<input type="text" name="user_login" value="" />
 											</div>
 											<div class="field-wrap">
-												<input type="password" name="user_password" value="<?php _e('Password','academy'); ?>" />
+												Password:
+												<input type="password" name="user_password" value="<?php //_e('Password','academy'); ?>" />
 											</div>
 											<div class="button-wrap left nomargin">
 												<a href="#" class="button submit-button"><?php _e('Sign In','academy'); ?></a>
-											</div>											
+											</div>
 											<?php if(ThemexFacebook::isActive()) { ?>
 											<div class="button-wrap left">
 												<a href="<?php echo ThemexFacebook::getURL(); ?>" title="<?php _e('Sign in with Facebook','academy'); ?>" class="button facebook-button">
@@ -61,7 +63,7 @@
 											<br>
 											<div class="button-wrap switch-button left">
 												<a href="#" class="button dark" title="<?php _e('Password Recovery','academy'); ?>">
-													
+
 													 <?php _e('Recover Password ','academy'); ?>
 												</a>
 											</div>
@@ -98,7 +100,7 @@
 							<?php } ?>
 						<?php } ?>
 						</div>
-						<!-- /login options -->										
+						<!-- /login options -->
 						<div class="search-form right">
 							<?php get_search_form(); ?>
 						</div>
@@ -120,15 +122,15 @@
 					</div>
 					<!-- /mobile search form -->
 					<nav class="header-navigation right">
-						<?php wp_nav_menu( array( 'theme_location' => 'main_menu', 'container_class' => 'menu' ) ); ?>						
+						<?php wp_nav_menu( array( 'theme_location' => 'main_menu', 'container_class' => 'menu' ) ); ?>
 						<div class="select-menu">
 							<span></span>
-							<?php ThemexInterface::renderDropdownMenu('main_menu'); ?>							
+							<?php ThemexInterface::renderDropdownMenu('main_menu'); ?>
 						</div>
 						<!--/ select menu-->
 					</nav>
-					<!-- /navigation -->						
-				</div>			
+					<!-- /navigation -->
+				</div>
 			</header>
 			<!-- /header -->
 		</div>
@@ -146,10 +148,10 @@
 				<div class="page-title">
 					<h1 class="nomargin"><?php ThemexInterface::renderPageTitle(); ?></h1>
 				</div>
-				<!-- /page title -->				
+				<!-- /page title -->
 			<?php } ?>
 			</div>
-		<?php } ?>		
+		<?php } ?>
 		</div>
 		<!-- /featured -->
 		<div class="main-content">
