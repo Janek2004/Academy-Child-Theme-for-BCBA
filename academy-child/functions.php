@@ -8,6 +8,14 @@ require_once("customapi.php");
 // 		wp_mail('mobilenterprise@gmail.com,jchudzynski@uwf.edu','Behavior.uwf.edu Password Reset Notification','Message will go here');
 // };
 
+
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+    function wcs_woo_remove_reviews_tab($tabs) {
+    unset($tabs['reviews']);
+    return $tabs;
+}
+
+
 // define the password_change_email callback
 function filter_password_change_email( $pass_change_email, $user, $userdata ) {
 			wp_mail('mobilenterprise@gmail.com,jchudzynski@uwf.edu','Behavior.uwf.edu Password Reset Notification','Message will go here');
