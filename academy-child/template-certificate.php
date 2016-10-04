@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**Returns a date for current user and course*/
 function getCertificateDate($post_id,$user){
 	//$user=wp_get_current_user();
 
-	/*THIS CODE Doesn't work	
+	/*THIS CODE Doesn't work
 	$args = array('user_id'=>$user,'type' => 'user_certificate','post_id' => $post_id);
 	$comments = get_comments($args);
 	print_r($comments);
@@ -12,24 +12,24 @@ function getCertificateDate($post_id,$user){
 	$comments_query = new WP_Comment_Query;
 	$comments = $comments_query->query( $args );
 	*/
-	
+
 	global $wpdb;
-	$query = "SELECT * 
-        FROM $wpdb->comments 
+	$query = "SELECT *
+        FROM $wpdb->comments
         WHERE $wpdb->comments.user_id =$user AND $wpdb->comments.comment_type = 'user_certificate' AND $wpdb->comments.comment_post_ID = $post_id ";
 	$results = $wpdb->get_results($query);
 	//comment_post_ID
 	if($results){
 		$result = $results[0]->comment_content;
-	
-		return $result;	
+
+		return $result;
 	}
 }
 
 if($_GET['format']=='pdf'){ ?>
-<?php 
+<?php
 include("mpdf/mpdf.php");
-$mpdf=new mPDF('utf-8', 'A4-L', '8', '', 5, 5, 10, 5, 10, 20); 
+$mpdf=new mPDF('utf-8', 'A4-L', '8', '', 5, 5, 10, 5, 10, 20);
 $mpdf->SetDisplayMode('fullpage');
 
 ?>
@@ -40,7 +40,7 @@ $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first lev
 $stylesheet = file_get_contents(get_stylesheet_directory_uri().'/css/certificate_pdf.css'); // external css
 $mpdf->WriteHTML($stylesheet,1);
 $mpdf->WriteHTML(file_get_contents( site_url().'?certificate='.$_GET['certificate']));
-         
+
 $mpdf->Output();
 
 ?>
@@ -52,17 +52,17 @@ $mpdf->Output();
 <?php wp_head(); ?>
 </head>
 <body <?php body_class('single-certificate'); ?>>
-<?php $ID=ThemexCore::getRewriteRule('certificate'); 
+<?php $ID=ThemexCore::getRewriteRule('certificate');
 		$post_id=themex_decode($ID);
  		$user =  themex_decode($ID,true)
  ?>
-<?php $certificate=ThemexCourse::getCertificate(themex_decode($ID), themex_decode($ID, true)); 
-	
+<?php $certificate=ThemexCourse::getCertificate(themex_decode($ID), themex_decode($ID, true));
+
 ?>
 <?php if(isset($certificate['user'])) { ?>
 
-		<?php 
-			
+		<?php
+
 			$timestamp = getCertificateDate($post_id, $user);
 			$today_date=date("F j, Y",$timestamp);
 			$credits=get_field('number_of_credits',$post_id);
@@ -70,16 +70,16 @@ $mpdf->Output();
 			$teacher=get_field('presenter_teacher',$post_id);
 			$name_of_course=get_field('name_of_course',$post_id);
 			$array_bcba_no = get_user_meta($certificate['user'],'_themex_bcba_no');
-			
+
 			$bcba_no=$array_bcba_no[0];
-			
-			$replaceContent=array($credits,$teacher,$name_of_course,$bcba_no,$today_date,$number_of_ethics_credits);
-			$replacingWords=array("%credits%","%teacher%","%course_name%","%bcba_no%","%certificate_date%","%ethics_credits%");
-			
+
+			$replaceContent=array($credits,$teacher,$name_of_course,$bcba_no,$today_date,$number_of_ethics_credits, $number_of_supervision_credits);
+			$replacingWords=array("%credits%","%teacher%","%course_name%","%bcba_no%","%certificate_date%","%ethics_credits%","%supervision_credits%");
+
 			$certificateContent = str_replace($replacingWords,$replaceContent,$certificate['content']);
-		
-		?>	
-	
+
+		?>
+
 		<?php if(!empty($certificate['background'])) { ?>
 		<div class="substrate">
 			<img src="<?php echo $certificate['background']; ?>" class="fullwidth" alt="" />
@@ -96,28 +96,28 @@ $mpdf->Output();
                     <h3><?php echo $today_date; ?></h3>
                     <small>DATE</small>
                   </div>
-                  
+
                   <div class="date">
 					<h3>OP-11-2135</h3>
                     <small>CEU PROVIDER NO.</small>
                   </div>
-                  
+
                   <div class="date">
                     <h3><?php echo $bcba_no; ?></h3>
                     <small>BCBA NO.</small>
                   </div>
-                
+
                  </div>
                 <p id="contact_info">Contact info:  aba@uwf.edu or (850) 474-2704</p>
-                 
+
              </div>
 		</div>
-	
+
 	<?php if($certificate['user']==get_current_user_id()) { ?>
-	
+
     <a href="<?php echo get_site_url(); ?>?certificate=<?php echo $ID; ?>&format=pdf" class="button" ><?php _e('Print Certificate', 'academy'); ?></a>
 	<?php } ?>
-<?php } else { 
+<?php } else {
 //echo $certificate['user'];
 
 ?>
