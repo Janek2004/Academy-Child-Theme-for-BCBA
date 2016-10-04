@@ -67,6 +67,8 @@ $mpdf->Output();
 			$today_date=date("F j, Y",$timestamp);
 			$credits=get_field('number_of_credits',$post_id);
 			$number_of_ethics_credits=get_field('number_of_ethics_credits',$post_id);
+			$number_of_supervision_credits=get_field('number_of_supervision_credit',$post_id);
+
 			$teacher=get_field('presenter_teacher',$post_id);
 			$name_of_course=get_field('name_of_course',$post_id);
 			$array_bcba_no = get_user_meta($certificate['user'],'_themex_bcba_no');
