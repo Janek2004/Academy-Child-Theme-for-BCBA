@@ -6,8 +6,10 @@
 <ul>
 <li>   Image files are stored in the Academy/Images folder </li>
    <li>CSS is set in the style.css academy-child  folder for web and certificate_pdf.css for pdf. </li>
-<li>   HTML and mpdf settings are set in the template-certificate.php</li>
-<li>   You should also add a shortcode in the course's meta (Wordpress Admin) </li>
+<li> HTML and mpdf settings are set in the template-certificate.php</li>
+<li> You should also add a shortcode in the course's meta (Wordpress Admin) </li>
+<li> To add more categories you need to: add shortcode like %some_shortcode% in course description. Also you need to modify the template_cerficate.php and add shortcode there. </li>
+
 </ul>
 
 
