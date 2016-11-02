@@ -1000,6 +1000,7 @@ class ThemexCourse {
 			$certificate['user']=$user;
 			$certificate['background']=ThemexCore::getPostMeta($ID, 'course_certificate_background');
 			$certificate['content']=wpautop(themex_keywords($certificate['content'], $keywords));
+
 		}
 
 		return $certificate;

@@ -11,6 +11,11 @@ function getCertificateDate($post_id,$user){
 	// The Query
 	$comments_query = new WP_Comment_Query;
 	$comments = $comments_query->query( $args );
+
+	// 			$headerText = "The Office of Applied Behavior Analysis at the
+	// University of West Florida Office";
+
+
 	*/
 
 	global $wpdb;
@@ -29,7 +34,7 @@ function getCertificateDate($post_id,$user){
 if($_GET['format']=='pdf'){ ?>
 <?php
 include("mpdf/mpdf.php");
-$mpdf=new mPDF('utf-8', 'A4-L', '8', '', 5, 5, 10, 5, 10, 20);
+$mpdf=new mPDF('utf-8', 'Letter-L', '8', '', 1, 1, 1, 1, 1, 1);
 $mpdf->SetDisplayMode('fullpage');
 
 ?>
@@ -60,25 +65,64 @@ $mpdf->Output();
 
 ?>
 <?php if(isset($certificate['user'])) { ?>
-
 		<?php
+			$user = $certificate['user'];
+  		$username=trim(get_user_meta($user, 'first_name', true).' '.get_user_meta($user, 'last_name', true));
+
+			$certificateText = '<p class="logoText">The Office of Applied Behavior Analysis at the University of West Florida Office </p> <p class="certifiesThat">certifies that </p>
+						<div class="text_area"><h1>%username%</h1><p>has viewed the online presentation by %presenter%
+						and answered review questions to proficiency and is hereby awarded this Certificate of Completion';
+
+  		$credits=get_field('number_of_credits',$post_id);
+			$number_of_ethics_credits=get_field('number_of_ethics_credits',$post_id);
+			$number_of_supervision_credits=get_field('number_of_supervision_credit',$post_id);
+			$presenter=get_field('presenter_teacher',$post_id);
+
+
+
+			if ($credits > 0){
+					$certificateText .= ' and <big>%credits% Continuing Education Units (CEUS)</big>';
+			}
+			if ($number_of_ethics_credits > 0){
+					$certificateText .= ' and <big> %ethics_credits% Ethics Credits</big>';
+			}
+			if ($number_of_supervision_credits > 0){
+					$certificateText .= ' and <big> %supervision_credits% Supervision Credits</big>';
+			}
+
+				$certificateText .= ' for participation in</p><h2 class="courseName">%course_name% </h2></div>';
+
+			// <p class="logoText">The Office of Applied Behavior Analysis at the University of West Florida Office </p> <p class="certifiesThat">certifies that </p>
+			// <div class="text_area"><h1>%username%</h1><p>has viewed the online presentation by Robert K. Ross, Ed.D.
+			// and answered review questions to proficiency and is hereby awarded this Certificate of Completion and
+			// <big>%credits% Continuing Education Units (CEUS)</big> and <big> %ethics_credits% Ethics Credits</big>
+			// for participation in</p><h2>%course_name% </h2>
+			// </div>
+
+
+
+
 
 			$timestamp = getCertificateDate($post_id, $user);
 			$today_date=date("F j, Y",$timestamp);
-			$credits=get_field('number_of_credits',$post_id);
-			$number_of_ethics_credits=get_field('number_of_ethics_credits',$post_id);
-			$number_of_supervision_credits=get_field('number_of_supervision_credit',$post_id);
 
-			$teacher=get_field('presenter_teacher',$post_id);
+
+
+
 			$name_of_course=get_field('name_of_course',$post_id);
 			$array_bcba_no = get_user_meta($certificate['user'],'_themex_bcba_no');
 
 			$bcba_no=$array_bcba_no[0];
 
-			$replaceContent=array($credits,$teacher,$name_of_course,$bcba_no,$today_date,$number_of_ethics_credits, $number_of_supervision_credits);
-			$replacingWords=array("%credits%","%teacher%","%course_name%","%bcba_no%","%certificate_date%","%ethics_credits%","%supervision_credits%");
+			$replaceContent=array($credits,$presenter,$name_of_course,$bcba_no,$today_date,$number_of_ethics_credits, $number_of_supervision_credits, $username);
+			$replacingWords=array("%credits%","%presenter%","%course_name%","%bcba_no%","%certificate_date%","%ethics_credits%","%supervision_credits%","%username%");
 
-			$certificateContent = str_replace($replacingWords,$replaceContent,$certificate['content']);
+
+			$certificateContent = str_replace($replacingWords,$replaceContent, $certificateText);
+
+		//	print_r($certificate['content']);
+		//	die();
+			// $certificateContent = str_replace($replacingWords,$replaceContent,$certificate['content']);
 
 		?>
 
@@ -88,8 +132,8 @@ $mpdf->Output();
 		</div>
 		<?php } ?>
 		<div class="certificate-text">
-			<div id="certificate_main" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/images/certificate/certificate.jpg) center; background-repeat:no-repeat; background-image-resize:6">
-                <div class="logo"><img width="250px" height="109px" src="<?php echo get_stylesheet_directory_uri();  ?>/images//certificate/certificate_logo.jpg" /></div>
+			<div id="certificate_main" style="background:url(<?php echo get_stylesheet_directory_uri(); ?>/images/certificate/regualmodernrback-noblue.jpg) center; background-repeat:no-repeat; background-image-resize:6">
+                <div class="logo"><img width="500px" height="57px" src="<?php echo get_stylesheet_directory_uri();  ?>/images/certificate/cert.png" /></div>
                		<?php echo $certificateContent; ?>
 				<!--container for dates and etc -->
                 <div class="cert_container">

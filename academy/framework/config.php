@@ -1,7 +1,7 @@
 <?php
 //Theme Configuration
 $config = array (
-	
+
 	//Theme Modules
 	'modules' => array(
 		'ThemexInterface',
@@ -15,17 +15,17 @@ $config = array (
 		'ThemexFacebook',
 		'ThemexWoo',
 	),
-	
+
 	//Theme Components
 	'components' => array(
-	
+
 		//Supports
 		'supports' => array (
 			'automatic-feed-links',
 			'post-thumbnails',
 			'woocommerce',
 		),
-		
+
 		//Rewrite Rules
 		'rewrite_rules' => array (
 			'profile' => array(
@@ -36,7 +36,7 @@ $config = array (
 				'replace' => true,
 				'dynamic' => true,
 			),
-			
+
 			'register' => array(
 				'title' => __('Registration', 'academy'),
 				'name' => 'register',
@@ -45,7 +45,7 @@ $config = array (
 				'position' => 'top',
 				'authorized' => false,
 			),
-			
+
 			'file' => array(
 				'name' => 'file',
 				'rule' => 'file/([^/]+)',
@@ -54,7 +54,7 @@ $config = array (
 				'dynamic' => true,
 				'authorized' => true,
 			),
-			
+
 			'certificate' => array(
 				'name' => 'certificate',
 				'title' => __('Certificate', 'academy'),
@@ -62,7 +62,7 @@ $config = array (
 				'rewrite' => 'index.php?certificate=$matches[1]',
 				'position' => 'top',
 				'dynamic' => true,
-			),	
+			),
 			'redirect' => array(
 				'name' => 'redirect',
 				'rule' => 'redirect/([^/]+)',
@@ -71,7 +71,7 @@ $config = array (
 				'dynamic' => true,
 			),
 		),
-	
+
 		//User Roles
 		'user_roles' => array (
 			array(
@@ -80,150 +80,150 @@ $config = array (
 				'capabilities' => array(),
 			),
 		),
-		
+
 		//Custom Menus
 		'custom_menus' => array (
 			array(
 				'slug' => 'main_menu',
 				'name' => __('Main Menu', 'academy'),
 			),
-			
+
 			array(
 				'slug' => 'footer_menu',
 				'name' => __('Footer Menu', 'academy'),
 			),
 		),
-		
+
 		//Image Sizes
 		'image_sizes' => array (
-		
+
 			array(
 				'name' => 'normal',
 				'width' => 420,
 				'height' => 420,
 				'crop' => false,
 			),
-			
+
 			array(
 				'name' => 'extended',
 				'width' => 738,
 				'height' => 738,
 				'crop' => false,
-			),			
+			),
 		),
-		
+
 		//Editor styles
 		'editor_styles' => array(
 			'bordered'=>__('Bordered List', 'academy'),
 			'checked'=>__('Checked List', 'academy'),
 		),
-		
+
 		//Admin Styles
 		'admin_styles' => array(
-			
+
 			//colorpicker
 			array(
 				'name' => 'wp-color-picker',
 			),
-			
+
 			//thickbox
-			array(	
+			array(
 				'name' => 'thickbox',
 			),
-			
+
 			//interface
-			array(	
+			array(
 				'name' => 'themex-style',
 				'uri' => THEMEX_URI.'assets/css/style.css'
-			),			
+			),
 		),
-		
+
 		//Admin Scripts
 		'admin_scripts' => array(
-			
+
 			//colorpicker
 			array(
 				'name' => 'wp-color-picker',
 			),
-			
+
 			//thickbox
-			array(	
+			array(
 				'name' => 'thickbox',
 			),
-			
+
 			//uploader
-			array(	
+			array(
 				'name' => 'media-upload',
 			),
-			
+
 			//slider
-			array(	
+			array(
 				'name' => 'jquery-ui-slider',
 			),
-			
+
 			//popup
 			array(
 				'name' => 'themex-popup',
 				'uri' => THEMEX_URI.'assets/js/themex.popup.js',
 			),
-			
+
 			//interface
 			array(
 				'name' => 'themex-interface',
 				'uri' => THEMEX_URI.'assets/js/themex.interface.js',
 			),
 		),
-		
+
 		//User Styles
 		'user_styles' => array(
-		
+
 			//general
-			array(	
+			array(
 				'name' => 'general',
-				'uri' => CHILD_URI.'style.css',				
+				'uri' => CHILD_URI.'style.css',
 			),
 
 		),
-		
+
 		//User Scripts
 		'user_scripts' => array(
-			
+
 			//jquery
-			array(	
+			array(
 				'name' => 'jquery',
 			),
-			
+
 			//comment reply
-			array(	
+			array(
 				'name' => 'comment-reply',
 			),
-			
+
 			//hover intent
-			array(	
+			array(
 				'name' => 'hover-intent',
 				'uri' => THEME_URI.'js/jquery.hoverIntent.min.js',
 			),
-			
+
 			//placeholder
-			array(	
+			array(
 				'name' => 'placeholder',
 				'uri' => THEME_URI.'js/jquery.placeholder.min.js',
 			),
-			
+
 			//player
-			array(	
+			array(
 				'name' => 'jplayer',
 				'uri' => THEME_URI.'js/jplayer/jquery.jplayer.min.js',
 			),
-			
+
 			//slider
-			array(	
+			array(
 				'name' => 'themex-slider',
 				'uri' => THEME_URI.'js/jquery.themexSlider.js',
 			),
-			
+
 			//raty
-			array(	
+			array(
 				'name' => 'raty',
 				'uri' => THEME_URI.'js/jquery.raty.min.js',
 				'options' => array(
@@ -240,7 +240,7 @@ $config = array (
 				),
 			),
 		),
-		
+
 		//Widget Settings
 		'widget_settings' => array (
 			'before_widget' => '<div class="widget %2$s">',
@@ -248,7 +248,7 @@ $config = array (
 			'before_title' => '<div class="widget-title"><h3 class="nomargin">',
 			'after_title' => '</h3></div>',
 		),
-		
+
 		//Widget Areas
 		'widget_areas' => array (
 			array(
@@ -257,28 +257,28 @@ $config = array (
 				'before_widget' => '<div class="widget %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => '<div class="widget-title"><h3 class="nomargin">',
-				'after_title' => '</h3></div>',				
+				'after_title' => '</h3></div>',
 			),
-			
+
 			array(
 				'id' => 'lesson',
 				'name' => __('Lesson', 'academy'),
 				'before_widget' => '<div class="widget %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => '<div class="widget-title"><h3 class="nomargin">',
-				'after_title' => '</h3></div>',				
+				'after_title' => '</h3></div>',
 			),
-			
+
 			array(
 				'id' => 'footer',
 				'name' => __('Footer', 'academy'),
 				'before_widget' => '<div class="fourcol column"><div class="widget %2$s">',
 				'after_widget' => '</div></div>',
 				'before_title' => '<div class="widget-title"><h3 class="nomargin">',
-				'after_title' => '</h3></div>',				
+				'after_title' => '</h3></div>',
 			),
 		),
-		
+
 		//Widgets
 		'widgets' => array (
 			'ThemexAuthors',
@@ -287,10 +287,10 @@ $config = array (
 			'WP_Widget_Search',
 			'WP_Widget_Recent_Comments',
 		),
-		
+
 		//Post Types
 		'post_types' => array (
-		
+
 			//Plan
 			array (
 				'id' => 'plan',
@@ -316,7 +316,7 @@ $config = array (
 				'supports' => array('title', 'editor', 'page-attributes'),
 				'rewrite' => array('slug' => __('plan', 'academy')),
 			),
-		
+
 			//Course
 			array (
 				'id' => 'course',
@@ -341,7 +341,7 @@ $config = array (
 				'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'author', 'revisions'),
 				'rewrite' => array('slug' => __('course', 'academy')),
 			),
-			
+
 			//Lesson
 			array (
 				'id' => 'lesson',
@@ -366,7 +366,7 @@ $config = array (
 				'supports' => array('title', 'editor', 'author', 'revisions', 'comments', 'page-attributes'),
 				'rewrite' => array('slug' => __('lesson', 'academy')),
 			),
-			
+
 			//Quiz
 			array (
 				'id' => 'quiz',
@@ -392,7 +392,7 @@ $config = array (
 				'supports' => array('title', 'editor', 'author'),
 				'rewrite' => array('slug' => __('quiz', 'academy')),
 			),
-			
+
 			//Testimonial
 			array (
 				'id' => 'testimonial',
@@ -417,7 +417,7 @@ $config = array (
 				'supports' => array('title', 'editor', 'thumbnail'),
 				'rewrite' => array('slug' => __('testimonial', 'academy')),
 			),
-			
+
 			//Slide
 			array (
 				'id' => 'slide',
@@ -443,17 +443,17 @@ $config = array (
 				'rewrite' => array('slug' => __('slide', 'academy')),
 			),
 		),
-		
+
 		//Taxonomies
 		'taxonomies' => array (
-		
+
 			//Course Category
 			array(
 				'taxonomy' => 'course_category',
 				'object_type' => array('course'),
 				'settings' => array(
 					'hierarchical' => true,
-					'show_in_nav_menus' => true,			
+					'show_in_nav_menus' => true,
 					'labels' => array(
 	                    'name' => __( 'Course Categories', 'academy'),
 	                    'singular_name' => __( 'Course Category', 'academy'),
@@ -473,14 +473,14 @@ $config = array (
 					),
 				),
 			),
-			
+
 			//Testimonial Category
 			array(
 				'taxonomy' => 'testimonial_category',
 				'object_type' => array('testimonial'),
 				'settings' => array(
 					'hierarchical' => true,
-					'show_in_nav_menus' => true,			
+					'show_in_nav_menus' => true,
 					'labels' => array(
 	                    'name' => __( 'Testimonial Categories', 'academy'),
 	                    'singular_name' => __( 'Testimonial Category', 'academy'),
@@ -501,10 +501,10 @@ $config = array (
 				),
 			),
 		),
-		
+
 		//Meta Boxes
 		'meta_boxes' => array(
-		
+
 			//Page
 			array(
 				'id' => 'page_metabox',
@@ -513,7 +513,7 @@ $config = array (
 				'context' => 'normal',
 				'priority' => 'high',
 				'options' => array(
-					array(	
+					array(
 						'name' => __('Background', 'academy'),
 						'id' => 'background',
 						'type' => 'uploader',
@@ -521,7 +521,7 @@ $config = array (
 					),
 				),
 			),
-		
+
 			//Course
 			array(
 				'id' => 'course_metabox',
@@ -534,13 +534,13 @@ $config = array (
 						'name' => __('Status', 'academy'),
 						'id' => 'status',
 						'type' => 'select',
-						'options' => array(							
+						'options' => array(
 							'premium' => __('Premium', 'academy'),
 							'private' => __('Private', 'academy'),
 							'free' => __('Free', 'academy'),
 						),
 					),
-					
+
 					array(
 						'name' => __('Product', 'academy'),
 						'id' => 'product',
@@ -548,52 +548,52 @@ $config = array (
 						'post_type' => 'product',
 						'description' => __('Choose WooCommerce product to set the course price', 'academy'),
 					),
-					
+
 					array(
 						'name' => __('Rating', 'academy'),
 						'id' => 'rating',
 						'type' => 'text',
 					),
-					
+
 					array(
 						'name' => __('Students', 'academy'),
 						'id' => 'users',
 						'type' => 'users',
 					),
-				
-					array(	
+
+					array(
 						'name' => __('Background', 'academy'),
 						'id' => 'background',
 						'type' => 'uploader',
 						'description' => __('Choose background image from WordPress media library', 'academy'),
 					),
-				),			
-			),
-			
-			//Course Certificate
-			array(
-				'id' => 'certificate_metabox',
-				'title' =>  __('Course Certificate', 'academy'),
-				'page' => 'course',
-				'context' => 'normal',
-				'priority' => 'high',
-				'options' => array(					
-					array(	
-						'name' => __('Content', 'academy'),
-						'id' => 'certificate_content',
-						'type' => 'textarea',
-						'description' => __('Add certificate content, you can use %username%, %title%, %date% and %grade% keywords', 'academy'),
-					),
-					
-					array(	
-						'name' => __('Background', 'academy'),
-						'id' => 'certificate_background',
-						'type' => 'uploader',
-						'description' => __('Choose background image from WordPress media library', 'academy'),
-					),
 				),
 			),
-			
+
+			// //Course Certificate
+			// array(
+			// 	'id' => 'certificate_metabox',
+			// 	'title' =>  __('Course Certificate', 'academy'),
+			// 	'page' => 'course',
+			// 	'context' => 'normal',
+			// 	'priority' => 'high',
+			// 	'options' => array(
+			// 		array(
+			// 			'name' => __('Content', 'academy'),
+			// 			'id' => 'certificate_content',
+			// 			'type' => 'textarea',
+			// 			'description' => __('Add certificate content, you can use %username%, %title%, %date% and %grade% keywords', 'academy'),
+			// 		),
+			//
+			// 		array(
+			// 			'name' => __('Background', 'academy'),
+			// 			'id' => 'certificate_background',
+			// 			'type' => 'uploader',
+			// 			'description' => __('Choose background image from WordPress media library', 'academy'),
+			// 		),
+			// 	),
+			// ),
+
 			//Course Sidebar
 			array(
 				'id' => 'course_sidebar_metabox',
@@ -602,7 +602,7 @@ $config = array (
 				'context' => 'normal',
 				'priority' => 'high',
 				'options' => array(
-					array(	
+					array(
 						'name' => __('Content', 'academy'),
 						'id' => 'sidebar',
 						'type' => 'textarea',
@@ -610,7 +610,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			//Plan
 			array(
 				'id' => 'plan_metabox',
@@ -619,14 +619,14 @@ $config = array (
 				'context' => 'normal',
 				'priority' => 'high',
 				'options' => array(
-					array(	
+					array(
 						'name' => __('Category', 'academy'),
 						'id' => 'category',
 						'type' => 'select_category',
 						'taxonomy' => 'course_category',
 						'description' => __('Choose course category to add courses to the plan', 'academy'),
 					),
-					
+
 					array(
 						'name' => __('Product', 'academy'),
 						'id' => 'product',
@@ -634,7 +634,7 @@ $config = array (
 						'post_type' => 'product',
 						'description' => __('Choose WooCommerce product to set the plan price', 'academy'),
 					),
-					
+
 					array(
 						'name' => __('Period', 'academy'),
 						'id' => 'period',
@@ -649,15 +649,15 @@ $config = array (
 							'365' => __('Year', 'academy'),
 						),
 					),
-					
+
 					array(
 						'name' => __('Students', 'academy'),
 						'id' => 'users',
 						'type' => 'users',
 					),
-				),			
+				),
 			),
-			
+
 			//Lesson
 			array(
 				'id' => 'lesson_metabox',
@@ -670,34 +670,34 @@ $config = array (
 						'name' => __('Status', 'academy'),
 						'id' => 'status',
 						'type' => 'select',
-						'options' => array(					
+						'options' => array(
 							'premium' => __('Premium', 'academy'),
 							'free' => __('Free', 'academy'),
 						),
 					),
-					
+
 					array(
 						'name' => __('Course', 'academy'),
 						'id' => 'course',
 						'type' => 'select_post',
 						'post_type' => 'course',
 					),
-					
+
 					array(
 						'name' => __('Prerequisite', 'academy'),
 						'id' => 'lesson',
 						'type' => 'select_post',
 						'post_type' => 'lesson',
 					),
-					
+
 					array(
 						'name' => __('Attachments', 'academy'),
 						'id' => 'attachments',
 						'type' => 'attachments',
 					),
-				),	
+				),
 			),
-			
+
 			//Lesson Sidebar
 			array(
 				'id' => 'lesson_sidebar_metabox',
@@ -706,7 +706,7 @@ $config = array (
 				'context' => 'normal',
 				'priority' => 'high',
 				'options' => array(
-					array(	
+					array(
 						'name' => __('Content', 'academy'),
 						'id' => 'sidebar',
 						'type' => 'textarea',
@@ -714,7 +714,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			//Quiz
 			array(
 				'id' => 'quiz_metabox',
@@ -729,14 +729,14 @@ $config = array (
 						'type' => 'select_post',
 						'post_type' => 'lesson',
 					),
-					
+
 					array(
 						'name' => __('Percentage', 'academy'),
 						'id' => 'percentage',
 						'type' => 'number',
 						'description' => __('Set percentage of right answers required to pass this quiz', 'academy'),
 					),
-					
+
 					array(
 						'name' => __('Questions', 'academy'),
 						'id' => 'questions',
@@ -744,7 +744,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			//Slide
 			array(
 				'id' => 'slide_metabox',
@@ -753,35 +753,35 @@ $config = array (
 				'context' => 'normal',
 				'priority' => 'high',
 				'options' => array(
-					array(	
+					array(
 						'name' => __('Link', 'academy'),
 						'id' => 'link',
 						'type' => 'text',
 						'description' => __('Enter URL for the slide image link', 'academy'),
 					),
-					
-					array(	
+
+					array(
 						'name' => __('Video', 'academy'),
 						'id' => 'video',
 						'type' => 'textarea',
 						'description' => __('Enter embedded video code to replace the slide image', 'academy'),
 					),
-				),			
+				),
 			),
 		),
-		
+
 		//Shortcodes
 		'shortcodes' => array(
-		
+
 			//Button
 			array(
 				'id' => 'button',
 				'name' => __('Button', 'academy'),
 				'shortcode' => '[button color="{{color}}" size="{{size}}" url="{{url}}" target="{{target}}"]{{content}}[/button]',
 				'options' => array(
-					array(			
+					array(
 						'id' => 'color',
-						'name' => __('Color', 'academy'),						
+						'name' => __('Color', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'primary' => __('Primary', 'academy'),
@@ -789,10 +789,10 @@ $config = array (
 							'dark' => __('Dark', 'academy'),
 						),
 					),
-				
-					array(			
+
+					array(
 						'id' => 'size',
-						'name' => __('Size', 'academy'),						
+						'name' => __('Size', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'small' => __('Small', 'academy'),
@@ -800,31 +800,31 @@ $config = array (
 							'large' => __('Large', 'academy'),
 						),
 					),
-					
-					array(		
+
+					array(
 						'id' => 'url',
-						'name' => __('Link', 'academy'),			
+						'name' => __('Link', 'academy'),
 						'type' => 'text',
 					),
-					
-					array(			
+
+					array(
 						'id' => 'target',
-						'name' => __('Target', 'academy'),			
+						'name' => __('Target', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'self' => __('Current Tab', 'academy'),
 							'blank' => __('New Tab', 'academy'),
 						),
 					),
-					
+
 					array(
 						'id' => 'content',
-						'name' => __('Caption', 'academy'),						
+						'name' => __('Caption', 'academy'),
 						'type' => 'text',
 					),
 				),
 			),
-		
+
 			//Columns
 			array(
 				'id' => 'column',
@@ -856,16 +856,16 @@ $config = array (
 								'three_fourths_last' => __('Three Fourths Last', 'academy'),
 							),
 						),
-						
-						array(					
+
+						array(
 							'id' => 'content',
-							'name' => __('Content', 'academy'),						
+							'name' => __('Content', 'academy'),
 							'type' => 'textarea',
 						),
 					),
 				),
 			),
-			
+
 			//Courses
 			array(
 				'id' => 'courses',
@@ -891,10 +891,10 @@ $config = array (
 							'4' => '4',
 						),
 					),
-					
-					array(			
+
+					array(
 						'id' => 'order',
-						'name' => __('Order', 'academy'),			
+						'name' => __('Order', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'date' => __('Date', 'academy'),
@@ -903,16 +903,16 @@ $config = array (
 							'random' => __('Random', 'academy'),
 						),
 					),
-					
+
 					array(
 						'id' => 'category',
-						'name' => __('Category', 'academy'),			
+						'name' => __('Category', 'academy'),
 						'type' => 'select_category',
 						'taxonomy' => 'course_category',
 					),
 				),
 			),
-			
+
 			//Content
 			array(
 				'id' => 'content',
@@ -921,32 +921,32 @@ $config = array (
 				'options' => array(
 					array(
 						'id' => 'type',
-						'name' => __('Type', 'academy'),			
+						'name' => __('Type', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'public' => __('Public', 'academy'),
 							'private' => __('Private', 'academy'),
 						),
 					),
-					
+
 					array(
 						'id' => 'content',
-						'name' => __('Content', 'academy'),						
+						'name' => __('Content', 'academy'),
 						'type' => 'textarea',
 					),
 				),
 			),
-			
+
 			//Contact Form
 			array(
 				'id' => 'contact_form',
 				'name' => __('Contact Form', 'academy'),
 				'shortcode' => '[contact_form]',
 				'options' => array(
-		
+
 				),
 			),
-			
+
 			//Google Map
 			array(
 				'id' => 'map',
@@ -966,29 +966,29 @@ $config = array (
 						'value' => '0',
 						'type' => 'text',
 					),
-					
+
 					array(
 						'id' => 'longitude',
 						'name' => __('Longitude', 'academy'),
 						'value' => '0',
 						'type' => 'text',
 					),
-					
+
 					array(
 						'id' => 'zoom',
 						'name' => __('Zoom', 'academy'),
 						'value' => '10',
 						'type' => 'number',
 					),
-					
-					array(					
+
+					array(
 						'id' => 'description',
-						'name' => __('Description', 'academy'),							
-						'type' => 'textarea',						
+						'name' => __('Description', 'academy'),
+						'type' => 'textarea',
 					),
 				),
 			),
-			
+
 			//Image
 			array(
 				'id' => 'image',
@@ -997,18 +997,18 @@ $config = array (
 				'options' => array(
 					array(
 						'id' => 'content',
-						'name' => __('Image', 'academy'),						
+						'name' => __('Image', 'academy'),
 						'type' => 'text',
-					),	
-					
-					array(			
+					),
+
+					array(
 						'id' => 'url',
-						'name' => __('Link', 'academy'),						
+						'name' => __('Link', 'academy'),
 						'type' => 'text',
-					),		
+					),
 				),
 			),
-			
+
 			//Plan
 			array(
 				'id' => 'plan',
@@ -1023,7 +1023,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			//Player
 			array(
 				'id' => 'player',
@@ -1036,7 +1036,7 @@ $config = array (
 						'value' => '',
 						'type' => 'text',
 					),
-					
+
 					array(
 						'id' => 'content',
 						'name' => __('File Title', 'academy'),
@@ -1045,7 +1045,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			//Posts
 			array(
 				'id' => 'posts',
@@ -1057,47 +1057,47 @@ $config = array (
 						'name' => __('Number', 'academy'),
 						'value' => '1',
 						'type' => 'number',
-					),		
-					
+					),
+
 					array(
 						'id' => 'order',
-						'name' => __('Order', 'academy'),			
+						'name' => __('Order', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'date' => __('Date', 'academy'),
 							'random' => __('Random', 'academy'),
 						),
 					),
-					
-					array(			
+
+					array(
 						'id' => 'category',
-						'name' => __('Category', 'academy'),			
+						'name' => __('Category', 'academy'),
 						'type' => 'select_category',
 						'taxonomy' => 'category',
 					),
 				),
 			),
-			
+
 			//Section
 			array(
 				'id' => 'section',
 				'name' => __('Section', 'academy'),
 				'shortcode' => '[section title="{{title}}"]{{content}}[/section]',
 				'options' => array(
-					array(			
+					array(
 						'id' => 'title',
-						'name' => __('Title', 'academy'),						
+						'name' => __('Title', 'academy'),
 						'type' => 'text',
-					),				
-			
+					),
+
 					array(
 						'id' => 'content',
-						'name' => __('Content', 'academy'),						
+						'name' => __('Content', 'academy'),
 						'type' => 'textarea',
-					),				
+					),
 				),
 			),
-			
+
 			//Slider
 			array(
 				'id' => 'slider',
@@ -1110,7 +1110,7 @@ $config = array (
 						'type' => 'number',
 						'value' => '0',
 					),
-					
+
 					array(
 						'id' => 'speed',
 						'name' => __('Speed', 'academy'),
@@ -1123,28 +1123,28 @@ $config = array (
 					'options' => array(
 						array(
 							'id' => 'url',
-							'name' => __('Image', 'academy'),						
+							'name' => __('Image', 'academy'),
 							'type' => 'text',
 						),
-						
+
 						array(
 							'id' => 'content',
-							'name' => __('Caption', 'academy'),							
-							'type' => 'textarea',						
+							'name' => __('Caption', 'academy'),
+							'type' => 'textarea',
 						),
 					),
 				),
 			),
-			
+
 			//Tabs
 			array(
 				'id' => 'tabs',
 				'name' => __('Tabs', 'academy'),
 				'shortcode' => '[tabs type="{{type}}"]{{clone}}[/tabs]',
 				'options' => array(
-					array(			
+					array(
 						'id' => 'type',
-						'name' => __('Type', 'academy'),			
+						'name' => __('Type', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'horizontal' => __('Horizontal', 'academy'),
@@ -1160,16 +1160,16 @@ $config = array (
 							'name' => __('Title', 'academy'),
 							'type' => 'text',
 						),
-						
-						array(					
+
+						array(
 							'id' => 'content',
-							'name' => __('Content', 'academy'),							
-							'type' => 'textarea',						
+							'name' => __('Content', 'academy'),
+							'type' => 'textarea',
 						),
 					),
 				),
 			),
-			
+
 			//Testimonials
 			array(
 				'id' => 'testimonials',
@@ -1181,27 +1181,27 @@ $config = array (
 						'name' => __('Number', 'academy'),
 						'value' => '3',
 						'type' => 'number',
-					),		
-					
-					array(		
+					),
+
+					array(
 						'id' => 'order',
-						'name' => __('Order', 'academy'),			
+						'name' => __('Order', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'date' => __('Date', 'academy'),
 							'random' => __('Random', 'academy'),
 						),
 					),
-					
-					array(			
+
+					array(
 						'id' => 'category',
-						'name' => __('Category', 'academy'),		
+						'name' => __('Category', 'academy'),
 						'type' => 'select_category',
 						'taxonomy' => 'testimonial_category',
 					),
 				),
 			),
-			
+
 			//Toggles
 			array(
 				'id' => 'toggles',
@@ -1216,7 +1216,7 @@ $config = array (
 							'multiple' => __('Multiple', 'academy'),
 							'accordion' => __('Accordion', 'academy'),
 						),
-					),			
+					),
 				),
 				'clone' => array(
 					'shortcode' => '[toggle title="{{title}}"]{{content}}[/toggle]',
@@ -1225,12 +1225,12 @@ $config = array (
 							'id' => 'title',
 							'name' => __('Title', 'academy'),
 							'type' => 'text',
-						),		
-						
+						),
+
 						array(
 							'id' => 'content',
-							'name' => __('Content', 'academy'),							
-							'type' => 'textarea',					
+							'name' => __('Content', 'academy'),
+							'type' => 'textarea',
 						),
 					),
 				),
@@ -1247,22 +1247,22 @@ $config = array (
 						'name' => __('Number', 'academy'),
 						'value' => '3',
 						'type' => 'number',
-					),		
-					
-					array(		
+					),
+
+					array(
 						'id' => 'order',
-						'name' => __('Order', 'academy'),			
+						'name' => __('Order', 'academy'),
 						'type' => 'select',
 						'options' => array(
 							'date' => __('Date', 'academy'),
 							'name' => __('Name', 'academy'),
 							'activity' => __('Activity', 'academy'),
 						),
-					),			
+					),
 				),
 			),
 		),
-		
+
 		//Custom Styles
 		'custom_styles' => array(
 			array(
@@ -1274,7 +1274,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => 'body, input, select, textarea',
 				'attributes' => array(
@@ -1284,7 +1284,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => 'h1,h2,h3,h4,h5,h6, .header-navigation div > ul > li > a',
 				'attributes' => array(
@@ -1294,7 +1294,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => 'input[type="submit"], input[type="button"], .button, .jp-play-bar, .jp-volume-bar-value, .free-course .course-price .price-text, .lessons-listing .lesson-attachments a, ul.styled-list.style-4 li:before, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce #content input.button.alt, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt, .woocommerce-page #respond input#submit.alt, .woocommerce-page #content input.button.alt, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce #content input.button.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page #content input.button.alt:hover',
 				'attributes' => array(
@@ -1304,7 +1304,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => '.free-course .course-price .corner',
 				'attributes' => array(
@@ -1312,14 +1312,14 @@ $config = array (
 						'name' => 'border-top-color',
 						'option' => 'primary_color',
 					),
-					
+
 					array(
 						'name' => 'border-right-color',
 						'option' => 'primary_color',
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => '.button.secondary, .quiz-listing .question-number, .lessons-listing .lesson-title .course-status, .course-price .price-text, .course-price .corner, .course-progress span, .questions-listing .question-replies, .course-price .corner-background, .user-links a:hover, .payment-listing .expanded .toggle-title:before, .styled-list.style-5 li:before, .faq-toggle .toggle-title:before, .lesson-toggle, ul.styled-list.style-1 li:before, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce #content input.button:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page #content input.button:hover',
 				'attributes' => array(
@@ -1329,7 +1329,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => 'a, a:hover, a:focus, ul.styled-list li > a:hover',
 				'attributes' => array(
@@ -1339,7 +1339,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => '.button.dark, .jp-gui, .jp-controls a, .jp-video-play-icon, .header-wrap, .header-navigation ul ul, .select-menu, .search-form, .mobile-search-form, .login-button .tooltip-text, .footer-wrap, .site-footer:after, .site-header:after, .widget-title',
 				'attributes' => array(
@@ -1349,7 +1349,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => '.jp-jplayer',
 				'attributes' => array(
@@ -1359,7 +1359,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => '.widget-title',
 				'attributes' => array(
@@ -1369,7 +1369,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => '::-moz-selection',
 				'attributes' => array(
@@ -1379,7 +1379,7 @@ $config = array (
 					),
 				),
 			),
-			
+
 			array(
 				'elements' => '::selection',
 				'attributes' => array(
@@ -1390,7 +1390,7 @@ $config = array (
 				),
 			),
 		),
-		
+
 		//Fonts
 		'fonts' => array(
 			'ABeeZee' => 'ABeeZee',
@@ -1920,47 +1920,47 @@ $config = array (
 			'Yeseva One' => 'Yeseva One',
 			'Yesteryear' => 'Yesteryear',
 			'Zeyada' => 'Zeyada',
-		),	
+		),
 	),
-	
+
 	//Theme Options
 	'options' => array(
-	
+
 		//General
-		array(	
+		array(
 			'name' => __('General', 'academy'),
 			'type' => 'section'
 		),
 
-			array(	
+			array(
 				'name' => __('Site Favicon', 'academy'),
 				'description' => __('Choose an image to replace the default site favicon', 'academy'),
 				'id' => 'favicon',
 				'type' => 'uploader',
 			),
 
-			array(	
+			array(
 				'name' => __('Site Logo', 'academy'),
 				'description' => __('Choose an image to replace the default theme logo', 'academy'),
 				'id' => 'site_logo',
 				'type' => 'uploader',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Login Logo', 'academy'),
 				'description' => __('Choose an image to replace the default WordPress login logo', 'academy'),
 				'id' => 'login_logo',
 				'type' => 'uploader',
 			),
 
-			array(	
+			array(
 				'name' => __('Copyright Text', 'academy'),
 				'description' => __('Enter copyright text to show in the theme footer', 'academy'),
 				'id' => 'copyright',
 				'type' => 'textarea',
 			),
 
-			array(	
+			array(
 				'name' => __('Tracking Code', 'academy'),
 				'description' => __('Enter Google Analytics code to track your site visitors', 'academy'),
 				'id' => 'tracking',
@@ -1971,37 +1971,37 @@ $config = array (
 		array(
 			'name' => __('Styling', 'academy'),
 			'type' => 'section',
-		),	
+		),
 
-			array(	
+			array(
 				'name' => __('Primary Color', 'academy'),
 				'default' => '#f3715d',
 				'id' => 'primary_color',
 				'type' => 'color',
 			),
 
-			array(	
+			array(
 				'name' => __('Secondary Color', 'academy'),
 				'default' => '#5ea5d7',
 				'id' => 'secondary_color',
 				'type' => 'color',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Background Color', 'academy'),
 				'default' => '#3d4e5b',
 				'id' => 'background_color',
 				'type' => 'color',
 			),
 
-			array(	
+			array(
 				'name' => __('Background Image', 'academy'),
 				'id' => 'background_image',
 				'description' => __('Choose background image from WordPress media library', 'academy'),
 				'type' => 'uploader',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Background Type', 'academy'),
 				'id' => 'background_type',
 				'type' => 'select',
@@ -2010,42 +2010,42 @@ $config = array (
 					'tiled' => __('Tiled', 'academy'),
 				),
 			),
-			
-			array(	
-				'name' => __('Heading Font' ,'academy'),					
+
+			array(
+				'name' => __('Heading Font' ,'academy'),
 				'id' => 'heading_font',
 				'default' => 'Crete Round',
 				'type' => 'select_font',
 			),
 
-			array(	
+			array(
 				'name' => __('Content Font', 'academy'),
 				'id' => 'content_font',
 				'default' => 'Open Sans',
 				'type' => 'select_font',
 			),
 
-			array(	
+			array(
 				'name' => __('Custom CSS', 'academy'),
 				'description' => __('Enter custom CSS code to overwrite the default theme styles', 'academy'),
 				'id' => 'css',
 				'type' => 'textarea',
 			),
-			
+
 		//Slider
-		array(	
+		array(
 			'name' => __('Header', 'academy'),
 			'type' => 'section',
 		),
-		
-			array(	
+
+			array(
 				'name' => __('Sharing Code', 'academy'),
 				'description' => __('Enter social sharing buttons code to show share button in the header', 'academy'),
 				'id' => 'sharing',
 				'type' => 'textarea',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Slider Type', 'academy'),
 				'id' => 'slider_type',
 				'type' => 'select',
@@ -2055,8 +2055,8 @@ $config = array (
 					'boxed' => __('Boxed', 'academy'),
 				),
 			),
-					
-			array(	
+
+			array(
 				'name' => __('Slider Pause', 'academy'),
 				'default' => '0',
 				'id' => 'slider_pause',
@@ -2065,8 +2065,8 @@ $config = array (
 				'unit'=>'ms',
 				'type' => 'slider',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Slider Speed', 'academy'),
 				'default' => '1000',
 				'id' => 'slider_speed',
@@ -2075,25 +2075,25 @@ $config = array (
 				'unit'=>'ms',
 				'type' => 'slider',
 			),
-			
+
 		//Courses
 		array(
 			'name' => __('Courses', 'academy'),
 			'type' => 'section',
 		),
-		
-			array(	
+
+			array(
 				'name' => __('Courses Layout', 'academy'),
 				'id' => 'courses_layout',
 				'type' => 'select_image',
 				'options' => array(
 					'fullwidth' => THEMEX_URI.'assets/images/layouts/layout-full.png',
 					'left' => THEMEX_URI.'assets/images/layouts/layout-left.png',
-					'right' => THEMEX_URI.'assets/images/layouts/layout-right.png',				
+					'right' => THEMEX_URI.'assets/images/layouts/layout-right.png',
 				),
 			),
-		
-			array(	
+
+			array(
 				'name' => __('Courses View', 'academy'),
 				'id' => 'courses_view',
 				'type' => 'select',
@@ -2102,8 +2102,8 @@ $config = array (
 					'list' => __('List', 'academy'),
 				),
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Courses Columns', 'academy'),
 				'id' => 'courses_columns',
 				'type' => 'select',
@@ -2117,8 +2117,8 @@ $config = array (
 					'value' => 'grid',
 				),
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Courses Order', 'academy'),
 				'id' => 'courses_order',
 				'type' => 'select',
@@ -2128,169 +2128,169 @@ $config = array (
 					'popularity' => __('Popularity', 'academy'),
 				),
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Courses Per Page', 'academy'),
 				'id' => 'courses_per_page',
 				'type' => 'number',
 				'default' => '12',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Related Courses Order', 'academy'),
 				'id' => 'courses_related_order',
 				'type' => 'select',
-				'options' => array(				
+				'options' => array(
 					'category' => __('Category', 'academy'),
 					'rating' => __('Rating', 'academy'),
 					'popularity' => __('Popularity', 'academy'),
 				),
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Related Courses Number', 'academy'),
 				'id' => 'courses_related_number',
 				'type' => 'number',
 				'default' => '4',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Students Number', 'academy'),
 				'id' => 'course_users_number',
 				'type' => 'number',
 				'default' => '9',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Questions Number', 'academy'),
 				'id' => 'course_questions_number',
 				'type' => 'number',
 				'default' => '7',
 			),
-			
+
 			array(
 				'name' => __('Hide Course Author', 'academy'),
 				'id' => 'course_author',
 				'type' => 'checkbox',
 			),
-			
+
 			array(
 				'name' => __('Hide Course Rating', 'academy'),
 				'id' => 'course_rating',
 				'type' => 'checkbox',
 			),
-			
+
 			array(
 				'name' => __('Hide Students Number', 'academy'),
 				'id' => 'course_popularity',
 				'type' => 'checkbox',
 			),
-			
+
 			array(
 				'name' => __('Disable Retaking Courses', 'academy'),
 				'id' => 'course_retake',
 				'type' => 'checkbox',
 			),
-			
+
 		//Lessons
 		array(
 			'name' => __('Lessons', 'academy'),
 			'type' => 'section',
 		),
-		
-			array(	
+
+			array(
 				'name' => __('Lessons Layout', 'academy'),
 				'id' => 'lessons_layout',
 				'type' => 'select_image',
 				'options' => array(
 					'left' => THEMEX_URI.'assets/images/layouts/layout-left.png',
-					'right' => THEMEX_URI.'assets/images/layouts/layout-right.png',				
+					'right' => THEMEX_URI.'assets/images/layouts/layout-right.png',
 				),
 			),
-			
+
 			array(
 				'name' => __('Hide Child Lessons', 'academy'),
 				'id' => 'lesson_collapse',
 				'type' => 'checkbox',
 			),
-			
+
 			array(
 				'name' => __('Disable Retaking Lessons', 'academy'),
 				'id' => 'lesson_retake',
 				'type' => 'checkbox',
 			),
-			
+
 			array(
 				'name' => __('Hide Prerequisite Content', 'academy'),
 				'id' => 'lesson_hide',
 				'type' => 'checkbox',
 			),
-			
+
 			array(
 				'name' => __('Shuffle Quiz Questions', 'academy'),
 				'id' => 'quiz_shuffle',
 				'type' => 'checkbox',
 			),
-		
+
 		//Posts
 		array(
 			'name' => __('Posts', 'academy'),
 			'type' => 'section',
-		),		
-			
-			array(	
+		),
+
+			array(
 				'name' => __('Posts Layout', 'academy'),
 				'id' => 'posts_layout',
 				'type' => 'select_image',
 				'options' => array(
 					'left' => THEMEX_URI.'assets/images/layouts/layout-left.png',
-					'right' => THEMEX_URI.'assets/images/layouts/layout-right.png',				
+					'right' => THEMEX_URI.'assets/images/layouts/layout-right.png',
 				),
 			),
-			
+
 			array(
 				'name' => __('Hide Post Author', 'academy'),
 				'id' => 'post_author',
 				'type' => 'checkbox',
 			),
-			
+
 			array(
 				'name' => __('Hide Post Date', 'academy'),
 				'id' => 'post_date',
 				'type' => 'checkbox',
 			),
-			
+
 			array(
 				'name' => __('Hide Post Image', 'academy'),
 				'id' => 'post_image',
 				'type' => 'checkbox',
 			),
-			
+
 		//Registration
 		array(
 			'name' => __('Registration', 'academy'),
 			'type' => 'section',
 		),
-		
-			array(	
+
+			array(
 				'name' => __('Enable Email Confirmation', 'academy'),
 				'id' => 'user_activation',
 				'type' => 'checkbox',
 			),
-		
-			array(	
+
+			array(
 				'name' => __('Enable Captcha Protection', 'academy'),
 				'id' => 'user_captcha',
 				'type' => 'checkbox',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Enable Facebook Login', 'academy'),
 				'id' => 'facebook_login',
 				'type' => 'checkbox',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Facebook Application ID', 'academy'),
 				'id' => 'facebook_id',
 				'type' => 'text',
@@ -2299,8 +2299,8 @@ $config = array (
 					'value' => 'true',
 				),
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Facebook Application Secret', 'academy'),
 				'id' => 'facebook_secret',
 				'type' => 'text',
@@ -2309,124 +2309,124 @@ $config = array (
 					'value' => 'true',
 				),
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Registration Email', 'academy'),
 				'id' => 'email_registration',
 				'description' => __('Add registration email text, you can use %username%, %password% and %link% keywords', 'academy'),
 				'type' => 'textarea',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Password Reset Email', 'academy'),
 				'id' => 'email_password',
 				'description' => __('Add password reset email text, you can use %username% and %link% keywords', 'academy'),
 				'type' => 'textarea',
 			),
-			
+
 		//Notifications
-		array(	
+		array(
 			'name' => __('Notifications', 'academy'),
 			'type' => 'section',
 		),
-		
-			array(	
+
+			array(
 				'name' => __('New Course Email', 'academy'),
 				'id' => 'email_course',
 				'description' => __('Add notification email text, you can use %username%, %title% and %link% keywords', 'academy'),
 				'type' => 'textarea',
 			),
-			
+
 			array(
 				'name' => __('Completed Course Email', 'academy'),
 				'id' => 'email_certificate',
 				'description' => __('Add notification email text, you can use %username%, %title% and %link% keywords', 'academy'),
 				'type' => 'textarea',
 			),
-		
-			array(	
+
+			array(
 				'name' => __('New Plan Email', 'academy'),
 				'id' => 'email_plan',
 				'description' => __('Add notification email text, you can use %username%, %title% and %link% keywords', 'academy'),
 				'type' => 'textarea',
 			),
-			
+
 			array(
 				'name' => __('New Question Email', 'academy'),
 				'id' => 'email_question',
 				'description' => __('Add notification email text, you can use %username%, %title% and %link% keywords', 'academy'),
 				'type' => 'textarea',
 			),
-			
+
 		//Profile Form
-		array(	
+		array(
 			'name' => __('Profile Form', 'academy'),
 			'type' => 'section',
 		),
-		
-			array(	
+
+			array(
 				'name' => __('Hide Signature', 'academy'),
 				'id' => 'profile_signature',
 				'type' => 'checkbox',
 			),
-		
-			array(	
+
+			array(
 				'name' => __('Hide Description', 'academy'),
 				'id' => 'profile_description',
 				'type' => 'checkbox',
 			),
-		
-			array(	
+
+			array(
 				'name' => __('Hide Social Links', 'academy'),
 				'id' => 'profile_links',
 				'type' => 'checkbox',
 			),
-			
-			array(	
+
+			array(
 				'name' => __('Hide Courses', 'academy'),
 				'id' => 'profile_courses',
 				'type' => 'checkbox',
 			),
-		
+
 			array(
 				'id' => 'ThemexForm',
 				'slug' => 'profile',
 				'type' => 'module',
 			),
-		
+
 		//Contact Form
 		array(
 			'name' => __('Contact Form', 'academy'),
 			'type' => 'section',
 		),
-			
+
 			array(
 				'id' => 'ThemexForm',
 				'slug' => 'contact',
 				'type' => 'module',
 			),
-			
+
 		//Checkout Form
-		array(	
+		array(
 			'name' => __('Checkout Form', 'academy'),
 			'type' => 'section',
 		),
-		
+
 			array(
 				'id' => 'ThemexWoo',
 				'type' => 'module',
 			),
-			
+
 		//Sidebars
-		array(	
+		array(
 			'name' => __('Sidebars', 'academy'),
 			'type' => 'section',
 		),
-		
+
 			array(
 				'id' => 'ThemexSidebar',
 				'type' => 'module',
-			),		
+			),
 	),
-	
+
 );
