@@ -15,8 +15,8 @@ Text Domain:  academy-child
 @import url("../academy/style.css");
 @import url("css/certificate_pdf.css");
 
-.site-header { border-top:4px solid #c1d82f;}
-.footer-wrap { border-bottom:4px solid #c1d82f;}
+.site-header { border-top:4px solid  #97D200;}
+.footer-wrap { border-bottom:4px solid  #97D200;}
 
 
 /* =Theme customization starts here
@@ -27,7 +27,7 @@ Text Domain:  academy-child
 	padding:0.2em 10px;
 	min-width:38px;
 	border:1px solid rgba(0,0,0,0.1);
-	background-color:#5ea5d7;
+	background-color:#8Dc8E8;
 	color:#fff;
 	text-align:center;
 	text-shadow:0 -1px 0 rgba(0,0,0,0.15);
