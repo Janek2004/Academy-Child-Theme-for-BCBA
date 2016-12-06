@@ -231,6 +231,16 @@ $config = array (
 				),
 			),
 
+
+			//lazyload
+			array(
+				'name' => 'lazyload',
+				'uri' => THEME_URI.'js/jquery.lazyload.min.js',
+				'options' => array(
+					'templateDirectory' => THEME_URI,
+				),
+			),
+
 			//general
 			array(
 				'name' => 'general',

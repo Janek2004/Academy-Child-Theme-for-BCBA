@@ -16,13 +16,18 @@
 						<nav class="footer-navigation right">
 							<?php  wp_nav_menu( array( 'theme_location' => 'footer_menu' ) ); ?>
 						</nav>
-						<!-- /navigation -->				
-					</div>			
-				</footer>				
+						<!-- /navigation -->
+					</div>
+				</footer>
 			</div>
-			<!-- /footer -->			
+			<!-- /footer -->
 		</div>
 		<!-- /site wrap -->
 	<?php wp_footer(); ?>
+	<script>
+jQuery(function($) {
+    $("img.lazy").lazyload();
+		});
+</script>
 	</body>
 </html>

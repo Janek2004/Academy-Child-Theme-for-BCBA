@@ -41,12 +41,9 @@ function mmail($args){
 			if(empty($headers)){
 					$headers = 'BCC: '.$bcc;
 			}else{
-					//$headers = $headers."\r\n".'BCC: '.$bcc1."\r\n".'BCC: '.$bcc1."\r\n";
 					$headers = $headers."\r\n".'BCC: '.$bcc;
 			}
 	}
-
-//print_r($headers);
 
 
 	$new_wp_mail = array(
