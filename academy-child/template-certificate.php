@@ -61,8 +61,13 @@ $mpdf->Output();
 		$post_id=themex_decode($ID);
  		$user =  themex_decode($ID,true)
  ?>
-<?php $certificate=ThemexCourse::getCertificate(themex_decode($ID), themex_decode($ID, true));
-
+ <script>
+	// console.log(<?php echo $post_id; ?>)
+	// console.log(<?php echo $user; ?>)
+ </script>
+<?php
+	$certificate=ThemexCourse::getCertificate(themex_decode($ID), themex_decode($ID, true));
+	// print_r($certificate);
 ?>
 <?php if(isset($certificate['user'])) { ?>
 		<?php
