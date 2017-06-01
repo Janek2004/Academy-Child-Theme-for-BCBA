@@ -1,8 +1,7 @@
 <?php
-
+date_default_timezone_set('America/Chicago');
 /**Returns a date for current user and course*/
 function getCertificateDate($post_id,$user){
-
 	global $wpdb;
 	$query = "SELECT *
         FROM $wpdb->comments
@@ -70,8 +69,6 @@ $mpdf->Output();
 			$number_of_supervision_credits=get_field('number_of_supervision_credit',$post_id);
 			$presenter=get_field('presenter_teacher',$post_id);
 
-
-
 			if ($credits > 0){
 					$certificateText .= ' and <big>%credits% Continuing Education Units (CEUS)</big>';
 			}
@@ -98,7 +95,7 @@ $mpdf->Output();
 			$timestamp = getCertificateDate($post_id, $user);
 			$today_date=date("F j, Y",$timestamp);
 
-
+			//echo($timestamp);
 
 
 			$name_of_course=get_field('name_of_course',$post_id);
