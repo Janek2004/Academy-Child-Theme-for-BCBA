@@ -1,22 +1,7 @@
 <?php
+
 /**Returns a date for current user and course*/
 function getCertificateDate($post_id,$user){
-	//$user=wp_get_current_user();
-
-	/*THIS CODE Doesn't work
-	$args = array('user_id'=>$user,'type' => 'user_certificate','post_id' => $post_id);
-	$comments = get_comments($args);
-	print_r($comments);
-
-	// The Query
-	$comments_query = new WP_Comment_Query;
-	$comments = $comments_query->query( $args );
-
-	// 			$headerText = "The Office of Applied Behavior Analysis at the
-	// University of West Florida Office";
-
-
-	*/
 
 	global $wpdb;
 	$query = "SELECT *
@@ -30,6 +15,8 @@ function getCertificateDate($post_id,$user){
 		return $result;
 	}
 }
+
+
 
 if($_GET['format']=='pdf'){ ?>
 <?php
